@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private bool canNormalJump;
     private bool canWallJump;
     private bool isAttemptingToJump;
-    private bool checkJumpMultiplier;
     private bool canMove;
     private bool canFlip;
     private bool hasWallJumped;
@@ -47,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
     public bool ledgeDetected;
 
+    public InputAction playerControls;
+
 
     public float movementSpeed = 10.0f;
     public float jumpForce = 16.0f;
@@ -55,7 +56,6 @@ public class PlayerController : MonoBehaviour
     public float wallSlideSpeed;
     public float movementForceInAir;
     public float airDragMultiplier = 0.95f;
-    public float variableJumpHeightMultiplier = 0.5f;
     public float wallJumpForce;
     public float wallHopForce;
     public float jumpTimerSet = 0.15f;
@@ -183,7 +183,6 @@ public class PlayerController : MonoBehaviour
 
         if (isTouchingWall)
         {
-            checkJumpMultiplier = false;
             canWallJump = true;
         }
 
@@ -195,6 +194,13 @@ public class PlayerController : MonoBehaviour
         {
             canNormalJump = true;
         }
+    }
+
+
+    public void Dash()
+    {
+        if (Time.time >= (lastDash + dashCoolDown))
+            AttemptToDash();
     }
 
     private void CheckDash()
@@ -229,7 +235,7 @@ public class PlayerController : MonoBehaviour
     private void CheckMovementDirection()
     {
         // Check if there's any input (left or right)
-        if (Mathf.Abs(movementInputDirection) > 0)
+        if (Mathf.Abs(rb.velocity.x) >= 0.01f)
         {
             isWalking = true;
         }
@@ -292,21 +298,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (checkJumpMultiplier && !Input.GetButton("Jump"))
-        {
-            checkJumpMultiplier = false;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpHeightMultiplier);
-        }
 
-        if (Input.GetButtonDown("Dash"))
-        {
-            if(Time.time >= (lastDash + dashCoolDown))
-            AttemptToDash();
-
-        }
+        if (Input.GetButtonDown("Dash")) { 
+            Dash();
     }
+}
 
-    private void AttemptToDash()
+        private void AttemptToDash()
     {
         isDashing = true;
         dashTimeLeft = dashTime;
@@ -362,11 +360,10 @@ public class PlayerController : MonoBehaviour
             amountOfJumpsLeft--;
             jumpTimer = 0;
             isAttemptingToJump = false;
-            checkJumpMultiplier = true;
         }
     }
 
-    private void WallJump()
+    public void WallJump()
     {
         if (canWallJump)
         {
@@ -378,7 +375,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(forceToAdd, ForceMode2D.Impulse);
             jumpTimer = 0;
             isAttemptingToJump = false;
-            checkJumpMultiplier = true;
             turnTimer = 0;
             canMove = true;
             canFlip = true;
@@ -405,6 +401,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void DisableFlip() 
+    { 
+        canFlip = false;
+    }
+
+    public void EnableFlip()
+    {
+        canFlip = true;
+    }
+
     private void Flip()
     {
         if (!isWallSliding && canFlip)
@@ -422,4 +428,3 @@ public class PlayerController : MonoBehaviour
     }
 
 }
-//orig
