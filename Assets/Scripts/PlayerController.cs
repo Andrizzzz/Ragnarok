@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private bool canNormalJump;
     private bool canWallJump;
     private bool isAttemptingToJump;
-    private bool checkJumpMultiplier;
     private bool canMove;
     private bool canFlip;
     private bool hasWallJumped;
@@ -47,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
     public bool ledgeDetected;
 
+    public InputAction playerControls;
+
 
     public float movementSpeed = 10.0f;
     public float jumpForce = 16.0f;
@@ -55,7 +56,6 @@ public class PlayerController : MonoBehaviour
     public float wallSlideSpeed;
     public float movementForceInAir;
     public float airDragMultiplier = 0.95f;
-    public float variableJumpHeightMultiplier = 0.5f;
     public float wallJumpForce;
     public float wallHopForce;
     public float jumpTimerSet = 0.15f;
@@ -183,7 +183,6 @@ public class PlayerController : MonoBehaviour
 
         if (isTouchingWall)
         {
-            checkJumpMultiplier = false;
             canWallJump = true;
         }
 
@@ -292,16 +291,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (checkJumpMultiplier && !Input.GetButton("Jump"))
-        {
-            checkJumpMultiplier = false;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpHeightMultiplier);
-        }
+      
 
         if (Input.GetButtonDown("Dash"))
         {
-            if(Time.time >= (lastDash + dashCoolDown))
-            AttemptToDash();
+            if (Time.time >= (lastDash + dashCoolDown))
+                AttemptToDash();
 
         }
     }
@@ -362,7 +357,6 @@ public class PlayerController : MonoBehaviour
             amountOfJumpsLeft--;
             jumpTimer = 0;
             isAttemptingToJump = false;
-            checkJumpMultiplier = true;
         }
     }
 
@@ -378,7 +372,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(forceToAdd, ForceMode2D.Impulse);
             jumpTimer = 0;
             isAttemptingToJump = false;
-            checkJumpMultiplier = true;
             turnTimer = 0;
             canMove = true;
             canFlip = true;
@@ -422,4 +415,3 @@ public class PlayerController : MonoBehaviour
     }
 
 }
-//orig
