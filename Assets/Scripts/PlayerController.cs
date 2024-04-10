@@ -196,6 +196,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void Dash()
+    {
+        if (Time.time >= (lastDash + dashCoolDown))
+            AttemptToDash();
+    }
+
     private void CheckDash()
     {
         if (isDashing)
@@ -228,7 +235,7 @@ public class PlayerController : MonoBehaviour
     private void CheckMovementDirection()
     {
         // Check if there's any input (left or right)
-        if (Mathf.Abs(movementInputDirection) > 0)
+        if (Mathf.Abs(rb.velocity.x) >= 0.01f)
         {
             isWalking = true;
         }
@@ -291,17 +298,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-      
 
-        if (Input.GetButtonDown("Dash"))
-        {
-            if (Time.time >= (lastDash + dashCoolDown))
-                AttemptToDash();
-
-        }
+        if (Input.GetButtonDown("Dash")) { 
+            Dash();
     }
+}
 
-    private void AttemptToDash()
+        private void AttemptToDash()
     {
         isDashing = true;
         dashTimeLeft = dashTime;
@@ -360,7 +363,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void WallJump()
+    public void WallJump()
     {
         if (canWallJump)
         {
@@ -396,6 +399,16 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
             }
         }
+    }
+
+    public void DisableFlip() 
+    { 
+        canFlip = false;
+    }
+
+    public void EnableFlip()
+    {
+        canFlip = true;
     }
 
     private void Flip()
