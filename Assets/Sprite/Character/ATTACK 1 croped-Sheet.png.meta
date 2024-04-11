@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b8a6fde02e8c51448eaa7921b75a911
+guid: 570f72cc10b57ad4aab2ba29afb3d629
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -114,7 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,11 +126,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_0
+      name: ATTACK 1 croped-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa3400c3ff45e484c87ed41acaee9574
-      internalID: -43114932
+      spriteID: 6eb99ec5d642b9241aaa8310b27aeae7
+      internalID: -506905307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_1
+      name: ATTACK 1 croped-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 131
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dac3e8ebf8a94f409d9eb227eaf35cc
-      internalID: -1728517612
+      spriteID: c88c59457ff7e0c4f8ccad265f74324f
+      internalID: 1110746773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_2
+      name: ATTACK 1 croped-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 262
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6aaf22a1ec1846458189a69155c149b
-      internalID: -196484501
+      spriteID: e2d34a0a222c29c4680f82e4d2f87df4
+      internalID: 1436196823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_3
+      name: ATTACK 1 croped-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 393
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d60a3675c7f397b4895e14947691d9ff
-      internalID: 1869307442
+      spriteID: 5bebad84523c52f4093e942b5e83ef47
+      internalID: 1857380577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_4
+      name: ATTACK 1 croped-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 524
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 466c731629d57e046943ed7140256a68
-      internalID: -835243652
+      spriteID: 0d0b6f5f97b37934fa7b66bf0268d179
+      internalID: 1687903890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_5
+      name: ATTACK 1 croped-Sheet_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 655
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05c67337f27d8854db742d2b0b3ee772
-      internalID: 23551750
+      spriteID: 6b3bf778a9d1a0749b30760f0dcb7774
+      internalID: -184096679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_6
+      name: ATTACK 1 croped-Sheet_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 786
         y: 0
-        width: 64
-        height: 64
+        width: 131
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,71 +281,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6c0e669c28b0ca4c8a613d001754361
-      internalID: 558676002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acc5aa30323cfe146aae1a243d9f30fd
-      internalID: -1320670948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 291a3fbcd86aab24893b54f113128319
-      internalID: 2129298934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running remaster with clothes and hair-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25e835370b56c864795c3af874ddefd3
-      internalID: -387074234
+      spriteID: 58690f7ca9db1f946b1c64196e15fd1d
+      internalID: 968813939
       vertices: []
       indices: 
       edges: []
@@ -361,16 +298,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      running remaster with clothes and hair-Sheet_0: -43114932
-      running remaster with clothes and hair-Sheet_1: -1728517612
-      running remaster with clothes and hair-Sheet_2: -196484501
-      running remaster with clothes and hair-Sheet_3: 1869307442
-      running remaster with clothes and hair-Sheet_4: -835243652
-      running remaster with clothes and hair-Sheet_5: 23551750
-      running remaster with clothes and hair-Sheet_6: 558676002
-      running remaster with clothes and hair-Sheet_7: -1320670948
-      running remaster with clothes and hair-Sheet_8: 2129298934
-      running remaster with clothes and hair-Sheet_9: -387074234
+      ATTACK 1 croped-Sheet_0: -506905307
+      ATTACK 1 croped-Sheet_1: 1110746773
+      ATTACK 1 croped-Sheet_2: 1436196823
+      ATTACK 1 croped-Sheet_3: 1857380577
+      ATTACK 1 croped-Sheet_4: 1687903890
+      ATTACK 1 croped-Sheet_5: -184096679
+      ATTACK 1 croped-Sheet_6: 968813939
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
