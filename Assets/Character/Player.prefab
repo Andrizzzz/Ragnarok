@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003199983922669029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.332, y: -0.09, z: -0}
+  m_LocalPosition: {x: 0.52, y: -0.12, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003199984640842223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.855, y: 1.179, z: -0.15}
+  m_LocalPosition: {x: -0.21, y: 0.76, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,7 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
   amountOfJumps: 2
-  ledgeDetected: 0
   playerControls:
     m_Name: Player Controls
     m_Type: 0
@@ -247,8 +246,13 @@ MonoBehaviour:
   dashSpeed: 50
   distanceBetweenImages: 0.1
   dashCoolDown: 1
+  ledgeClimbXOffSet1: 0.3
+  ledgeClimbYOffSet1: 0
+  ledgeClimbXOffSet2: 0.5
+  ledgeClimbYOffSet2: 3
   groundCheck: {fileID: 5003199984415777429}
   wallCheck: {fileID: 5003199983922669026}
+  ledgeCheck: {fileID: 5003199984640842220}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 192
