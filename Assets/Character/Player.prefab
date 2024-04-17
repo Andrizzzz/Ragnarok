@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003199984415777428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -1.51, z: 0}
+  m_LocalPosition: {x: 1.6, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003199985544214344}
-  m_LocalRotation: {x: 0.06541475, y: -0, z: -0, w: 0.99785817}
+  m_LocalRotation: {x: 0.065411836, y: 0, z: 0, w: 0.99785835}
   m_LocalPosition: {x: -11.28, y: -4.78, z: -7.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -173,8 +173,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -451095133
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 1412565777, guid: 821e48a7ecda2304091c490967da90e7, type: 3}
   m_Color: {r: 1, g: 0.9198113, b: 0.9198113, a: 1}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaaf0182f67c4b548a40fcf3361f97d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatEnabled: 0
+  combatEnabled: 1
   inputTimer: 0.2
   attack1Radius: 0.8
   attack1Damage: 10
@@ -230,20 +230,20 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  movementSpeed: 15
-  jumpForce: 20
+  movementSpeed: 8
+  jumpForce: 15
   groundCheckRadius: 0.6
   wallCheckDistance: 0.63
   wallSlideSpeed: 1
   movementForceInAir: 0
   airDragMultiplier: 0.95
-  wallJumpForce: 30
+  wallJumpForce: 27
   wallHopForce: 20
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
   wallJumpTimerSet: 1
   dashTime: 0.2
-  dashSpeed: 50
+  dashSpeed: 25
   distanceBetweenImages: 0.1
   dashCoolDown: 1
   ledgeClimbXOffSet1: 0.3
