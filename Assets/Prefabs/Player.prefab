@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8797246221407267554}
   - component: {fileID: 5935643704844867075}
   - component: {fileID: 8797246221407267553}
+  - component: {fileID: 1023416517227651337}
   - component: {fileID: 8797246221407267552}
   - component: {fileID: 8797246221407267567}
   - component: {fileID: 8797246221407267556}
@@ -62,7 +63,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8797246221407267566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.46, y: -4.76, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -715575031
-  m_SortingLayer: 2
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 1412565777, guid: 821e48a7ecda2304091c490967da90e7, type: 3}
   m_Color: {r: 1, g: 0.9198113, b: 0.9198113, a: 1}
@@ -158,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
+  knockBackDuration: 0.1
+  knockBackSpeed: {x: 10, y: 5}
   amountOfJumps: 2
   playerControls:
     m_Name: Player Controls
@@ -196,6 +199,21 @@ MonoBehaviour:
     m_Bits: 8
   wallHopDirection: {x: 0, y: 0}
   wallJumpDirection: {x: 1, y: 2}
+--- !u!114 &1023416517227651337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797246221407267566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5119f7af09148946aeb2a2da30623c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 50
+  deathChunkParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
+  deathBloodParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
 --- !u!50 &8797246221407267552
 Rigidbody2D:
   serializedVersion: 4

@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BasicEnemyController : MonoBehaviour
 {
@@ -20,15 +19,23 @@ public class BasicEnemyController : MonoBehaviour
         wallCheckDistance,
         movementSpeed,
         maxHealth,
-        knockbackDuration;
+        knockbackDuration,
+        lastTouchDamageTime,
+        touchDamageCoolDown,
+        touchDamage,
+        touchDamageWidth,
+        touchDamageHeight;
 
     [SerializeField]
     private Transform
         groundCheck,
-        wallCheck;
+        wallCheck,
+        touchDamageCheck;
 
     [SerializeField]
-    private LayerMask whatIsGround;
+    private LayerMask
+        whatIsGround,
+        whatIsPlayer;
     [SerializeField]
     private Vector2 knockbackSpeed;
     [SerializeField]
@@ -37,30 +44,35 @@ public class BasicEnemyController : MonoBehaviour
         deathChunkParticle,
         deathBloodParticle;
 
-    private float 
+    private float
         currentHealth,
         KnockbackStartTime;
-        
-    private int 
+
+    private float[] attackDetails = new float[2];
+
+    private int
         facingDirection,
         damageDirection;
 
-    private Vector2 movement;
+    private Vector2
+        movement,
+        touchDamageBotLeft,
+        touchDamageTopRight;
 
 
     private bool
         groundDetected,
         wallDetected;
-        
-    private GameObject alive;
-    private Rigidbody2D aliveRb;
-    private Animator aliveAnim;
+
+    private GameObject lavaworm; // Changed from "alive" to "lavaworm"
+    private Rigidbody2D lavawormRb; // Changed from "aliveRb" to "lavawormRb"
+    private Animator lavawormAnim; // Changed from "aliveAnim" to "lavawormAnim"
 
     private void Start()
     {
-        alive = transform.Find("Alive").gameObject;
-        aliveRb = alive.GetComponent<Rigidbody2D>();
-        aliveAnim = GetComponent<Animator>();
+        lavaworm = transform.Find("Lavaworm").gameObject; // Changed from "Alive" to "Lavaworm"
+        lavawormRb = lavaworm.GetComponent<Rigidbody2D>(); // Changed from "alive" to "lavaworm"
+        lavawormAnim = GetComponent<Animator>();
 
         currentHealth = maxHealth;
         facingDirection = 1;
@@ -69,15 +81,15 @@ public class BasicEnemyController : MonoBehaviour
 
     private void Update()
     {
-        switch(currentState)
+        switch (currentState)
         {
             case State.Moving:
                 UpdateMovingState();
                 break;
-                case State.Knockback:
+            case State.Knockback:
                 UpdateKnockbackState();
                 break;
-                case State.Dead:
+            case State.Dead:
                 UpdateDeadState();
                 break;
 
@@ -90,7 +102,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         facingDirection *= -1;
 
-        alive.transform.Rotate(0.0f, 180.0f, 0.0f);
+        lavaworm.transform.Rotate(0.0f, 180.0f, 0.0f); // Changed from "alive" to "lavaworm"
     }
 
 
@@ -105,51 +117,71 @@ public class BasicEnemyController : MonoBehaviour
 
         wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
+        CheckTouchDamage();
+
         if (!groundDetected || wallDetected)
         {
             Flip();
         }
         else
         {
-            movement.Set(movementSpeed * facingDirection, aliveRb.velocity.y); // Modify this line
-            aliveRb.velocity = movement;
+            movement.Set(movementSpeed * facingDirection, lavawormRb.velocity.y); // Changed from "aliveRb" to "lavawormRb"
+            lavawormRb.velocity = movement; // Changed from "aliveRb" to "lavawormRb"
         }
     }
 
+    private void CheckTouchDamage()
+    {
+        if (Time.time >= lastTouchDamageTime + touchDamageCoolDown)
+        {
+            touchDamageBotLeft.Set(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
+            touchDamageTopRight.Set(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
 
+            Collider2D hit = Physics2D.OverlapArea(touchDamageBotLeft, touchDamageTopRight, whatIsPlayer);
+
+            if (hit != null)
+            {
+                lastTouchDamageTime = Time.time;
+                attackDetails[0] = touchDamage;
+                attackDetails[1] = lavaworm.transform.position.x; // Changed from "alive" to "lavaworm"
+                hit.SendMessage("Damage", attackDetails);
+            }
+
+        }
+    }
 
     private void ExitMovingState()
     {
 
     }
 
-   //--Knockback state-----------------------------------------------------------------------------
+    //--Knockback state-----------------------------------------------------------------------------
 
-    private void EnterKnockbackState() 
+    private void EnterKnockbackState()
     {
         KnockbackStartTime = Time.time;
         movement.Set(knockbackSpeed.x * damageDirection, knockbackSpeed.y);
-        aliveRb.velocity = movement;
-        aliveAnim.SetBool("Knockback", true);
+        lavawormRb.velocity = movement; // Changed from "aliveRb" to "lavawormRb"
+        lavawormAnim.SetBool("Knockback", true); // Changed from "aliveAnim" to "lavawormAnim"
     }
 
     private void UpdateKnockbackState()
     {
-        if(Time.time >= KnockbackStartTime + knockbackDuration)
+        if (Time.time >= KnockbackStartTime + knockbackDuration)
         {
             SwitchState(State.Moving);
         }
     }
 
-    private void ExitKnockbackState() 
+    private void ExitKnockbackState()
     {
-        aliveAnim.SetBool("Knockback", false);
+        lavawormAnim.SetBool("Knockback", false); // Changed from "aliveAnim" to "lavawormAnim"
     }
     //--Dead State-----------------------------------------------------------------------------------
     private void EnterDeadState()
     {
-        Instantiate(deathChunkParticle, alive.transform.position, deathChunkParticle.transform.rotation);   
-        Instantiate(deathBloodParticle, alive.transform.position, deathBloodParticle.transform.rotation);
+        Instantiate(deathChunkParticle, lavaworm.transform.position, deathChunkParticle.transform.rotation); // Changed from "alive" to "lavaworm"
+        Instantiate(deathBloodParticle, lavaworm.transform.position, deathBloodParticle.transform.rotation); // Changed from "alive" to "lavaworm"
         Destroy(gameObject);
     }
 
@@ -169,10 +201,10 @@ public class BasicEnemyController : MonoBehaviour
     {
         currentHealth -= attackDetails[0];
 
-        Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
+        Instantiate(hitParticle, lavaworm.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f))); // Changed from "alive" to "lavaworm"
 
 
-        if (attackDetails[1] > alive.transform.position.x) 
+        if (attackDetails[1] > lavaworm.transform.position.x)  // Changed from "alive" to "lavaworm"
         {
             damageDirection = -1;
 
@@ -185,11 +217,11 @@ public class BasicEnemyController : MonoBehaviour
 
         //HitParticle
 
-        if(currentHealth > 0.0f)
+        if (currentHealth > 0.0f)
         {
             SwitchState(State.Knockback);
         }
-        
+
         else if (currentHealth <= 0.0f)
         {
             SwitchState(State.Dead);
@@ -198,19 +230,19 @@ public class BasicEnemyController : MonoBehaviour
 
     private void SwitchState(State state)
     {
-        switch(currentState)
+        switch (currentState)
         {
             case State.Moving:
                 ExitMovingState();
                 break;
-                case State.Knockback:
+            case State.Knockback:
                 ExitKnockbackState();
                 break;
-                case State.Dead:
+            case State.Dead:
                 ExitDeadState();
                 break;
         }
-                
+
         switch (state)
         {
             case State.Moving:
@@ -224,7 +256,7 @@ public class BasicEnemyController : MonoBehaviour
                 break;
         }
 
-        currentState = state; 
+        currentState = state;
     }
 
     private void OnDrawGizmos()
@@ -232,6 +264,16 @@ public class BasicEnemyController : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
 
         Gizmos.DrawLine(wallCheck.position, new Vector2(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+
+        Vector2 botLeft = new Vector2(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
+        Vector2 botRight = new Vector2(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
+        Vector2 topRight = new Vector2(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
+        Vector2 topLeft = new Vector2(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
+
+        Gizmos.DrawLine(botLeft, botRight);
+        Gizmos.DrawLine(botRight, topRight);
+        Gizmos.DrawLine(topRight, topLeft);
+        Gizmos.DrawLine(topLeft, botLeft);
     }
-        
+
 }

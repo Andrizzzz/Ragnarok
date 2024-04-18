@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 210396736255543302}
   - component: {fileID: 210396736255543301}
   m_Layer: 6
-  m_Name: Alive
+  m_Name: Lavaworm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,6 +65,7 @@ Transform:
   m_Children:
   - {fileID: 210396736253005898}
   - {fileID: 210396737645170654}
+  - {fileID: 1355838749204519703}
   m_Father: {fileID: 210396737241663119}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -106,10 +107,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1252055665
-  m_SortingLayer: 1
+  m_SortingLayerID: -1259393193
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1269143296, guid: c34ae4ef3fa7719408751bf0d53954cd, type: 3}
+  m_Sprite: {fileID: 1930606287, guid: ff38c8e869133c2418b3e72bbbc57239, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,16 +240,24 @@ MonoBehaviour:
   movementSpeed: 3
   maxHealth: 30
   knockbackDuration: 0.1
+  lastTouchDamageTime: 0
+  touchDamageCoolDown: 0.2
+  touchDamage: 10
+  touchDamageWidth: 1.2
+  touchDamageHeight: 2
   groundCheck: {fileID: 210396736253005898}
   wallCheck: {fileID: 210396737645170654}
+  touchDamageCheck: {fileID: 1355838749204519703}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
   knockbackSpeed: {x: 10, y: 5}
   hitParticle: {fileID: 6904029441958797392, guid: 3847d88a7319c6a4b9fcb98506a0539d, type: 3}
-  deathChunkParticle: {fileID: 0}
-  deathBloodParticle: {fileID: 0}
-  HitParticle: {fileID: 0}
+  deathChunkParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
+  deathBloodParticle: {fileID: 3836196999372202544, guid: a5d6eec93e4ec9a428782973b20fc1ca, type: 3}
 --- !u!95 &210396737241663105
 Animator:
   serializedVersion: 5
@@ -300,4 +309,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 210396736255543300}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3774687251088976642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355838749204519703}
+  m_Layer: 6
+  m_Name: TouchDamageCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355838749204519703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774687251088976642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.65, y: 0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 210396736255543300}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

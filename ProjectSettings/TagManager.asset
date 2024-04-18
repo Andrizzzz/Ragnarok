@@ -54,6 +54,9 @@ TagManager:
   - name: FOREGROUND1
     uniqueID: 3870235491
     locked: 0
+  - name: ENEMY
+    uniqueID: 3035574103
+    locked: 0
   - name: PLAYER
     uniqueID: 3579392265
     locked: 0
