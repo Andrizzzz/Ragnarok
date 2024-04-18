@@ -1,40 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Transform respawnPoint;
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private float respawnTime;
+    [SerializeField]
+    private Transform respawnPoint;
+    [SerializeField]
+    private GameObject playerPrefab; // Change the type to GameObject
+    [SerializeField]
+    private float respawnTime; // Add this variable
 
-    private bool respawnInProgress;
-    private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private float respawnTimeStart;
+
+    private bool respawn;
+
+    private CinemachineVirtualCamera CVC;
 
     private void Start()
     {
-        cinemachineVirtualCamera = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
+        CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
     }
 
     public void Respawn()
     {
-        if (!respawnInProgress)
-        {
-            respawnInProgress = true;
-            Invoke("SpawnPlayer", respawnTime);
-        }
+        respawnTimeStart = Time.time;
+        respawn = true;
     }
 
-    private void SpawnPlayer()
+    private void Update()
     {
-        if (playerPrefab != null && respawnPoint != null)
+        CheckRespawn();
+    }
+
+    private void CheckRespawn()
+    {
+        if (Time.time >= respawnTimeStart + respawnTime && respawn)
         {
-            GameObject playerInstance = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
-            cinemachineVirtualCamera.Follow = playerInstance.transform;
-            respawnInProgress = false;
-        }
-        else
-        {
-            Debug.LogWarning("Player prefab or respawn point not assigned.");
+            // Instantiate the new player object at the respawn point
+            GameObject newPlayer = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
+            // Transfer the velocity from the old player to the new one
+            Rigidbody2D oldPlayerRB = FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>();
+            Rigidbody2D newPlayerRB = newPlayer.GetComponent<Rigidbody2D>();
+            newPlayerRB.velocity = oldPlayerRB.velocity;
+
+            // Make the new player the target of the virtual camera
+            CVC.m_Follow = newPlayer.transform;
+
+            respawn = false;
         }
     }
 }

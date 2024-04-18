@@ -144,7 +144,7 @@ public class BasicEnemyController : MonoBehaviour
                 lastTouchDamageTime = Time.time;
                 attackDetails[0] = touchDamage;
                 attackDetails[1] = lavaworm.transform.position.x; // Changed from "alive" to "lavaworm"
-                hit.SendMessage("Damage", attackDetails);
+                //hit.SendMessage("Damage", attackDetails);
             }
 
         }

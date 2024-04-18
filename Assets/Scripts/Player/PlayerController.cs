@@ -95,11 +95,13 @@ public class PlayerController : MonoBehaviour
         amountOfJumpsLeft = amountOfJumps;
         wallHopDirection.Normalize();
         wallJumpDirection.Normalize();
+        turnTimer = turnTimerSet; // Initialize turnTimer here
     }
+
 
     void Update()
     {
-        CheckInput();
+        CheckInput(); // Line 102
         CheckMovementDirection();
         UpdateAnimations();
         CheckIfCanJump();
@@ -109,6 +111,7 @@ public class PlayerController : MonoBehaviour
         CheckLedgeClimb();
         CheckKnockback();
     }
+
 
     private void FixedUpdate()
     {
@@ -295,7 +298,10 @@ public class PlayerController : MonoBehaviour
 
     private void CheckInput()
     {
-        movementInputDirection = _joystick.Horizontal;
+        if (_joystick != null)
+        {
+            movementInputDirection = _joystick.Horizontal;
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -317,7 +323,7 @@ public class PlayerController : MonoBehaviour
             turnTimer = turnTimerSet;
         }
 
-        if (turnTimer >= 0)
+        if (turnTimer >= 0) // Line 301
         {
             turnTimer -= Time.deltaTime;
 
@@ -328,11 +334,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
         if (Input.GetButtonDown("Dash"))
         {
             Dash();
         }
     }
+
 
     private void AttemptToDash()
     {
