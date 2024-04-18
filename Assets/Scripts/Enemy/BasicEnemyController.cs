@@ -36,8 +36,6 @@ public class BasicEnemyController : MonoBehaviour
         hitParticle,
         deathChunkParticle,
         deathBloodParticle;
-    [SerializeField]
-    private GameObject HitParticle;
 
     private float 
         currentHealth,
@@ -150,7 +148,8 @@ public class BasicEnemyController : MonoBehaviour
     //--Dead State-----------------------------------------------------------------------------------
     private void EnterDeadState()
     {
-        //spawnchunks
+        Instantiate(deathChunkParticle, alive.transform.position, deathChunkParticle.transform.rotation);   
+        Instantiate(deathBloodParticle, alive.transform.position, deathBloodParticle.transform.rotation);
         Destroy(gameObject);
     }
 
