@@ -902,6 +902,10 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 1575256209}
+    - target: {fileID: 5003199985544214343, guid: 4f43ad2b9040a9d429fada11e516092a, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5003199985544214344, guid: 4f43ad2b9040a9d429fada11e516092a, type: 3}
       propertyPath: m_Name
       value: Player
