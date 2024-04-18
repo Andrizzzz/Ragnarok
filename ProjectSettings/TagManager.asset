@@ -48,11 +48,11 @@ TagManager:
   - name: BACKGROUND1
     uniqueID: 1658260443
     locked: 0
-  - name: FOREGROUND1
-    uniqueID: 3870235491
-    locked: 0
   - name: FOREGROUND2
     uniqueID: 116341571
+    locked: 0
+  - name: FOREGROUND1
+    uniqueID: 3870235491
     locked: 0
   - name: PLAYER
     uniqueID: 3579392265
