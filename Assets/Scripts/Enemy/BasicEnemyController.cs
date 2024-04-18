@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,11 +31,18 @@ public class BasicEnemyController : MonoBehaviour
     private LayerMask whatIsGround;
     [SerializeField]
     private Vector2 knockbackSpeed;
+    [SerializeField]
+    private GameObject
+        hitParticle,
+        deathChunkParticle,
+        deathBloodParticle;
+    [SerializeField]
+    private GameObject HitParticle;
 
     private float 
         currentHealth,
         KnockbackStartTime;
-
+        
     private int 
         facingDirection,
         damageDirection;
@@ -56,7 +64,7 @@ public class BasicEnemyController : MonoBehaviour
         aliveRb = alive.GetComponent<Rigidbody2D>();
         aliveAnim = GetComponent<Animator>();
 
-
+        currentHealth = maxHealth;
         facingDirection = 1;
     }
 
@@ -82,10 +90,9 @@ public class BasicEnemyController : MonoBehaviour
     //--Walking state---------------------------------------------------------------------------
     private void Flip()
     {
-        facingDirection *= -1; // Change from facingDirection *= 1 to facingDirection *= -1
-        Vector3 scale = alive.transform.localScale;
-        scale.x *= -1; // Flip the scale instead of rotating
-        alive.transform.localScale = scale;
+        facingDirection *= -1;
+
+        alive.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
 
@@ -162,6 +169,9 @@ public class BasicEnemyController : MonoBehaviour
     private void Damage(float[] attackDetails)
     {
         currentHealth -= attackDetails[0];
+
+        Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
+
 
         if (attackDetails[1] > alive.transform.position.x) 
         {

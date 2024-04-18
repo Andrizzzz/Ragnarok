@@ -109,7 +109,8 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfWallSliding()
     {
-        if (isTouchingWall && movementInputDirection == facingDirection && rb.velocity.y < 0 && !canClimbLedge)
+        // Check if the player is touching a wall and moving towards it while falling
+        if (isTouchingWall && Mathf.Sign(movementInputDirection) == facingDirection && rb.velocity.y < 0 && !canClimbLedge)
         {
             isWallSliding = true;
         }
@@ -118,6 +119,7 @@ public class PlayerController : MonoBehaviour
             isWallSliding = false;
         }
     }
+
 
     private void CheckSurroundings()
     {
@@ -178,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckLedgeClimb()
     {
-        if(ledgeDetected && !canClimbLedge)
+        if (ledgeDetected && !canClimbLedge)
         {
             canClimbLedge = true;
 
@@ -204,7 +206,7 @@ public class PlayerController : MonoBehaviour
             transform.position = ledgePos1;
         }
     }
-
+    //orig
     private void CheckDash()
     {
         if (isDashing)

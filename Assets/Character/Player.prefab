@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003199983922669026}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003199984415777429}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003199984640842223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 0.76, z: -0.15}
+  m_LocalPosition: {x: 0.73, y: 1.06, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5003199985544214345}
   - component: {fileID: 5003199985544214338}
   - component: {fileID: 9030597990570851710}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
   attackHitBoxPos: {fileID: 4701830379862119566}
   whatIsDamageable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &5003199985544214343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   ledgeCheck: {fileID: 5003199984640842220}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 8
   wallHopDirection: {x: 0, y: 0}
   wallJumpDirection: {x: 1, y: 2}
 --- !u!50 &5003199985544214342

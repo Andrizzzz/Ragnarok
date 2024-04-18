@@ -18,7 +18,7 @@ public class PlayerCombatController : MonoBehaviour
 
     private float lastInputTime = Mathf.NegativeInfinity;
     
-    //private float[] attackDetails = new float[2]; 
+    private float[] attackDetails = new float[2]; 
 
     private Animator anim;
 
@@ -26,6 +26,8 @@ public class PlayerCombatController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack", combatEnabled);
+
+
     }
 
     private void Update()
@@ -83,14 +85,14 @@ public class PlayerCombatController : MonoBehaviour
 
     private void CheckAttackHitBox()
     {
-        //attackDetails[0] = attack1Damage;
-        //attackDetails[1] = transform.position.x;
+        attackDetails[0] = attack1Damage;
+        attackDetails[1] = transform.position.x;
 
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackHitBoxPos.position, attack1Radius, whatIsDamageable);
 
         foreach (Collider2D collider in detectedObjects)
         {
-            collider.transform.parent.SendMessage("Damage", attack1Damage);
+            collider.transform.parent.SendMessage("Damage", attackDetails);
         }
     }
 

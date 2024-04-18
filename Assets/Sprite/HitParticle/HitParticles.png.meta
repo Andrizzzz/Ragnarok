@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16ec4628a30074143aaeec6eecfb16c3
+guid: 2d4a0d834c5e07146bd71692cd3331a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ledgeClimbTemporary_0
+      name: HitParticles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4f8676a568c3249952205a6a4e35ad
-      internalID: -1974564631
+      spriteID: 7d8199395044f6245a26640db61bcd7a
+      internalID: -1351560836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ledgeClimbTemporary_1
+      name: HitParticles_1
       rect:
         serializedVersion: 2
         x: 128
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c0c761d91fd9644beae847c33d1f16
-      internalID: 1774035857
+      spriteID: b35b42de171c52046ac0981db75b8b04
+      internalID: -1060382805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ledgeClimbTemporary_2
+      name: HitParticles_2
       rect:
         serializedVersion: 2
         x: 256
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8a2c672cfd9f4429fe9ebd735e58e8
-      internalID: 600262294
+      spriteID: 2dfb4380b5f63524ebb25fabb4e60649
+      internalID: 439844332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ledgeClimbTemporary_3
+      name: HitParticles_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,50 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d6cdae5b1dfb9b47bd337dd58994878
-      internalID: -2008709384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ledgeClimbTemporary_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03ef734ad4ca19b46bf95178550428dc
-      internalID: -1910253130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ledgeClimbTemporary_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ff9c723e9199f342a03b0dd160cca3b
-      internalID: 182126927
+      spriteID: 5b5f3b92b15ea074ba0ae394b920f395
+      internalID: -731538
       vertices: []
       indices: 
       edges: []
@@ -277,12 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ledgeClimbTemporary_0: -1974564631
-      ledgeClimbTemporary_1: 1774035857
-      ledgeClimbTemporary_2: 600262294
-      ledgeClimbTemporary_3: -2008709384
-      ledgeClimbTemporary_4: -1910253130
-      ledgeClimbTemporary_5: 182126927
+      HitParticles_0: -1351560836
+      HitParticles_1: -1060382805
+      HitParticles_2: 439844332
+      HitParticles_3: -731538
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
