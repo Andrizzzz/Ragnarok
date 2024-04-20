@@ -80,6 +80,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 wallHopDirection;
     public Vector2 wallJumpDirection;
 
+    SavePlayerPos playerPosData;
+    
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType<SavePlayerPos>();
+        playerPosData.PlayerPosLoad();
+    }
     
 
     void Start()

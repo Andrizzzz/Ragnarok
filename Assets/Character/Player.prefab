@@ -174,7 +174,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -715575031
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 1412565777, guid: 821e48a7ecda2304091c490967da90e7, type: 3}
   m_Color: {r: 0.6226415, g: 0.48460305, b: 0.48460305, a: 1}
@@ -255,7 +255,7 @@ MonoBehaviour:
   ledgeCheck: {fileID: 5003199984640842220}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 200
   wallHopDirection: {x: 0, y: 0}
   wallJumpDirection: {x: 1, y: 2}
 --- !u!50 &5003199985544214342
