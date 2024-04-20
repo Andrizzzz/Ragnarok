@@ -16,6 +16,7 @@ public class Quit : MonoBehaviour
         PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
         playerPosData.PlayerPosSave();
         SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
     }
     public void Save()
         {
