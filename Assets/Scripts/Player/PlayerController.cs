@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 wallHopDirection;
     public Vector2 wallJumpDirection;
 
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
