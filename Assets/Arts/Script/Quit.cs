@@ -13,6 +13,7 @@ public class Quit : MonoBehaviour
     }
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
         playerPosData.PlayerPosSave();
         SceneManager.LoadScene("Main Menu");
     }

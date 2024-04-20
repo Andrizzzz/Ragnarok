@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Level1-1");
+        SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
         Time.timeScale = 1;
     }
 }
