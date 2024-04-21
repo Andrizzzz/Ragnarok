@@ -13,8 +13,19 @@ public class Quit : MonoBehaviour
     }
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("SlotSaved" + SaveID.saveID, 1);
+        PlayerPrefs.SetInt("LoadSaved" + SaveID.saveID, 1);
+        PlayerPrefs.SetInt("SavedScene" + SaveID.saveID, SceneManager.GetActiveScene().buildIndex);
         playerPosData.PlayerPosSave();
         SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
     }
+    public void Save()
+        {
+        PlayerPrefs.SetInt("SlotSaved" + SaveID.saveID, 1);
+        PlayerPrefs.SetInt("LoadSaved" + SaveID.saveID, 1);
+        PlayerPrefs.SetInt("SavedScene" + SaveID.saveID, SceneManager.GetActiveScene().buildIndex);
+        playerPosData.PlayerPosSave();
+        }
 }
 
