@@ -19,7 +19,15 @@ public class Menu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+        if(PlayerPrefs.GetInt("LoadSaved") == 1)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+        }
+        else
+        {
+            return;
+        }
+        
         Time.timeScale = 1;
     }
 }
