@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-       // playerPosData = FindObjectOfType<SavePlayerPos>();
+       //   playerPosData = FindObjectOfType<SavePlayerPos>();
         //playerPosData.PlayerPosLoad();
     }
     
@@ -312,11 +312,11 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
-        if (isWallSliding && !isAttemptingToJump && (movementInputDirection != 0f))
-        {
-            movementInputDirection = 0f; // Set movement input to zero
+        //if (isWallSliding && !isAttemptingToJump && (movementInputDirection != 0f))
+        //{
+          //  movementInputDirection = 0f; // Set movement input to zero
 
-        }
+        //}
     }
 
         private void AttemptToDash()
