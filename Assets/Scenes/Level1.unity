@@ -11932,6 +11932,22 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 1902532488}
+    - target: {fileID: 8797246221407267553, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: wallHopForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797246221407267553, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: amountOfJumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797246221407267553, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: wallSlideSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797246221407267553, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: movementForceInAir
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8797246221407267555, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
       propertyPath: m_RootOrder
       value: 3

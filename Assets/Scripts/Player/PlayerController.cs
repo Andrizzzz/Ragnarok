@@ -84,8 +84,8 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        playerPosData = FindObjectOfType<SavePlayerPos>();
-        playerPosData.PlayerPosLoad();
+       // playerPosData = FindObjectOfType<SavePlayerPos>();
+        //playerPosData.PlayerPosLoad();
     }
     
 
@@ -118,15 +118,18 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfWallSliding()
     {
-        // Check if the player is touching a wall and moving towards it while falling
-        if (isTouchingWall && Mathf.Sign(movementInputDirection) == facingDirection && rb.velocity.y < 0 && !canClimbLedge)
+        if (isTouchingWall && rb.velocity.y < 0 && !canClimbLedge )
         {
             isWallSliding = true;
+    
         }
         else
         {
             isWallSliding = false;
+       //org
+
         }
+
     }
 
 
@@ -311,6 +314,10 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
+        if (isWallSliding && !isAttemptingToJump)
+        {
+            movementInputDirection = 0f; // Set movement input to zero
+        }
     }
 
     private void AttemptToDash()
@@ -429,7 +436,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()         
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + new Vector3(wallCheckDistance, 0, 0));
