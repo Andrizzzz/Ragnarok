@@ -45,8 +45,6 @@ public class PlayerController : MonoBehaviour
     public int amountOfJumps = 1;
 
 
-    public InputAction playerControls;
-
     public float movementSpeed = 10.0f;
     public float jumpForce = 16.0f;
     public float groundCheckRadius;
@@ -84,8 +82,8 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        playerPosData = FindObjectOfType<SavePlayerPos>();
-        playerPosData.PlayerPosLoad();
+       // playerPosData = FindObjectOfType<SavePlayerPos>();
+        //playerPosData.PlayerPosLoad();
     }
     
 
@@ -118,15 +116,18 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfWallSliding()
     {
-        // Check if the player is touching a wall and moving towards it while falling
-        if (isTouchingWall && Mathf.Sign(movementInputDirection) == facingDirection && rb.velocity.y < 0 && !canClimbLedge)
+        if (isTouchingWall && rb.velocity.y < 0 && !canClimbLedge )
         {
             isWallSliding = true;
+    
         }
         else
         {
             isWallSliding = false;
+       //org
+
         }
+
     }
 
 
@@ -289,7 +290,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Horizontal") && isTouchingWall)
+        if (Input.GetButtonDown("Horizontal") && !isTouchingWall)
         {
             canMove = false;
             canFlip = false;
@@ -311,9 +312,14 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
+        if (isWallSliding && !isAttemptingToJump && (movementInputDirection != 0f))
+        {
+            movementInputDirection = 0f; // Set movement input to zero
+
+        }
     }
 
-    private void AttemptToDash()
+        private void AttemptToDash()
     {
         isDashing = true;
         dashTimeLeft = dashTime;
@@ -429,7 +435,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()         
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + new Vector3(wallCheckDistance, 0, 0));
