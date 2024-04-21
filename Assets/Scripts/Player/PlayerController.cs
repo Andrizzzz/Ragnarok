@@ -45,8 +45,6 @@ public class PlayerController : MonoBehaviour
     public int amountOfJumps = 1;
 
 
-    public InputAction playerControls;
-
     public float movementSpeed = 10.0f;
     public float jumpForce = 16.0f;
     public float groundCheckRadius;
@@ -292,7 +290,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Horizontal") && isTouchingWall)
+        if (Input.GetButtonDown("Horizontal") && !isTouchingWall)
         {
             canMove = false;
             canFlip = false;
@@ -314,13 +312,14 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
-        if (isWallSliding && !isAttemptingToJump)
+        if (isWallSliding && !isAttemptingToJump && (movementInputDirection != 0f))
         {
             movementInputDirection = 0f; // Set movement input to zero
+
         }
     }
 
-    private void AttemptToDash()
+        private void AttemptToDash()
     {
         isDashing = true;
         dashTimeLeft = dashTime;
