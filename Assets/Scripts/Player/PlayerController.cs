@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-       //   playerPosData = FindObjectOfType<SavePlayerPos>();
-        //playerPosData.PlayerPosLoad();
+       playerPosData = FindObjectOfType<SavePlayerPos>();
+        playerPosData.PlayerPosLoad();
     }
     
 
@@ -312,7 +312,7 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
- 
+        
     }
 
         private void AttemptToDash()
