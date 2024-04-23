@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private float dashTimeLeft;
     private float lastImageXpos;
     private float lastDash = -100f;
+    private float knockbackStartTime;
+    [SerializeField]
+    private float knockbackDuration;
 
     private int amountOfJumpsLeft;
     private int facingDirection = 1;
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool isTouchingLedge;
     private bool canClimbLedge = false;
     private bool ledgeDetected;
+    private bool knockback;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -40,6 +44,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
     private Vector2 ledgePos2;
+
+    [SerializeField]
+    private Vector2 knockbackSpeed;
+
 
 
     public int amountOfJumps = 1;
@@ -78,15 +86,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 wallHopDirection;
     public Vector2 wallJumpDirection;
 
-    SavePlayerPos playerPosData;
-    
-    private void Awake()
-    {
-       playerPosData = FindObjectOfType<SavePlayerPos>();
-        playerPosData.PlayerPosLoad();
-    }
-    
-
+    public SavePlayerPos playerPosData;
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -106,12 +107,36 @@ public class PlayerController : MonoBehaviour
         CheckJump();
         CheckDash();
         CheckLedgeClimb();
+        CheckKnockback();
     }
+
+    //private void Awake()
+ //   {
+      //  playerPosData = FindObjectOfType<SavePlayerPos>();
+       // playerPosData.PlayerPosLoad();
+    //}
 
     private void FixedUpdate()
     {
         ApplyMovement();
         CheckSurroundings();
+    }
+
+    public void Knockback(int direction)
+    {
+        knockback = true;
+        knockbackStartTime = Time.time;
+
+        rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+    }
+
+    private void CheckKnockback()
+    {
+        if(Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        {
+            knockback = false;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
     }
 
     private void CheckIfWallSliding()
@@ -128,6 +153,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
+    }
+
+
+    public bool GetDashStatus()
+    {
+        return isDashing;
     }
 
 
@@ -396,11 +427,11 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !knockback)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove)
+        else if (canMove && !knockback)
         {
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
 
@@ -408,6 +439,8 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
             }
+
+
         }
     }
 
@@ -423,17 +456,21 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        if (!isWallSliding && canFlip)
+        if (!isWallSliding && canFlip && !knockback)
         {
             facingDirection *= -1;
             isFacingRight = !isFacingRight;
-            transform.Rotate(0.0f, 180.0f, 0.0f);
+            transform.Rotate(0.0f, 180.0f, 0.0f);   
         }
     }
+
+  
 
     private void OnDrawGizmos()         
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + new Vector3(wallCheckDistance, 0, 0));
+
+   
     }
 }

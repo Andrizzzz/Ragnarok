@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-public class BasicEnemyController : MonoBehaviour
+public class MiniBossBC : MonoBehaviour
 {
     private enum State
     {
@@ -19,37 +19,22 @@ public class BasicEnemyController : MonoBehaviour
         wallCheckDistance,
         movementSpeed,
         maxHealth,
-        knockbackDuration,
-        touchDamage,
-        lastTouchDamageTime,
-        touchDamageCooldown,
-        touchDamageWidth,
-        touchDamageHeight;
+        knockbackDuration;
 
     [SerializeField]
     private Transform
         groundCheck,
-        wallCheck,
-        touchDamageCheck;
+        wallCheck;
 
     [SerializeField]
-    private LayerMask 
-        whatIsGround,
-        whatIsPlayer;
-
+    private LayerMask whatIsGround;
     [SerializeField]
-    private Vector2 
-        knockbackSpeed,
-        touchDamageBotLeft,
-        touchDamageTopRight;
-
+    private Vector2 knockbackSpeed;
     [SerializeField]
     private GameObject
         hitParticle,
         deathChunkParticle,
         deathBloodParticle;
-
-    private float[] attackDetails = new float[2];
 
     private float
         currentHealth,
@@ -66,15 +51,29 @@ public class BasicEnemyController : MonoBehaviour
         groundDetected,
         wallDetected;
 
-    private GameObject Worm;
-    private Rigidbody2D WormRb;
-    private Animator WormAnim;
+    private GameObject MiniBossSlime;
+    private Rigidbody2D MiniBossSlimeRb;
+    private Animator MiniBossSlimeAnim;
 
     private void Start()
     {
-        Worm = transform.Find("Worm").gameObject;
-        WormRb = Worm.GetComponent<Rigidbody2D>();
-        WormAnim = Worm.GetComponent<Animator>();
+        MiniBossSlime = transform.Find("MiniBossSlime").gameObject;
+      
+        if (MiniBossSlime != null)
+        {
+            MiniBossSlimeRb = MiniBossSlime.GetComponent<Rigidbody2D>();
+            MiniBossSlimeAnim = MiniBossSlime.GetComponent<Animator>();
+
+            currentHealth = maxHealth;
+            facingDirection = 1;
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("MiniBossSlime GameObject not found!");
+        }
+
+        MiniBossSlimeRb = MiniBossSlime.GetComponent<Rigidbody2D>();
+        MiniBossSlimeAnim = MiniBossSlime.GetComponent<Animator>();
 
         currentHealth = maxHealth;
         facingDirection = 1;
@@ -104,7 +103,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         facingDirection *= -1;
 
-        Worm.transform.Rotate(0.0f, 180.0f, 0.0f);
+        MiniBossSlime.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
 
@@ -119,16 +118,14 @@ public class BasicEnemyController : MonoBehaviour
 
         wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
-        CheckTouchDamage();
-
         if (!groundDetected || wallDetected)
         {
             Flip();
         }
         else
         {
-            movement.Set(movementSpeed * facingDirection, WormRb.velocity.y); // Modify this line
-            WormRb.velocity = movement;
+            movement.Set(movementSpeed * facingDirection, MiniBossSlimeRb.velocity.y); // Modify this line
+            MiniBossSlimeRb.velocity = movement;
         }
     }
 
@@ -146,8 +143,8 @@ public class BasicEnemyController : MonoBehaviour
     {
         KnockbackStartTime = Time.time;
         movement.Set(knockbackSpeed.x * damageDirection, knockbackSpeed.y);
-        WormRb.velocity = movement;
-        WormAnim.SetBool("Knockback", true);
+        MiniBossSlimeRb.velocity = movement;
+        MiniBossSlimeAnim.SetBool("Knockback", true);
     }
 
 
@@ -161,13 +158,13 @@ public class BasicEnemyController : MonoBehaviour
 
     private void ExitKnockbackState()
     {
-        WormAnim.SetBool("Knockback", false);
+        MiniBossSlimeAnim.SetBool("Knockback", false);
     }
     //--Dead State-----------------------------------------------------------------------------------
     private void EnterDeadState()
     {
-        Instantiate(deathChunkParticle, Worm.transform.position, deathChunkParticle.transform.rotation);
-        Instantiate(deathBloodParticle, Worm.transform.position, deathBloodParticle.transform.rotation);
+        Instantiate(deathChunkParticle, MiniBossSlime.transform.position, deathChunkParticle.transform.rotation);
+        Instantiate(deathBloodParticle, MiniBossSlime.transform.position, deathBloodParticle.transform.rotation);
         Destroy(gameObject);
     }
 
@@ -187,10 +184,10 @@ public class BasicEnemyController : MonoBehaviour
     {
         currentHealth -= attackDetails[0];
 
-        Instantiate(hitParticle, Worm.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
+        Instantiate(hitParticle, MiniBossSlime.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
 
 
-        if (attackDetails[1] > Worm.transform.position.x)
+        if (attackDetails[1] > MiniBossSlime.transform.position.x)
         {
             damageDirection = -1;
 
@@ -211,27 +208,6 @@ public class BasicEnemyController : MonoBehaviour
         else if (currentHealth <= 0.0f)
         {
             SwitchState(State.Dead);
-        }
-    }
-
-    private void CheckTouchDamage()
-    {
-        if(Time.time >= lastTouchDamageTime + touchDamageCooldown)
-        {
-            touchDamageBotLeft.Set(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
-            touchDamageTopRight.Set(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
-
-
-            Collider2D hit = Physics2D.OverlapArea(touchDamageBotLeft, touchDamageTopRight, whatIsPlayer);
-
-            if(hit != null)
-            {
-                lastTouchDamageTime = Time.time;
-                attackDetails[0] = touchDamage;
-                attackDetails[1] = Worm.transform.position.x;
-                hit.SendMessage("Damage", attackDetails);
-            }
-
         }
     }
 
@@ -271,17 +247,6 @@ public class BasicEnemyController : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
 
         Gizmos.DrawLine(wallCheck.position, new Vector2(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
-
-        Vector2 botLeft = new Vector2(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
-        Vector2 botRight = new Vector2(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
-        Vector2 topRight = new Vector2(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
-        Vector2 topLeft = new Vector2(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
-
-        Gizmos.DrawLine(botLeft, botRight);
-        Gizmos.DrawLine(botRight, topRight);
-        Gizmos.DrawLine(topRight, topLeft);
-        Gizmos.DrawLine(topLeft, botLeft);
-
     }
 
 }
