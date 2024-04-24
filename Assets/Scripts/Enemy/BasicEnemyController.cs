@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
+
 public class BasicEnemyController : MonoBehaviour
 {
     private enum State
@@ -33,12 +33,12 @@ public class BasicEnemyController : MonoBehaviour
         touchDamageCheck;
 
     [SerializeField]
-    private LayerMask 
+    private LayerMask
         whatIsGround,
         whatIsPlayer;
 
     [SerializeField]
-    private Vector2 
+    private Vector2
         knockbackSpeed,
         touchDamageBotLeft,
         touchDamageTopRight;
@@ -49,11 +49,12 @@ public class BasicEnemyController : MonoBehaviour
         deathChunkParticle,
         deathBloodParticle;
 
+    
     private float[] attackDetails = new float[2];
 
     private float
         currentHealth,
-        KnockbackStartTime;
+        knockbackStartTime;
 
     private int
         facingDirection,
@@ -61,25 +62,23 @@ public class BasicEnemyController : MonoBehaviour
 
     private Vector2 movement;
 
-
     private bool
         groundDetected,
         wallDetected;
 
-    private GameObject Worm;
-    private Rigidbody2D WormRb;
-    private Animator WormAnim;
+    private GameObject worm;
+    private Rigidbody2D wormRb;
+    private Animator wormAnim;
 
     private void Start()
     {
-        Worm = transform.Find("Worm").gameObject;
-        WormRb = Worm.GetComponent<Rigidbody2D>();
-        WormAnim = Worm.GetComponent<Animator>();
+        worm = transform.Find("Worm").gameObject;
+        wormRb = worm.GetComponent<Rigidbody2D>();
+        wormAnim = worm.GetComponent<Animator>();
 
         currentHealth = maxHealth;
         facingDirection = 1;
     }
-
 
     private void Update()
     {
@@ -94,29 +93,22 @@ public class BasicEnemyController : MonoBehaviour
             case State.Dead:
                 UpdateDeadState();
                 break;
-
         }
     }
 
-
-    //--Walking state---------------------------------------------------------------------------
     private void Flip()
     {
         facingDirection *= -1;
-
-        Worm.transform.Rotate(0.0f, 180.0f, 0.0f);
+        worm.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
-
 
     private void EnterMovingState()
     {
-
     }
 
     private void UpdateMovingState()
     {
         groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-
         wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
         CheckTouchDamage();
@@ -127,33 +119,26 @@ public class BasicEnemyController : MonoBehaviour
         }
         else
         {
-            movement.Set(movementSpeed * facingDirection, WormRb.velocity.y); // Modify this line
-            WormRb.velocity = movement;
+            movement.Set(movementSpeed * facingDirection, wormRb.velocity.y);
+            wormRb.velocity = movement;
         }
     }
 
-
-
-
     private void ExitMovingState()
     {
-
     }
-
-    //--Knockback state-----------------------------------------------------------------------------
 
     private void EnterKnockbackState()
     {
-        KnockbackStartTime = Time.time;
+        knockbackStartTime = Time.time;
         movement.Set(knockbackSpeed.x * damageDirection, knockbackSpeed.y);
-        WormRb.velocity = movement;
-        WormAnim.SetBool("Knockback", true);
+        wormRb.velocity = movement;
+        wormAnim.SetBool("Knockback", true);
     }
-
 
     private void UpdateKnockbackState()
     {
-        if (Time.time >= KnockbackStartTime + knockbackDuration)
+        if (Time.time >= knockbackStartTime + knockbackDuration)
         {
             SwitchState(State.Moving);
         }
@@ -161,77 +146,65 @@ public class BasicEnemyController : MonoBehaviour
 
     private void ExitKnockbackState()
     {
-        WormAnim.SetBool("Knockback", false);
+        wormAnim.SetBool("Knockback", false);
     }
-    //--Dead State-----------------------------------------------------------------------------------
+
     private void EnterDeadState()
     {
-        Instantiate(deathChunkParticle, Worm.transform.position, deathChunkParticle.transform.rotation);
-        Instantiate(deathBloodParticle, Worm.transform.position, deathBloodParticle.transform.rotation);
+        Instantiate(deathChunkParticle, worm.transform.position, deathChunkParticle.transform.rotation);
+        Instantiate(deathBloodParticle, worm.transform.position, deathBloodParticle.transform.rotation);
         Destroy(gameObject);
     }
 
     private void UpdateDeadState()
     {
-
     }
 
     private void ExitDeadState()
     {
-
     }
-
-    //OTHER FUNCTION--------------------------------------------------------------------------
 
     private void Damage(float[] attackDetails)
     {
         currentHealth -= attackDetails[0];
+        Instantiate(hitParticle, worm.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
 
-        Instantiate(hitParticle, Worm.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
-
-
-        if (attackDetails[1] > Worm.transform.position.x)
+        if (attackDetails[1] > worm.transform.position.x)
         {
             damageDirection = -1;
-
         }
-
         else
         {
             damageDirection = 1;
         }
 
-        //HitParticle
-
         if (currentHealth > 0.0f)
         {
             SwitchState(State.Knockback);
         }
-
         else if (currentHealth <= 0.0f)
         {
             SwitchState(State.Dead);
         }
     }
 
+
     private void CheckTouchDamage()
     {
-        if(Time.time >= lastTouchDamageTime + touchDamageCooldown)
+        if (Time.time >= lastTouchDamageTime + touchDamageCooldown)
         {
             touchDamageBotLeft.Set(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
             touchDamageTopRight.Set(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
 
-
             Collider2D hit = Physics2D.OverlapArea(touchDamageBotLeft, touchDamageTopRight, whatIsPlayer);
 
-            if(hit != null)
+            if (hit != null)
             {
                 lastTouchDamageTime = Time.time;
                 attackDetails[0] = touchDamage;
-                attackDetails[1] = Worm.transform.position.x;
+                attackDetails[1] = worm.transform.position.x;
                 hit.SendMessage("Damage", attackDetails);
             }
-
         }
     }
 
@@ -264,12 +237,11 @@ public class BasicEnemyController : MonoBehaviour
         }
 
         currentState = state;
-    }
+    }   
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-
         Gizmos.DrawLine(wallCheck.position, new Vector2(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
 
         Vector2 botLeft = new Vector2(touchDamageCheck.position.x - (touchDamageWidth / 2), touchDamageCheck.position.y - (touchDamageHeight / 2));
@@ -281,7 +253,5 @@ public class BasicEnemyController : MonoBehaviour
         Gizmos.DrawLine(botRight, topRight);
         Gizmos.DrawLine(topRight, topLeft);
         Gizmos.DrawLine(topLeft, botLeft);
-
     }
-
 }
