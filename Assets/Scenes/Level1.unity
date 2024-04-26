@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &61870211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3742648335619413372, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+  m_PrefabInstance: {fileID: 3742648334743178858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &73691773
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +287,7 @@ GameObject:
   m_Layer: 0
   m_Name: RespawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -389,8 +394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 272484918}
-  playerPrefab: {fileID: 1281252118}
-  respawnDelay: 5
+  player: {fileID: 61870211}
+  respawnTime: 5
 --- !u!4 &539593753
 Transform:
   m_ObjectHideFlags: 0
@@ -11035,17 +11040,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1281252118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3742648335619413372, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
-  m_PrefabInstance: {fileID: 3742648334743178858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1281252121 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3742648335619413363, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
   m_PrefabInstance: {fileID: 3742648334743178858}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281252118}
+  m_GameObject: {fileID: 61870211}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041aedef867285a4a8694f131e94fd5a, type: 3}
@@ -11739,7 +11739,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1997683437802236305, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
   m_PrefabInstance: {fileID: 3742648334743178858}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281252118}
+  m_GameObject: {fileID: 61870211}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaaf0182f67c4b548a40fcf3361f97d5, type: 3}

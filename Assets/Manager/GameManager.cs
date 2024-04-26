@@ -5,52 +5,46 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Transform respawnPoint;
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private float respawnDelay = 1f;
+    [SerializeField]
+    private Transform respawnPoint;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private float respawnTime;
 
-    private bool respawning = false;
-    private GameObject currentPlayer;
+    private float respawnTimeStart;
+
+    private bool respawn;
 
     private CinemachineVirtualCamera CVC;
 
     private void Start()
     {
         CVC = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
-        SpawnPlayer();
     }
 
     private void Update()
     {
-        if (respawning)
-        {
-            if (currentPlayer == null) // Check if the current player object has been destroyed
-            {
-                respawning = false;
-                Invoke("SpawnPlayer", respawnDelay);
-            }
-        }
+        CheckRespawn();
     }
 
     public void Respawn()
     {
-        if (!respawning)
-        {
-            respawning = true;
-            Destroy(currentPlayer); // Destroy the current player object
-        }
+        respawnTimeStart = Time.time;
+        respawn = true;
+
     }
 
-    private void SpawnPlayer()
+    private void CheckRespawn()
     {
-        currentPlayer = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
-        if (CVC != null)
+        if (Time.time >= respawnTimeStart + respawnTime && respawn)
         {
-            CVC.Follow = currentPlayer.transform;
-        }
-        else
-        {
-           UnityEngine.Debug.LogError("Cinemachine Virtual Camera is not assigned.");
+            //var playerTemp = Instantiate(player, respawnPoint.position, respawnPoint.rotation);
+            //CVC.m_Follow = playerTemp.transform;
+            player.gameObject.SetActive(true);
+            player.transform.position = respawnPoint.position;
+            respawn = false;
         }
     }
+    //orig
 }
