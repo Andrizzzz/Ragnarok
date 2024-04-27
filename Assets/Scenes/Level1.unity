@@ -11905,6 +11905,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7292366450186445043, guid: 8beeb7930dd9776419b40e303bdc78c1, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7292366450186445043, guid: 8beeb7930dd9776419b40e303bdc78c1, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
