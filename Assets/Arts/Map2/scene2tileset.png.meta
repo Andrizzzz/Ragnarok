@@ -36,9 +36,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -120,6 +120,27 @@ TextureImporter:
       name: scene2tileset_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a9734b90cfff458e587c87d84684b
+      internalID: -40100480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene2tileset_1
+      rect:
+        serializedVersion: 2
         x: 16
         y: 48
         width: 16
@@ -131,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d6a42b85519634387039f925e08a16
-      internalID: 227777503
+      spriteID: d6a4429f844740e498a2ff08963da3dc
+      internalID: 1986162973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scene2tileset_1
+      name: scene2tileset_2
       rect:
         serializedVersion: 2
         x: 32
@@ -152,29 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba12f1cdd105954cae87dacd1f5887f
-      internalID: -2077272546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scene2tileset_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6352a1b464de68d4b9b058d7cf518bf7
-      internalID: 1952526171
+      spriteID: 7abbde9d677634b46a913e18e276506e
+      internalID: 1472336749
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01960848bb6c45141b1954f31e5da44f
-      internalID: 1361889063
+      spriteID: f777717bdd248e14ba87b60d93f2b512
+      internalID: -1585979552
       vertices: []
       indices: 
       edges: []
@@ -215,14 +215,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 146510e548841634ea0fba985516650b
-      internalID: 801928714
+      spriteID: 1c9b8d8c04d40c44d82c21eab12d74bf
+      internalID: 469177167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: scene2tileset_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8506aab78c66ba541ae3e292b0659155
+      internalID: 1940145046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene2tileset_6
       rect:
         serializedVersion: 2
         x: 16
@@ -236,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd80c44b2d413bf4bb7176624a780bde
-      internalID: 333107994
+      spriteID: 10f93e331be09a742bb477faf4741559
+      internalID: -2092859927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scene2tileset_6
+      name: scene2tileset_7
       rect:
         serializedVersion: 2
         x: 32
@@ -257,29 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cecba615c0432ac4fb93245e0faf7720
-      internalID: 38734643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scene2tileset_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13cc68bd1cf646648b121f811158b45e
-      internalID: 2043932213
+      spriteID: b601c88e662f9934face992049c1398b
+      internalID: -951474810
       vertices: []
       indices: 
       edges: []
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c8e54f069c9fb84ab0472c3aeba01ae
-      internalID: 1662016708
+      spriteID: 98be0983097050a438aca944fb823202
+      internalID: -276374395
       vertices: []
       indices: 
       edges: []
@@ -320,14 +320,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca7c5fe230246f34780ea5bc027130fb
-      internalID: 974530820
+      spriteID: 3bc586c28571f58429af6988ea887cac
+      internalID: -840136333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: scene2tileset_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c5fd33394fb3647a4d08cf09bc5e24
+      internalID: 2110365225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene2tileset_11
       rect:
         serializedVersion: 2
         x: 16
@@ -341,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292f44ac71fdaaf47b70961e0a293e2c
-      internalID: -311513290
+      spriteID: 9b5de67865da2d4449f43143021285e4
+      internalID: -1011153529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scene2tileset_11
+      name: scene2tileset_12
       rect:
         serializedVersion: 2
         x: 32
@@ -362,29 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24d8f8bc47680340977aee29e102f0c
-      internalID: 1573929383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scene2tileset_12
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c428f7ca5f1aafe45929510f92f0ebbc
-      internalID: 1013142569
+      spriteID: 0da394d10b4d4c846b13d005b5a64325
+      internalID: -1101649851
       vertices: []
       indices: 
       edges: []
@@ -400,19 +400,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      scene2tileset_0: 227777503
-      scene2tileset_1: -2077272546
-      scene2tileset_10: -311513290
-      scene2tileset_11: 1573929383
-      scene2tileset_12: 1013142569
-      scene2tileset_2: 1952526171
-      scene2tileset_3: 1361889063
-      scene2tileset_4: 801928714
-      scene2tileset_5: 333107994
-      scene2tileset_6: 38734643
-      scene2tileset_7: 2043932213
-      scene2tileset_8: 1662016708
-      scene2tileset_9: 974530820
+      scene2tileset_0: -40100480
+      scene2tileset_1: 1986162973
+      scene2tileset_10: 2110365225
+      scene2tileset_11: -1011153529
+      scene2tileset_12: -1101649851
+      scene2tileset_2: 1472336749
+      scene2tileset_3: -1585979552
+      scene2tileset_4: 469177167
+      scene2tileset_5: 1940145046
+      scene2tileset_6: -2092859927
+      scene2tileset_7: -951474810
+      scene2tileset_8: -276374395
+      scene2tileset_9: -840136333
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
