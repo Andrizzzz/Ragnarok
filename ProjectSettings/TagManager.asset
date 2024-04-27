@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Damageable
   - Dead
   - Player
-  - 
+  - Wall
   - 
   - 
   - 
@@ -55,7 +56,11 @@ TagManager:
     uniqueID: 3870235491
     locked: 0
   - name: ENEMY
+<<<<<<< HEAD
     uniqueID: 3035574103
+=======
+    uniqueID: 1455826997
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
     locked: 0
   - name: PLAYER
     uniqueID: 3579392265

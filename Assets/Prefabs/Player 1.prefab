@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!1 &2964264399298319646
+=======
+--- !u!1 &3000877663168734155
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +12,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   - component: {fileID: 2964264399298319641}
+=======
+  - component: {fileID: 4025691287864030906}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
@@ -16,12 +24,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!4 &2964264399298319641
+=======
+--- !u!4 &4025691287864030906
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264399298319646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: -0.12, z: -0}
@@ -32,6 +45,18 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2964264399795622511
+=======
+  m_GameObject: {fileID: 3000877663168734155}
+  m_LocalRotation: {x: -0.06541475, y: 0, z: -0, w: 0.99785817}
+  m_LocalPosition: {x: 2.53, y: -0.17, z: 6.52}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3742648335619413361}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3742648333955762129
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,7 +64,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   - component: {fileID: 2964264399795622510}
+  m_Layer: 3
+  m_Name: GroundCheck
+  m_TagString: Untagged
+=======
+  - component: {fileID: 3742648333955762134}
+  m_Layer: 9
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3742648333955762134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742648333955762129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52, y: 0.5, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3742648335619413361}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3742648334582595744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742648334582595745}
   m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -47,12 +109,89 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2964264399795622510
+--- !u!4 &3742648334582595745
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742648334582595744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -1.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3742648335619413361}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3742648334844083163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742648334844083160}
+  m_Layer: 0
+  m_Name: LedgeCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3742648334844083160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742648334844083163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.681, y: 0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3742648335619413361}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3742648335619413372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742648335619413361}
+  - component: {fileID: 3742648335619413360}
+  - component: {fileID: 7038891286947747728}
+  - component: {fileID: 1997683437802236305}
+  - component: {fileID: 3742648335619413363}
+  - component: {fileID: 3742648335619413362}
+  - component: {fileID: 3742648335619413373}
+  - component: {fileID: 3742648335619413366}
+  - component: {fileID: 2913655398723249713}
+  - component: {fileID: 3742648335619413323}
+  m_Layer: 8
+  m_Name: Player
+  m_TagString: Player
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
+--- !u!4 &2964264399795622510
+=======
+--- !u!4 &3742648335619413361
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264399795622511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -1.51, z: 0}
@@ -136,12 +275,32 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2964264400965994431
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32.18, y: -5.02, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3742648334582595745}
+  - {fileID: 3742648333955762134}
+  - {fileID: 3742648334844083160}
+  - {fileID: 4025691287864030906}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3742648335619413360
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -175,9 +334,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -715575031
   m_SortingLayer: 6
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_SortingOrder: 1
+=======
+  m_SortingOrder: 4
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Sprite: {fileID: 1412565777, guid: 821e48a7ecda2304091c490967da90e7, type: 3}
-  m_Color: {r: 1, g: 0.9198113, b: 0.9198113, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -187,13 +350,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!114 &102055089812110174
+=======
+--- !u!114 &7038891286947747728
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0631c93f39943042935fc487a5a67c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathChunkParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
+  deathBloodParticle: {fileID: 3836196999372202544, guid: a5d6eec93e4ec9a428782973b20fc1ca, type: 3}
+  maxHealth: 100
+--- !u!114 &1997683437802236305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaaf0182f67c4b548a40fcf3361f97d5, type: 3}
@@ -203,71 +389,95 @@ MonoBehaviour:
   inputTimer: 0.2
   attack1Radius: 0.8
   attack1Damage: 10
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   attackHitBoxPos: {fileID: 3246392696841069685}
   whatIsDamageable:
     serializedVersion: 2
     m_Bits: 64
 --- !u!114 &2964264400965994428
+=======
+  attackHitBoxPos: {fileID: 4025691287864030906}
+  whatIsDamageable:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &3742648335619413363
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041aedef867285a4a8694f131e94fd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   knockBackDuration: 0.1
   knockBackSpeed: {x: 10, y: 5}
+=======
+  knockbackDuration: 0.1
+  knockbackSpeed: {x: 15, y: 5}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   amountOfJumps: 2
-  playerControls:
-    m_Name: Player Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 40724b70-f1ce-44b4-9adc-171814e609b7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  movementSpeed: 15
+  movementSpeed: 8
   jumpForce: 16
-  groundCheckRadius: 0.6
-  wallCheckDistance: 0.63
+  groundCheckRadius: 0.3
+  wallCheckDistance: 0.3
   wallSlideSpeed: 1
   movementForceInAir: 0
   airDragMultiplier: 0.95
   wallJumpForce: 30
-  wallHopForce: 30
+  wallHopForce: 5
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
   wallJumpTimerSet: 1
   dashTime: 0.2
-  dashSpeed: 50
+  dashSpeed: 25
   distanceBetweenImages: 0.1
   dashCoolDown: 1
   ledgeClimbXOffSet1: 0.3
   ledgeClimbYOffSet1: 0
   ledgeClimbXOffSet2: 0.5
   ledgeClimbYOffSet2: 3
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   groundCheck: {fileID: 2964264399795622510}
   wallCheck: {fileID: 2964264399298319641}
   ledgeCheck: {fileID: 2964264400593217815}
+=======
+  groundCheck: {fileID: 3742648334582595745}
+  wallCheck: {fileID: 3742648333955762134}
+  ledgeCheck: {fileID: 3742648334844083160}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   wallHopDirection: {x: 0, y: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   wallJumpDirection: {x: 1, y: 2}
 --- !u!50 &2964264400965994429
+=======
+  wallJumpDirection: {x: 2, y: 2}
+  playerPosData: {fileID: 0}
+--- !u!50 &3742648335619413362
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -281,16 +491,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!61 &2964264400965994418
+=======
+--- !u!61 &3742648335619413373
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 50efb596a050d584d9db0d6ca1dee404, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -307,14 +525,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4049549, y: 3.1235867}
   m_EdgeRadius: 0
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!95 &2964264400965994425
+=======
+--- !u!95 &3742648335619413366
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3b17c1812f0cec9468266b5cba81bf35, type: 2}
@@ -328,13 +554,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!114 &2964264400965994372
+=======
+--- !u!114 &2913655398723249713
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
   m_GameObject: {fileID: 2964264400965994419}
+=======
+  m_GameObject: {fileID: 3742648335619413372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3449762edfbe194e89caa0755639849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3742648335619413323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742648335619413372}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -358,6 +604,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefabs/Player 1.prefab
 --- !u!1 &3708400130436952324
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,3 +636,5 @@ Transform:
   m_Father: {fileID: 2964264400965994430}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/Player.prefab

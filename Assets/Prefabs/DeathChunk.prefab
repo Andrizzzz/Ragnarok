@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor: {r: 0.95294124, g: 0.6, b: 0.3921569, a: 1}
+      maxColor: {r: 0.9450981, g: 0.3529412, b: 0.23137257, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1540,7 +1540,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
+<<<<<<< HEAD:Assets/Prefabs/DeathChunk.prefab
     - sprite: {fileID: 605551571, guid: b1bb8bd944be04447aefda54388cc119, type: 3}
+=======
+    - sprite: {fileID: 828843753, guid: d91d5a8a02d9a8b4485145c835418b07, type: 3}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39:Assets/Prefabs/DeathChunkParticle.prefab
     flipU: 0
     flipV: 0
   VelocityModule:

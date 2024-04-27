@@ -106,18 +106,33 @@ public class PlayerCombatController : MonoBehaviour
         anim.SetBool("Attack1", false);
     }
 
+<<<<<<< HEAD
     private void Damage(float[] attackDetails)
     {
          if (!PC.GetDashStatus())
         {
             int direction;
+=======
+
+    private void Damage(float[] attackDetails)
+    {
+        if (!PC.GetDashStatus())
+        {
+            int direction;
+
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
             PS.DecreaseHealth(attackDetails[0]);
 
             if (attackDetails[1] < transform.position.x)
             {
                 direction = 1;
+<<<<<<< HEAD
 
             }
+=======
+            }
+
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
             else
             {
                 direction = -1;
@@ -125,7 +140,12 @@ public class PlayerCombatController : MonoBehaviour
 
             PC.Knockback(direction);
         }
+<<<<<<< HEAD
       
+=======
+
+       
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
     }
 
     private void OnDrawGizmos()

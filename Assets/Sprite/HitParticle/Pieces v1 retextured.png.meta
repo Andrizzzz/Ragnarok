@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b1bb8bd944be04447aefda54388cc119
+=======
+guid: d91d5a8a02d9a8b4485145c835418b07
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,14 +153,23 @@ TextureImporter:
         width: 6
         height: 5
       alignment: 0
+<<<<<<< HEAD
       pivot: {x: 0.5, y: 0.5}
+=======
+      pivot: {x: 0, y: 0}
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 12cd369807c53024eb245d49889b8c65
       internalID: 605551571
+=======
+      spriteID: 016586955e6de9c4dac7ef8fd13a098f
+      internalID: 606274801
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
       vertices: []
       indices: 
       edges: []
@@ -165,6 +178,7 @@ TextureImporter:
       name: Pieces v1 retextured_1
       rect:
         serializedVersion: 2
+<<<<<<< HEAD
         x: 32
         y: 29
         width: 1
@@ -186,6 +200,8 @@ TextureImporter:
       name: Pieces v1 retextured_2
       rect:
         serializedVersion: 2
+=======
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
         x: 30
         y: 16
         width: 5
@@ -197,8 +213,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 682f1ffa79c789740bdcdb45635606b7
       internalID: -790322297
+=======
+      spriteID: 9e62fb3d1394eed4c99155ae10c8b4a2
+      internalID: 828843753
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
       vertices: []
       indices: 
       edges: []
@@ -214,9 +235,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< HEAD
       Pieces v1 retextured_0: -1849454800
       Pieces v1 retextured_1: 1605097112
       Pieces v1 retextured_2: -790322297
+=======
+      Pieces v1 retextured_0: 606274801
+      Pieces v1 retextured_1: 828843753
+>>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
