@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour
 
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
-    public GameObject WormGO { get; private set; }
+    public GameObject SlimeGO { get; private set; }
 
     [SerializeField]
     private Transform wallCheck;
@@ -27,9 +27,9 @@ public class Entity : MonoBehaviour
         facingDirection = 1;
 
 
-        WormGO = transform.Find("Worm").gameObject;
-        rb = WormGO.GetComponent<Rigidbody2D>();
-        anim = WormGO.GetComponent<Animator>();
+        SlimeGO = transform.Find("Slime").gameObject;
+        rb = SlimeGO.GetComponent<Rigidbody2D>();
+        anim = SlimeGO.GetComponent<Animator>();
 
         stateMachine = new FiniteStateMachine();
 
@@ -53,7 +53,7 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckWall()
     {
-        return Physics2D.Raycast(wallCheck.position, WormGO.transform.right, entityData.wallCheckDistance, entityData.WhatIsGround);
+        return Physics2D.Raycast(wallCheck.position, SlimeGO.transform.right, entityData.wallCheckDistance, entityData.WhatIsGround);
     }
 
     public virtual bool CheckLedge()
@@ -63,14 +63,14 @@ public class Entity : MonoBehaviour
 
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        return Physics2D.Raycast(playerCheck.position, WormGO.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
+        return Physics2D.Raycast(playerCheck.position, SlimeGO.transform.right, entityData.minAgroDistance, entityData.WhatIsPlayer);
     }
 
 
 
     public virtual bool CheckPlayerInMaxAgroRange()
     {
-        return Physics2D.Raycast(playerCheck.position, WormGO.transform.right, entityData.maxAgroDistance, entityData.WhatIsPlayer);
+        return Physics2D.Raycast(playerCheck.position, SlimeGO.transform.right, entityData.maxAgroDistance, entityData.WhatIsPlayer);
 
     }
 
@@ -78,7 +78,7 @@ public class Entity : MonoBehaviour
     public virtual void Flip()
     {
         facingDirection *= -1;
-        WormGO.transform.Rotate(0f, 180f, 0f);
+        SlimeGO.transform.Rotate(0f, 180f, 0f);
     }
 
     public virtual void OnDrawGizmos()
