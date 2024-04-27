@@ -3,20 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - CheckPoint
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Damageable
-  - Dead
-  - Player
-  - Wall
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,26 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BACKGROUND2
-    uniqueID: 1900342091
-    locked: 0
-  - name: BACKGROUND1
-    uniqueID: 1658260443
-    locked: 0
-  - name: FOREGROUND2
-    uniqueID: 116341571
-    locked: 0
-  - name: FOREGROUND1
-    uniqueID: 3870235491
-    locked: 0
-  - name: ENEMY
-<<<<<<< HEAD
-    uniqueID: 3035574103
-=======
-    uniqueID: 1455826997
->>>>>>> f9594ac2c9a4404ac333ca3aa6d1904365082f39
-    locked: 0
-  - name: PLAYER
-    uniqueID: 3579392265
     locked: 0
