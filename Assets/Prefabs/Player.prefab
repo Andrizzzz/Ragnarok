@@ -156,7 +156,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3742648335619413372}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -32.18, y: -5.02, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041aedef867285a4a8694f131e94fd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joystick: {fileID: 2620713969421834353, guid: 2d4fd7c147469324ead48693087921a1, type: 3}
+  _joystick: {fileID: 0}
   knockbackDuration: 0.1
   knockbackSpeed: {x: 15, y: 5}
   amountOfJumps: 2

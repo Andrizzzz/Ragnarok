@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210396736253005898}
   m_Layer: 3
-  m_Name: GroundCheck
+  m_Name: LedgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,13 +59,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210396736255543299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -6.1, z: 0}
+  m_LocalPosition: {x: -6.4, y: -7.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 210396736253005898}
   - {fileID: 210396737645170654}
   - {fileID: 771273326142294967}
+  - {fileID: 5055686104341215867}
   m_Father: {fileID: 210396737241663119}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,7 +138,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 50efb596a050d584d9db0d6ca1dee404, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -198,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210396737241663119}
-  - component: {fileID: 210396737241663118}
+  - component: {fileID: 210396736171931868}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -222,7 +223,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &210396737241663118
+--- !u!114 &210396736171931868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,34 +232,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 210396737241663117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b47c8b62542694b9e392d84233b828, type: 3}
+  m_Script: {fileID: 11500000, guid: ad4bb78477d49f94e899af5a79610aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 0.5
-  wallCheckDistance: 0.1
-  movementSpeed: 3
-  maxHealth: 30
-  knockbackDuration: 0.1
-  touchDamage: 10
-  lastTouchDamageTime: 0
-  touchDamageCooldown: 0.2
-  touchDamageWidth: 1.5
-  touchDamageHeight: 1.5
-  groundCheck: {fileID: 210396736253005898}
+  entityData: {fileID: 11400000, guid: 183c634793aabab46b693e029b1aecbc, type: 2}
   wallCheck: {fileID: 210396737645170654}
-  touchDamageCheck: {fileID: 771273326142294967}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  knockbackSpeed: {x: 10, y: 5}
-  touchDamageBotLeft: {x: 0, y: 0}
-  touchDamageTopRight: {x: 0, y: 0}
-  hitParticle: {fileID: 6904029441958797392, guid: 3847d88a7319c6a4b9fcb98506a0539d, type: 3}
-  deathChunkParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
-  deathBloodParticle: {fileID: 3836196999372202544, guid: a5d6eec93e4ec9a428782973b20fc1ca, type: 3}
+  ledgeCheck: {fileID: 210396736253005898}
+  playerCheck: {fileID: 5055686104341215867}
+  idleStateData: {fileID: 11400000, guid: 853b2303913ab1244b6dc51586c0fdbc, type: 2}
+  moveStateData: {fileID: 11400000, guid: 09176bbbfc280554987befde14a58f63, type: 2}
+  playerDetectedData: {fileID: 11400000, guid: d20f87cddb222464e9eb791207873f8e, type: 2}
 --- !u!1 &210396737645170653
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +272,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 210396736255543300}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1777496627626658353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5055686104341215867}
+  m_Layer: 0
+  m_Name: PlayerCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5055686104341215867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777496627626658353}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6, y: 0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 210396736255543300}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2890773315914856809
 GameObject:
