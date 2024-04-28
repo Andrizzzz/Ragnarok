@@ -26,7 +26,13 @@ public class E1_ChargeState : ChargeState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isChargeTimeOver)
+        
+        if(!isDetectingLedge || isDetectingWall)
+        {
+            stateMachine.ChangeState(enemy.lookForPlayerState);
+        }
+
+      else  if (isChargeTimeOver)
         {
             if (isPlayerInMinAgroRange)
             {
