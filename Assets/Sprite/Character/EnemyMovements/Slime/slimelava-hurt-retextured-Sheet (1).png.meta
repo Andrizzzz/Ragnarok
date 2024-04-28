@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca447f162b78a1a44b72af69bdf08118
+guid: ef5824d75fc3ced4cb7e841cddce2ff5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LavaSlime v1-Sheet_0
+      name: slimelava-hurt-retextured-Sheet (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d64a540126b962342948d93e8cc94d64
-      internalID: 1878601745
+      spriteID: 663c198144c3362499f340c76ca6d1d4
+      internalID: 2138057209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LavaSlime v1-Sheet_1
+      name: slimelava-hurt-retextured-Sheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91ad63a3c5e1f74bbe95527113bd278
+      internalID: 225423587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimelava-hurt-retextured-Sheet (1)_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c8c8eb4b94cce749bb824e3c382edbe
-      internalID: 1021173486
+      spriteID: 1b3d25a0d3f0f104c9d4d31e562c04ab
+      internalID: 1351361353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LavaSlime v1-Sheet_2
+      name: slimelava-hurt-retextured-Sheet (1)_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,197 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: affefac16fdd1a9498af3d579a46b085
-      internalID: 815519472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eebf090ef4592e042979425c0304d324
-      internalID: -774146533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aba9ef11d6393a241bbd459247418523
-      internalID: -1787454130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19c4cfedc4ac46246be289e06747a780
-      internalID: -1736990311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da6af60dbee7f6e4fb678b060763463d
-      internalID: 396617009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5e140e1c673ee44699eab5f9d9dedc0
-      internalID: 1921853112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4237fe81d4e7cee43864e60beadbc95b
-      internalID: -1146163296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf89b0c9c05f826488e356f16810f8e7
-      internalID: -1517650898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d72c7b493bcd4134d95dfd64b7128105
-      internalID: 1615776776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LavaSlime v1-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88f22f032ccd769449ae6f73ea808771
-      internalID: -1304629616
+      spriteID: 4e5372db0543f6948850cc3e181afc62
+      internalID: -37955123
       vertices: []
       indices: 
       edges: []
@@ -403,18 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LavaSlime v1-Sheet_0: 1878601745
-      LavaSlime v1-Sheet_1: 1021173486
-      LavaSlime v1-Sheet_10: 1615776776
-      LavaSlime v1-Sheet_11: -1304629616
-      LavaSlime v1-Sheet_2: 815519472
-      LavaSlime v1-Sheet_3: -774146533
-      LavaSlime v1-Sheet_4: -1787454130
-      LavaSlime v1-Sheet_5: -1736990311
-      LavaSlime v1-Sheet_6: 396617009
-      LavaSlime v1-Sheet_7: 1921853112
-      LavaSlime v1-Sheet_8: -1146163296
-      LavaSlime v1-Sheet_9: -1517650898
+      slimelava-hurt-retextured-Sheet (1)_0: 2138057209
+      slimelava-hurt-retextured-Sheet (1)_1: 225423587
+      slimelava-hurt-retextured-Sheet (1)_2: 1351361353
+      slimelava-hurt-retextured-Sheet (1)_3: -37955123
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9305d5014be58e743aac60ab6e66d063, type: 3}
   m_Name: E1_BaseData
   m_EditorClassIdentifier: 
-  wallCheckDistance: 0.2
+  wallCheckDistance: 0.4
   ledgeCheckDistance: 0.4
   maxAgroDistance: 4
   minAgroDistance: 3
