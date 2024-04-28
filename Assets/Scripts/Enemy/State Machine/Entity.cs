@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour
 
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
-    public GameObject SlimeGO { get; private set; }
+    public GameObject SlimeGO { get; private set; } 
 
     [SerializeField]
     private Transform wallCheck;
@@ -20,11 +20,16 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private Transform playerCheck;
 
+  //  private float currentHealth;
+
+  //  private int lastDamageDirection;
+
     private Vector2 velocityWorksSpace;
 
     public virtual void Start()
     {
         facingDirection = 1;
+      //  currentHealth = entityData.maxHealth;
 
 
         SlimeGO = transform.Find("Slime").gameObject;
@@ -50,7 +55,7 @@ public class Entity : MonoBehaviour
         velocityWorksSpace.Set(facingDirection * velocity, rb.velocity.y);
         rb.velocity = velocityWorksSpace;
     }
-
+        
     public virtual bool CheckWall()
     {
         return Physics2D.Raycast(wallCheck.position, SlimeGO.transform.right, entityData.wallCheckDistance, entityData.WhatIsGround);
@@ -74,10 +79,33 @@ public class Entity : MonoBehaviour
 
     }
 
+    //public virtual void DamageHop(float velocity)
+    //{
+      //  velocityWorksSpace.Set(rb.velocity.x, velocity);
+       // rb.velocity = velocityWorksSpace;
+   // }
+
+  //  public virtual void Damage(AttackDetails attackDetails)
+   // {
+    //    currentHealth -= attackDetails.damageAmount;
+
+    //    DamageHop(entityData.damageHopSpeed);
+
+    //    if(attackDetails.position.x > SlimeGO.transform.right.position.x)
+    //    {
+    //        lastDamageDirection = -1;
+   //     }
+
+      //  else
+     //   {
+     //       lastDamageDirection = 1;
+     //   }
+   // }
+
 
     public virtual void Flip()
     {
-        facingDirection *= -1;
+        facingDirection *= -1;  
         SlimeGO.transform.Rotate(0f, 180f, 0f);
     }
 
