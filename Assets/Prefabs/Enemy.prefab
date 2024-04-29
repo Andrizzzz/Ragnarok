@@ -83,6 +83,10 @@ MonoBehaviour:
   idleStateData: {fileID: 11400000, guid: 853b2303913ab1244b6dc51586c0fdbc, type: 2}
   moveStateData: {fileID: 11400000, guid: 09176bbbfc280554987befde14a58f63, type: 2}
   playerDetectedData: {fileID: 11400000, guid: d20f87cddb222464e9eb791207873f8e, type: 2}
+  chargeStateData: {fileID: 0}
+  lookForPlayerStateData: {fileID: 0}
+  meleeAttackStateData: {fileID: 0}
+  meleeAttackPosition: {fileID: 0}
 --- !u!1 &6102262912099453151
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +185,7 @@ Transform:
   - {fileID: 6102262912099453148}
   - {fileID: 6697117073043442869}
   - {fileID: 1183754866546556281}
+  - {fileID: 8888625727831667450}
   m_Father: {fileID: 6102262911965036941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,7 +238,7 @@ SpriteRenderer:
   m_Size: {x: 5.625, y: 5.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6102262913126272773
@@ -304,6 +309,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &8223384786423285915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8888625727831667450}
+  m_Layer: 6
+  m_Name: MeleeAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8888625727831667450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223384786423285915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6102262913126272774}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9104865013705686635
 GameObject:
   m_ObjectHideFlags: 0

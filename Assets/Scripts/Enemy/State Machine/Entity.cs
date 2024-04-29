@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public GameObject SlimeGO { get; private set; } 
+    public AnimationToStateMachine atsm {get; private set;}
 
     [SerializeField]
     private Transform wallCheck;
@@ -37,6 +38,7 @@ public class Entity : MonoBehaviour
         anim = SlimeGO.GetComponent<Animator>();
 
         stateMachine = new FiniteStateMachine();
+        atsm = SlimeGO.GetComponent<AnimationToStateMachine>();
 
     }
 
@@ -102,16 +104,25 @@ public class Entity : MonoBehaviour
      //   }
    // }
 
-
+    public virtual bool CheckPlayerInCloseRangeAction()
+    {
+        return Physics2D.Raycast(playerCheck.position, SlimeGO.transform.right, entityData.closeRangeActionDistance, entityData.WhatIsPlayer);
+    }
     public virtual void Flip()
     {
         facingDirection *= -1;  
         SlimeGO.transform.Rotate(0f, 180f, 0f);
     }
+    
 
     public virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.wallCheckDistance));
         Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3) (Vector2.down * entityData.ledgeCheckDistance));
+
+        Gizmos.DrawWireSphere(playerCheck.position +(Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position +(Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position +(Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+
     }
 }

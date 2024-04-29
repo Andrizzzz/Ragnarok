@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class PlayerDetectedState : State
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
     protected bool performLongRangeAction;
+    protected bool performCloseRangeAction;
 
     public PlayerDetectedState(Entity entity, FiniteStateMachine stateMachine, string animBool, D_PlayerDetected stateData) : base(entity, stateMachine, animBool)
     {
@@ -21,6 +23,8 @@ public class PlayerDetectedState : State
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
+
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()
@@ -52,5 +56,8 @@ public class PlayerDetectedState : State
   
     }
 
-
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
+    }
 }

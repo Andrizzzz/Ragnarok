@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 570f72cc10b57ad4aab2ba29afb3d629
+guid: d0d6b70b9ea70ef41896f1f6b822cbb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_0
+      name: ATTACK 2-Sheet adjusted_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 131
-        height: 63
+        width: 220
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eb99ec5d642b9241aaa8310b27aeae7
-      internalID: -506905307
+      spriteID: 69891e98d14947840aee27c05b1c69af
+      internalID: -402251794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_1
+      name: ATTACK 2-Sheet adjusted_1
       rect:
         serializedVersion: 2
-        x: 131
+        x: 220
         y: 0
-        width: 131
-        height: 63
+        width: 220
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88c59457ff7e0c4f8ccad265f74324f
-      internalID: 1110746773
+      spriteID: 580ecb1e357fd01489cc0f956c8ee363
+      internalID: -1484012532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_2
+      name: ATTACK 2-Sheet adjusted_2
       rect:
         serializedVersion: 2
-        x: 262
+        x: 440
         y: 0
-        width: 131
-        height: 63
+        width: 220
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2d34a0a222c29c4680f82e4d2f87df4
-      internalID: 1436196823
+      spriteID: 10c48a3dca664464dab7e900d4539060
+      internalID: 348114637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_3
+      name: ATTACK 2-Sheet adjusted_3
       rect:
         serializedVersion: 2
-        x: 393
+        x: 660
         y: 0
-        width: 131
-        height: 63
+        width: 220
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bebad84523c52f4093e942b5e83ef47
-      internalID: 1857380577
+      spriteID: 3419d47c56c28c14aa06c0965cb5a8be
+      internalID: 798350517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_4
+      name: ATTACK 2-Sheet adjusted_4
       rect:
         serializedVersion: 2
-        x: 524
+        x: 880
         y: 0
-        width: 131
-        height: 63
+        width: 220
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,50 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d0b6f5f97b37934fa7b66bf0268d179
-      internalID: 1687903890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 655
-        y: 0
-        width: 131
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b3bf778a9d1a0749b30760f0dcb7774
-      internalID: -184096679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 786
-        y: 0
-        width: 131
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58690f7ca9db1f946b1c64196e15fd1d
-      internalID: 968813939
+      spriteID: 88f7416b6cb9ae84ca9c0014c12250fd
+      internalID: -1061988946
       vertices: []
       indices: 
       edges: []
@@ -298,13 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ATTACK 1 croped-Sheet_0: -506905307
-      ATTACK 1 croped-Sheet_1: 1110746773
-      ATTACK 1 croped-Sheet_2: 1436196823
-      ATTACK 1 croped-Sheet_3: 1857380577
-      ATTACK 1 croped-Sheet_4: 1687903890
-      ATTACK 1 croped-Sheet_5: -184096679
-      ATTACK 1 croped-Sheet_6: 968813939
+      ATTACK 2-Sheet adjusted_0: -402251794
+      ATTACK 2-Sheet adjusted_1: -1484012532
+      ATTACK 2-Sheet adjusted_2: 348114637
+      ATTACK 2-Sheet adjusted_3: 798350517
+      ATTACK 2-Sheet adjusted_4: -1061988946
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
