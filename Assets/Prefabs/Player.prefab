@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3000877663168734155
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4025691287864030906}
-  m_Layer: 0
-  m_Name: Attack1Pos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4025691287864030906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3000877663168734155}
-  m_LocalRotation: {x: -0.06541475, y: 0, z: -0, w: 0.99785817}
-  m_LocalPosition: {x: 2.53, y: -0.17, z: 6.52}
-  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3742648335619413361}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3742648333955762129
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +133,7 @@ Transform:
   - {fileID: 3742648334582595745}
   - {fileID: 3742648333955762134}
   - {fileID: 3742648334844083160}
-  - {fileID: 4025691287864030906}
+  - {fileID: 8347576176145057232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -251,7 +220,7 @@ MonoBehaviour:
   inputTimer: 0.2
   attack1Radius: 0.8
   attack1Damage: 10
-  attackHitBoxPos: {fileID: 4025691287864030906}
+  attackHitBoxPos: {fileID: 8347576176145057232}
   whatIsDamageable:
     serializedVersion: 2
     m_Bits: 64
@@ -410,3 +379,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &4125633094258964317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8347576176145057232}
+  m_Layer: 0
+  m_Name: Attack1pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8347576176145057232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125633094258964317}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.23266383, y: 0.5924017, z: 6.580641}
+  m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3742648335619413361}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

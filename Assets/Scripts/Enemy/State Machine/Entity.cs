@@ -21,16 +21,16 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private Transform playerCheck;
 
-  //  private float currentHealth;
+    private float currentHealth;
 
-  //  private int lastDamageDirection;
+    private int lastDamageDirection;
 
     private Vector2 velocityWorksSpace;
 
     public virtual void Start()
     {
         facingDirection = 1;
-      //  currentHealth = entityData.maxHealth;
+        currentHealth = entityData.maxHealth;
 
 
         SlimeGO = transform.Find("Slime").gameObject;
@@ -81,28 +81,28 @@ public class Entity : MonoBehaviour
 
     }
 
-    //public virtual void DamageHop(float velocity)
-    //{
-      //  velocityWorksSpace.Set(rb.velocity.x, velocity);
-       // rb.velocity = velocityWorksSpace;
-   // }
+    public virtual void DamageHop(float velocity)
+    {
+      velocityWorksSpace.Set(rb.velocity.x, velocity);
+       rb.velocity = velocityWorksSpace;
+    }
 
-  //  public virtual void Damage(AttackDetails attackDetails)
-   // {
-    //    currentHealth -= attackDetails.damageAmount;
+    public virtual void Damage(AttackDetails attackDetails)
+    {
+        currentHealth -= attackDetails.damageAmount;
 
-    //    DamageHop(entityData.damageHopSpeed);
+        DamageHop(entityData.damageHopSpeed);
 
-    //    if(attackDetails.position.x > SlimeGO.transform.right.position.x)
-    //    {
-    //        lastDamageDirection = -1;
-   //     }
+        if(attackDetails.position.x > SlimeGO.transform.position.x)
+        {
+            lastDamageDirection = -1;
+        }
 
-      //  else
-     //   {
-     //       lastDamageDirection = 1;
-     //   }
-   // }
+        else
+        {
+            lastDamageDirection = 1;
+        }
+    }
 
     public virtual bool CheckPlayerInCloseRangeAction()
     {
