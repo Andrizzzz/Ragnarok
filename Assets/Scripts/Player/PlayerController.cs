@@ -110,11 +110,11 @@ public class PlayerController : MonoBehaviour
         CheckKnockback();
     }
 
-    //private void Awake()
- //   {
-      //  playerPosData = FindObjectOfType<SavePlayerPos>();
-       // playerPosData.PlayerPosLoad();
-    //}
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType<SavePlayerPos>();
+        playerPosData.PlayerPosLoad();
+    }
 
     private void FixedUpdate()
     {

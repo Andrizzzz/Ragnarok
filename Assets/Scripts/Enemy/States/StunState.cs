@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StunState : State
+public class StunState : MonoBehaviour
 {
-public StunState(Entity entity, FiniteStateMachine stateMachine, string animBool) : base(entity, stateMachine, animBool)
+    // Start is called before the first frame update
+    void Start()
     {
-       this.stateData = stateData;
+        
     }
-    
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
