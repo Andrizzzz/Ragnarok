@@ -10,6 +10,8 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
     [SerializeField]
+    private float stunDamageAmount = 1f;
+    [SerializeField]
     private Transform attackHitBoxPos;
     [SerializeField]
     private LayerMask whatIsDamageable;
@@ -90,6 +92,7 @@ public class PlayerCombatController : MonoBehaviour
     {
         attackDetails.damageAmount = attack1Damage;
         attackDetails.position = transform.position;
+        attackDetails.stunDamageAmount = stunDamageAmount;
 
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackHitBoxPos.position, attack1Radius, whatIsDamageable);
 
