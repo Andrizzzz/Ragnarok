@@ -14014,6 +14014,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3742648335619413373, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 13.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742648335619413373, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 8.6875
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
 --- !u!1001 &6102262913042137050
@@ -14070,6 +14078,14 @@ PrefabInstance:
     - target: {fileID: 6102262911965036943, guid: bfa3cb56ce25eb540975d7c6885c25e3, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102262913126272774, guid: bfa3cb56ce25eb540975d7c6885c25e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102262913126272774, guid: bfa3cb56ce25eb540975d7c6885c25e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa3cb56ce25eb540975d7c6885c25e3, type: 3}

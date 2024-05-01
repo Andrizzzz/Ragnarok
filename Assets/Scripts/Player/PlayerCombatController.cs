@@ -54,6 +54,8 @@ public class PlayerCombatController : MonoBehaviour
         {
             DisableAttack();
         }
+
+  
     }
 
     public void PerformAttack()
@@ -62,6 +64,7 @@ public class PlayerCombatController : MonoBehaviour
         lastInputTime = Time.time;
     }
 
+  
     private void DisableAttack()
     {
         gotInput = false;
