@@ -104,7 +104,7 @@ public class PlayerCombatController : MonoBehaviour
             collider.transform.parent.SendMessage("Damage", attackDetails);
         }
     }
-
+    
     private void FinishAttack1()
     {
         isAttacking = false;

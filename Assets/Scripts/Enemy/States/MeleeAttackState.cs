@@ -23,7 +23,7 @@ public class MeleeAttackState : AttackState
         attackDetails = new AttackDetails();
 
         attackDetails.damageAmount = stateData.attackDamage;
-        attackDetails.position = entity.SlimeGO.transform.position;
+        attackDetails.position = entity.alive.transform.position;
     }
 
     public override void Exit()

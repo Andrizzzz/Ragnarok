@@ -12,6 +12,7 @@ public class AnimationToStateMachine : MonoBehaviour
     }
 
     private void FinishAttack(){
+
         attackState.FinishAttack();
     }
 }

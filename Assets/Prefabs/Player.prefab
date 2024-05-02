@@ -242,17 +242,17 @@ MonoBehaviour:
   knockbackSpeed: {x: 15, y: 5}
   amountOfJumps: 2
   movementSpeed: 8
-  jumpForce: 16
+  jumpForce: 10
   groundCheckRadius: 0.3
   wallCheckDistance: 0.3
   wallSlideSpeed: 1
   movementForceInAir: 0
   airDragMultiplier: 0.95
-  wallJumpForce: 30
-  wallHopForce: 5
+  wallJumpForce: 20
+  wallHopForce: 15
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
-  wallJumpTimerSet: 1
+  wallJumpTimerSet: 0.5
   dashTime: 0.2
   dashSpeed: 25
   distanceBetweenImages: 0.1
@@ -267,8 +267,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  wallHopDirection: {x: 0, y: 0}
-  wallJumpDirection: {x: 2, y: 2}
+  wallHopDirection: {x: 2, y: 2}
+  wallJumpDirection: {x: 1, y: 1}
   playerPosData: {fileID: 0}
 --- !u!50 &3742648335619413362
 Rigidbody2D:
@@ -286,7 +286,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: cc6b6ad97fff8fc46b02d03f2016bd5e, type: 2}
+  m_Material: {fileID: 6200000, guid: 50efb596a050d584d9db0d6ca1dee404, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -300,7 +300,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3742648335619413372}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 50efb596a050d584d9db0d6ca1dee404, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

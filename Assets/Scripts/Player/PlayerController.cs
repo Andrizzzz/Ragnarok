@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private int amountOfJumpsLeft;
     private int facingDirection = 1;
     private int lastWallJumpDirection;
+    private int wallJumpsPerformed = 0;
+
 
     private bool isFacingRight = true;
     private bool isWalking;
@@ -168,15 +170,19 @@ public class PlayerController : MonoBehaviour
         isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
         isTouchingLedge = Physics2D.Raycast(ledgeCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
+        if (isGrounded)
+        {
+            amountOfJumpsLeft = amountOfJumps;
+            wallJumpsPerformed = 0; // Reset wall jump counter
+        }
+
         if (isTouchingWall && !isTouchingLedge && !ledgeDetected)
         {
             ledgeDetected = true;
             ledgePosBot = wallCheck.position;
         }
-
-
-
     }
+
 
     public void FinishLedgeClimb()
     {
@@ -202,6 +208,10 @@ public class PlayerController : MonoBehaviour
         {
             canWallJump = true;
         }
+        else
+        {
+            canWallJump = false; // Disable wall jump if not touching wall
+        }
 
         if (amountOfJumpsLeft <= 0)
         {
@@ -211,7 +221,14 @@ public class PlayerController : MonoBehaviour
         {
             canNormalJump = true;
         }
+
+        // Disable normal jump if wall sliding without wall jump available
+        if (isWallSliding && !canWallJump)
+        {
+            canNormalJump = false;
+        }
     }
+
 
     public void Dash()
     {
@@ -393,6 +410,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void NormalJump()
     {
         if (canNormalJump)
@@ -406,12 +424,13 @@ public class PlayerController : MonoBehaviour
 
     public void WallJump()
     {
-        if (canWallJump)
+        if (canWallJump && wallJumpsPerformed < 3) // Assuming 3 is the maximum limit
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
             isWallSliding = false;
             amountOfJumpsLeft = amountOfJumps;
             amountOfJumpsLeft--;
+            wallJumpsPerformed++; // Increment wall jump counter
             Vector2 forceToAdd = new Vector2(wallJumpForce * wallJumpDirection.x * movementInputDirection, wallJumpForce * wallJumpDirection.y);
             rb.AddForce(forceToAdd, ForceMode2D.Impulse);
             jumpTimer = 0;
@@ -424,6 +443,7 @@ public class PlayerController : MonoBehaviour
             lastWallJumpDirection = -facingDirection;
         }
     }
+
 
     private void ApplyMovement()
     {
