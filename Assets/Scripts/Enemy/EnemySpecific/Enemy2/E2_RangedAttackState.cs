@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E2_MeleeAttackState : MeleeAttackState
+public class E2_RangedAttackState : RangedAttackState
 {
 
-    private Enemy2 enemy;
-    public E2_MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    Enemy2 enemy;
+    public E2_RangedAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackState stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
     }
@@ -41,18 +41,16 @@ public class E2_MeleeAttackState : MeleeAttackState
             {
                 stateMachine.ChangeState(enemy.playerDetectedState);
             }
-            else if (!isPlayerInMinAgroRange)
+            else
             {
                 stateMachine.ChangeState(enemy.lookForPlayerState);
             }
         }
     }
 
-    public override void PhysicsUpdate()    
+    public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-
     }
 
     public override void TriggerAttack()
