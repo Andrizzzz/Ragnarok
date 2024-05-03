@@ -278,7 +278,7 @@ public class PlayerController : MonoBehaviour
 
                 if (Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
                 {
-                    PlayerAfterImagePool.instance.GetFromPool();
+                    PlayerAfterImagePool.Instance.GetFromPool();
                     lastImageXpos = transform.position.x;
                 }
             }
@@ -369,7 +369,7 @@ public class PlayerController : MonoBehaviour
         dashTimeLeft = dashTime;
         lastDash = Time.time;
 
-        PlayerAfterImagePool.instance.GetFromPool();
+        PlayerAfterImagePool.Instance.GetFromPool();
         lastImageXpos = transform.position.x;
     }
 

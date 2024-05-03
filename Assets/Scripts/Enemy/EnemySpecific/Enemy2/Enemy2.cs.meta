@@ -3,7 +3,23 @@ guid: 028da1367cf1f254ebbae41b1936c87e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - entityData: {instanceID: 0}
+  - wallCheck: {instanceID: 0}
+  - ledgeCheck: {instanceID: 0}
+  - playerCheck: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - moveStateData: {instanceID: 0}
+  - idleStateData: {instanceID: 0}
+  - playerDetectedStateData: {instanceID: 0}
+  - lookForPlayerStateData: {instanceID: 0}
+  - meleeAttackStateData: {instanceID: 0}
+  - stunStateData: {instanceID: 0}
+  - deadStateData: {instanceID: 0}
+  - dodgeStateData: {instanceID: 0}
+  - rangedAttackStateData: {fileID: 11400000, guid: 40ef826e0b6105944b5db537b7f1fbae, type: 2}
+  - meleeAttackPosition: {instanceID: 0}
+  - rangedAttackPosition: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -36,7 +36,7 @@ public class E3_PlayerDetectedState : PlayerDetectedState
             stateMachine.ChangeState(enemy.rangedAttackState);
         }
           
-        if (!isPlayerInMaxAgroRange)
+        else if (!isPlayerInMaxAgroRange)
         {
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }

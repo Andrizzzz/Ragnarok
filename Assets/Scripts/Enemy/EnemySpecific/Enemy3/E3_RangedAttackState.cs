@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class E3_RangedAttackState : RangedAttackState
 {
-    Enemy3 enemy;
+   private Enemy3 enemy;
     public E3_RangedAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackState stateData, Enemy3 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
