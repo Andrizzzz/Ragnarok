@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathChunkParticle: {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
   deathBloodParticle: {fileID: 3836196999372202544, guid: a5d6eec93e4ec9a428782973b20fc1ca, type: 3}
-  maxHealth: 100
+  maxHealth: 200
 --- !u!114 &1997683437802236305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   inputTimer: 0.2
   attack1Radius: 0.8
   attack1Damage: 10
-  stunDamageAmount: 1
+  stunDamageAmount: 15
   attackHitBoxPos: {fileID: 8347576176145057232}
   whatIsDamageable:
     serializedVersion: 2

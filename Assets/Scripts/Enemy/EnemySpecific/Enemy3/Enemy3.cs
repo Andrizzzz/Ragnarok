@@ -9,6 +9,9 @@ public class Enemy3 : Entity
     public E3_LookForPlayer lookForPlayerState { get; private set; }
     public E3_PlayerDetectedState playerDetectedState { get; private set; }
     public E3_RangedAttackState rangedAttackState { get; private set; }
+    public E3_StunState stunState { get; private set; }
+    public E3_MeleeAttackState meleeAttackState { get; private set; }
+    public E3_DeadState deadState { get; private set; }
 
 
     [SerializeField]
@@ -21,7 +24,15 @@ public class Enemy3 : Entity
     private D_PlayerDetected playerDetectedStateData;
     [SerializeField]
     private D_RangedAttackState rangedAttackStateData;
+    [SerializeField]
+    private D_StunState stunStateData;
+    [SerializeField]
+    private D_MeleeAttack meleeAttackStateData;
+    [SerializeField]
+    private D_DeadState deadStateData;
 
+    [SerializeField]
+    private Transform meleeAttackPosition;  
     [SerializeField]
     private Transform rangedAttackPosition;
 
@@ -34,6 +45,9 @@ public class Enemy3 : Entity
         lookForPlayerState = new E3_LookForPlayer(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         playerDetectedState = new E3_PlayerDetectedState(this, stateMachine,"playerDetectedState", playerDetectedStateData, this);
         rangedAttackState = new E3_RangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
+        meleeAttackState = new E3_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        stunState = new E3_StunState(this, stateMachine, "stun", stunStateData, this);
+        deadState = new E3_DeadState(this, stateMachine, "dead", deadStateData, this);
 
         stateMachine.Initialize(movestate);
 
@@ -43,15 +57,31 @@ public class Enemy3 : Entity
     {
         base.Damage(attackDetails);
 
-         if (CheckPlayerInMinAgroRange())
+        if (isDead)
+        {
+            stateMachine.ChangeState(deadState);
+        }
+
+
+        else if (isStunned && stateMachine.currentState != stunState)
+        {
+            stateMachine.ChangeState(stunState);
+        }
+        else if (CheckPlayerInMinAgroRange())
         {
             stateMachine.ChangeState(rangedAttackState);
         }
-
         else if (!CheckPlayerInMinAgroRange())
         {
             lookForPlayerState.SetTurnImmediately(true);
             stateMachine.ChangeState(lookForPlayerState);
         }
+    }
+
+    public override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
     }
 }
