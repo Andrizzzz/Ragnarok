@@ -16,23 +16,23 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
     //public bool GrabInput { get; private set; }
-    public bool DashInput { get; private set; }
-    public bool DashInputStop { get; private set; }
+    //public bool DashInput { get; private set; }
+    //public bool DashInputStop { get; private set; }
 
-    public bool[] AttackInputs { get; private set; }
+    //public bool[] AttackInputs { get; private set; }
 
     [SerializeField]
     private float inputHoldTime = 0.2f;
 
     private float jumpInputStartTime;
-    private float dashInputStartTime;
+    //private float dashInputStartTime;
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
 
         int count = Enum.GetValues(typeof(CombatInputs)).Length;
-        AttackInputs = new bool[count];
+        //AttackInputs = new bool[count];
 
         cam = Camera.main;
     }
@@ -40,33 +40,33 @@ public class PlayerInputHandler : MonoBehaviour
     private void Update()
     {
         CheckJumpInputHoldTime();
-        CheckDashInputHoldTime();
+        //CheckDashInputHoldTime();
     }
 
     public void OnPrimaryAttackInput(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            AttackInputs[(int)CombatInputs.primary] = true;
-        }
+        //if (context.started)
+        //{
+        //    AttackInputs[(int)CombatInputs.primary] = true;
+        //}
 
-        if (context.canceled)
-        {
-            AttackInputs[(int)CombatInputs.primary] = false;
-        }
+        //if (context.canceled)
+        //{
+        //    AttackInputs[(int)CombatInputs.primary] = false;
+        //}
     }
 
     public void OnSecondaryAttackInput(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            AttackInputs[(int)CombatInputs.secondary] = true;
-        }
+        //if (context.started)
+        //{
+        //    AttackInputs[(int)CombatInputs.secondary] = true;
+        //}
 
-        if (context.canceled)
-        {
-            AttackInputs[(int)CombatInputs.secondary] = false;
-        }
+        //if (context.canceled)
+        //{
+        //    AttackInputs[(int)CombatInputs.secondary] = false;
+        //}
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -114,13 +114,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            DashInput = true;
-            DashInputStop = false;
-            dashInputStartTime = Time.time;
+            //DashInput = true;
+            //DashInputStop = false;
+            //dashInputStartTime = Time.time;
         }
         else if (context.canceled)
         {
-            DashInputStop = true;
+            //DashInputStop = true;
         }
     }
 
@@ -138,7 +138,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void UseJumpInput() => JumpInput = false;
 
-    public void UseDashInput() => DashInput = false;
+    //public void UseDashInput() => DashInput = false;
 
     private void CheckJumpInputHoldTime()
     {
@@ -148,13 +148,13 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    private void CheckDashInputHoldTime()
-    {
-        if (Time.time >= dashInputStartTime + inputHoldTime)
-        {
-            DashInput = false;
-        }
-    }
+    //private void CheckDashInputHoldTime()
+    //{
+    //    if (Time.time >= dashInputStartTime + inputHoldTime)
+    //    {
+    //        DashInput = false;
+    //    }
+    //}
 }
 
 public enum CombatInputs

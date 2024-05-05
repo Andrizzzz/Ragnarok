@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
-    //public PlayerJumpState JumpState { get; private set; }
-    //public PlayerInAirState InAirState { get; private set; }
-    //public PlayerLandState LandState { get; private set; }
+    public PlayerJumpState JumpState { get; private set; }
+    public PlayerInAirState InAirState { get; private set; }
+    public PlayerLandState LandState { get; private set; }
     //public PlayerWallSlideState WallSlideState { get; private set; }
     //public PlayerWallGrabState WallGrabState { get; private set; }
     //public PlayerWallClimbState WallClimbState { get; private set; }
@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private PlayerData playerData;
-
+    [SerializeField]
+    private Transform groundCheck;
 
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
@@ -49,9 +50,9 @@ public class Player : MonoBehaviour
 
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
-        //JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
-        //InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
-        //LandState = new PlayerLandState(this, StateMachine, playerData, "land");
+        JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
+        InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
+        LandState = new PlayerLandState(this, StateMachine, playerData, "land");
         //WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         //WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         //WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
@@ -99,6 +100,13 @@ public class Player : MonoBehaviour
         CurrentVelocity = workspace;
     }
 
+    public void SetVelocityY(float velocity)
+    {
+        workspace.Set(CurrentVelocity.x, velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
+    }
+
 
     //public void SetColliderHeight(float height)
     //{
@@ -113,7 +121,7 @@ public class Player : MonoBehaviour
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
-    // private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+    private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
     private void Flip()
     {
@@ -121,6 +129,10 @@ public class Player : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
+    public bool CheckIfGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+    }
     public void CheckIfShouldFlip(int xInput)
     {
         if(xInput != 0 && xInput != FacingDirection)

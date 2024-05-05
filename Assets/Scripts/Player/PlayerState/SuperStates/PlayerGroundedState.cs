@@ -12,9 +12,9 @@ public class PlayerGroundedState : PlayerState
 
     //protected bool isTouchingCeiling;
 
-    //private bool JumpInput;
+    private bool JumpInput;
     //private bool grabInput;
-    //private bool isGrounded;
+    private bool isGrounded;
     //private bool isTouchingWall;
     //private bool isTouchingLedge;
     //private bool dashInput;
@@ -27,7 +27,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        //isGrounded = core.CollisionSenses.Ground;
+        isGrounded = player.CheckIfGrounded();
         //isTouchingWall = core.CollisionSenses.WallFront;
         //isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
         //isTouchingCeiling = core.CollisionSenses.Ceiling;
@@ -37,7 +37,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.Enter();
 
-        //player.JumpState.ResetAmountOfJumpsLeft();
+        player.JumpState.ResetAmountOfJumpsLeft();
         //player.DashState.ResetCanDash();
     }
 
@@ -52,27 +52,28 @@ public class PlayerGroundedState : PlayerState
 
         xInput = player.InputHandler.NormInputX;
         //yInput = player.InputHandler.NormInputY;
-        //    JumpInput = player.InputHandler.JumpInput;
+            JumpInput = player.InputHandler.JumpInput;
         //    grabInput = player.InputHandler.GrabInput;
         //    dashInput = player.InputHandler.DashInput;
 
-        //    if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !isTouchingCeiling)
-        //    {
-        //        stateMachine.ChangeState(player.PrimaryAttackState);
-        //    }
-        //    else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && !isTouchingCeiling)
-        //    {
-        //        stateMachine.ChangeState(player.SecondaryAttackState);
-        //    }
-        //    else if (JumpInput && player.JumpState.CanJump())
-        //    {
-        //        stateMachine.ChangeState(player.JumpState);
-        //    }
-        //    else if (!isGrounded)
-        //    {
-        //        player.InAirState.StartCoyoteTime();
-        //        stateMachine.ChangeState(player.InAirState);
-        //    }
+            //    if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !isTouchingCeiling)
+            //    {
+            //        stateMachine.ChangeState(player.PrimaryAttackState);
+            //    }
+            //    else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && !isTouchingCeiling)
+            //    {
+            //        stateMachine.ChangeState(player.SecondaryAttackState);
+            //    }
+            if (JumpInput && player.JumpState.CanJump())
+        {
+            player.InputHandler.UseJumpInput();
+            stateMachine.ChangeState(player.JumpState);
+        }
+        else if (!isGrounded)
+        {
+            player.InAirState.StartCoyoteTime();
+            stateMachine.ChangeState(player.InAirState);
+        }
         //    else if (isTouchingWall && grabInput && isTouchingLedge)
         //    {
         //        stateMachine.ChangeState(player.WallGrabState);
