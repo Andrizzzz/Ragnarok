@@ -12,7 +12,7 @@ public class PlayerLandState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        //if (!isExitingState)
+        if (!isExitingState)
         {
             if (xInput != 0)
             {

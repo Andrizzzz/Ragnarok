@@ -56,9 +56,9 @@ public class PlayerTouchingWallState : PlayerState
         base.LogicUpdate();
 
         xInput = player.InputHandler.NormInputX;
-        //yInput = player.InputHandler.NormInputY;
-        //grabInput = player.InputHandler.GrabInput;
-        //jumpInput = player.InputHandler.JumpInput;
+        yInput = player.InputHandler.NormInputY;
+        grabInput = player.InputHandler.GrabInput;
+        jumpInput = player.InputHandler.JumpInput;
 
             //if (jumpInput)
             //{

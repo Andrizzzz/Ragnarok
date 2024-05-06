@@ -9,7 +9,7 @@ public class PlayerState
     protected PlayerData playerData;
 
     protected bool isAnimationFinished;
-    //protected bool isExitingState;
+    protected bool isExitingState;
 
     protected float startTime;
 
@@ -30,14 +30,14 @@ public class PlayerState
         startTime = Time.time;
         //Debug.Log(animBoolName);
         isAnimationFinished = false;
-        //isExitingState = false;
+        isExitingState = false;
         Debug.Log(animBoolName);
     }
 
     public virtual void Exit()
     {
        player.Anim.SetBool(animBoolName, false);
-        //isExitingState = true;
+        isExitingState = true;
     }
 
     public virtual void LogicUpdate()

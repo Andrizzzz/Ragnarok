@@ -13,7 +13,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
     {
         base.LogicUpdate();
 
-        //if (!isExitingState)
+        if (!isExitingState)
         {
             player.SetVelocityY(-playerData.wallSlideVelocity);
 
@@ -21,7 +21,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
             {
                 stateMachine.ChangeState(player.WallGrabState);
             }
-            //}
+            
 
         }
     }

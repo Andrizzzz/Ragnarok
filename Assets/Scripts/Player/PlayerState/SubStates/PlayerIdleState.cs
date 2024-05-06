@@ -31,17 +31,17 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        //if (!isExitingState)
-        //{
+        if (!isExitingState)
+        {
             if (xInput != 0)
             {
                 stateMachine.ChangeState(player.MoveState);
             }
-        //    else if (yInput == -1)
-        //    {
-        //        stateMachine.ChangeState(player.CrouchIdleState);
-        //    }
-        //}
+            //    else if (yInput == -1)
+            //    {
+            //        stateMachine.ChangeState(player.CrouchIdleState);
+            //    }
+        }
 
     }
 
