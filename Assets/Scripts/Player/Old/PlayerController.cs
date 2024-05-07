@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 wallHopDirection;
     public Vector2 wallJumpDirection;
 
-    public SavePlayerPos playerPosData;
+    
    
     void Start()
     {
@@ -112,11 +112,7 @@ public class PlayerController : MonoBehaviour
         CheckKnockback();
     }
 
-    private void Awake()
-    {
-        playerPosData = FindObjectOfType<SavePlayerPos>();
-        playerPosData.PlayerPosLoad();
-    }
+    
 
     private void FixedUpdate()
     {
