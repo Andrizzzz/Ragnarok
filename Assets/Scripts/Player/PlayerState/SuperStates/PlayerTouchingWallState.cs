@@ -33,12 +33,8 @@ public class PlayerTouchingWallState : PlayerState
 
         isGrounded = player.CheckIfGrounded();
         isTouchingWall = player.CheckIfTouchingWall();
-        //isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
 
-        if (isTouchingWall && !isTouchingLedge)
-        {
-            //player.LedgeClimbState.SetDetectedPosition(player.transform.position);
-        }
+       
     }
 
     public override void Enter()
@@ -60,12 +56,13 @@ public class PlayerTouchingWallState : PlayerState
         grabInput = player.InputHandler.GrabInput;
         jumpInput = player.InputHandler.JumpInput;
 
-            //if (jumpInput)
-            //{
-            //    player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
-            //    stateMachine.ChangeState(player.WallJumpState);
-            //    //}
-         if (isGrounded && !grabInput)
+        if (jumpInput)
+        {
+            player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
+            stateMachine.ChangeState(player.WallJumpState);
+        }
+
+        else if (isGrounded && !grabInput)
         {
             stateMachine.ChangeState(player.IdleState);
         }
@@ -73,10 +70,7 @@ public class PlayerTouchingWallState : PlayerState
         {
             stateMachine.ChangeState(player.InAirState);
         }
-        //else if (isTouchingWall && !isTouchingLedge)
-        //{
-        //    stateMachine.ChangeState(player.LedgeClimbState);
-        //}
+     
     }
 
     public override void PhysicsUpdate()

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState WallSlideState { get; private set; }
     public PlayerWallGrabState WallGrabState { get; private set; }
     public PlayerWallClimbState WallClimbState { get; private set; }
-    //public PlayerWallJumpState WallJumpState { get; private set; }
+    public PlayerWallJumpState WallJumpState { get; private set; }
     //public PlayerLedgeClimbState LedgeClimbState { get; private set; }
     //public PlayerDashState DashState { get; private set; }
     //public PlayerCrouchIdleState CrouchIdleState { get; private set; }
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
-        //WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
+        WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         //LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "ledgeClimbState");
         //DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
         //CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "crouchIdle");
@@ -74,18 +74,11 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
 
         FacingDirection = 1;
-        //DashDirectionIndicator = transform.Find("DashDirectionIndicator");
-        //MovementCollider = GetComponent<BoxCollider2D>();
-        //Inventory = GetComponent<PlayerInventory>();
-
-        //PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
-        //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         StateMachine.Initialize(IdleState);
     }
 
     private void Update()
     {
-        // Core.LogicUpdate();
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
     }
@@ -93,6 +86,14 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         StateMachine.CurrentState.PhysicsUpdate();
+    }
+
+    public void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        workspace.Set(angle.x * velocity * direction, angle.y * velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
     }
 
     public void SetVelocityX(float velocity)
@@ -108,18 +109,6 @@ public class Player : MonoBehaviour
         RB.velocity = workspace;
         CurrentVelocity = workspace;
     }
-
-
-    //public void SetColliderHeight(float height)
-    //{
-    //    Vector2 center = MovementCollider.offset;
-    //    workspace.Set(MovementCollider.size.x, height);
-
-    //    center.y += (height - MovementCollider.size.y) / 2;
-
-    //    MovementCollider.size = workspace;
-    //    MovementCollider.offset = center;
-    //}
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
@@ -139,6 +128,11 @@ public class Player : MonoBehaviour
     public bool CheckIfTouchingWall()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingWallBack()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * -FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
     public void CheckIfShouldFlip(int xInput)
     {

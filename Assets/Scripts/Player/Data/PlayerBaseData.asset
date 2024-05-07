@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: PlayerBaseData
   m_EditorClassIdentifier: 
   movementVelocity: 10
-  jumpVelocity: 20
+  jumpVelocity: 15
   amountOfJumps: 2
   groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   wallCheckDistance: 0.6
-  wallJumpVelocity: 20
+  wallJumpVelocity: 25
   wallJumpTime: 0.4
   wallJumpAngle: {x: 1, y: 2}
-  coyoteTime: 1
+  coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
   wallSlideVelocity: 2
-  wallClimbVelocity: 2
+  wallClimbVelocity: 3
   startOffset: {x: 0, y: 0}
   stopOffset: {x: 0, y: 0}
   dashCooldown: 0.5
