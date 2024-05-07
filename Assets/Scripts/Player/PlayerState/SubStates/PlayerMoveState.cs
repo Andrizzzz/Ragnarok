@@ -30,8 +30,6 @@ public class PlayerMoveState : PlayerGroundedState
         base.LogicUpdate();
       
         player.CheckIfShouldFlip(xInput);
-
-
         player.SetVelocityX(playerData.movementVelocity *xInput);
 
         if (!isExitingState)
@@ -39,10 +37,10 @@ public class PlayerMoveState : PlayerGroundedState
             if (xInput == 0 )
         {
             stateMachine.ChangeState(player.IdleState);
-        }
+      }
             
-        }
     }
+  }
 
     public override void PhysicsUpdate()
     {
