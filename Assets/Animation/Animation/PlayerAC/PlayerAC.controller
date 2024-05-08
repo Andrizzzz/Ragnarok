@@ -141,6 +141,23 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1109 &-6740089674369156773
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: dash
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8654540295752942350}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
 --- !u!1107 &-5822175492684085177
 AnimatorStateMachine:
   serializedVersion: 6
@@ -196,6 +213,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-5219383532947666885
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: dash
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-5089546276477616632
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -334,72 +376,78 @@ AnimatorController:
   m_Name: PlayerAC
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: dash
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: climbLedge
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: ledgeClimbState
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: wallClimb
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: wallGrab
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: wallSlide
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: land
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: inAir
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: idle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: move
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: yVelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: xVelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -682,29 +730,32 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6784176604791443176}
-    m_Position: {x: -1700, y: -3190, z: 0}
+    m_Position: {x: -1850, y: -3620, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2149435301928309957}
-    m_Position: {x: -1700, y: -2900, z: 0}
+    m_Position: {x: -1850, y: -3330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5784358523312924828}
-    m_Position: {x: -1700, y: -2540, z: 0}
+    m_Position: {x: -1840, y: -2940, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7016147021556916342}
-    m_Position: {x: -1700, y: -2640, z: 0}
+    m_Position: {x: -1850, y: -3040, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1814044009711220323}
-    m_Position: {x: -1700, y: -2440, z: 0}
+    m_Position: {x: -1840, y: -2840, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8624121678376902149}
-    m_Position: {x: -1700, y: -3100, z: 0}
+    m_Position: {x: -1850, y: -3530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5975441426442365127}
-    m_Position: {x: -1700, y: -2990, z: 0}
+    m_Position: {x: -1850, y: -3420, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8654540295752942350}
+    m_Position: {x: -1850, y: -3140, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -5822175492684085177}
-    m_Position: {x: -1700, y: -2770, z: 0}
+    m_Position: {x: -1850, y: -3250, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions:
   - {fileID: 4203442545042562281}
@@ -714,14 +765,15 @@ AnimatorStateMachine:
   - {fileID: 2189617261995604930}
   - {fileID: -9047767351162001721}
   - {fileID: 4263266606777395690}
+  - {fileID: -6740089674369156773}
   m_StateMachineTransitions:
   - first: {fileID: -5822175492684085177}
     second:
     - {fileID: 7780172703864133695}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -2270, y: -2860, z: 0}
-  m_EntryPosition: {x: -2070, y: -2770, z: 0}
-  m_ExitPosition: {x: -1320, y: -2770, z: 0}
+  m_AnyStatePosition: {x: -2420, y: -3290, z: 0}
+  m_EntryPosition: {x: -2220, y: -3200, z: 0}
+  m_ExitPosition: {x: -1470, y: -3200, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6784176604791443176}
 --- !u!1102 &5571881798111728102
@@ -922,6 +974,33 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: a8861aa7122bc164da4b6fdbd63a377d, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &8654540295752942350
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: dash
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -5219383532947666885}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: c6c1e0eaceea718408ecb559135b9e6e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
