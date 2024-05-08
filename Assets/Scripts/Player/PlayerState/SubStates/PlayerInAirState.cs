@@ -92,7 +92,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.ChangeState(player.LandState);
         }
 
-        else if (isTouchingWall && !isTouchingLedge)
+        else if (isTouchingWall && !isTouchingLedge && !isGrounded)
         {
             stateMachine.ChangeState(player.LedgeClimbState);
         }
