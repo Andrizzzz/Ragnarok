@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         CheckInput();
         CheckMovementDirection();
         UpdateAnimations();
