@@ -76,17 +76,18 @@ public class PlayerDashState : PlayerAbilityState
                     PlaceAfterImage();
 
                 }
-                else
-                {
-                    player.SetVelocity(playerData.dashVelocity, dashDirection);
-                    CheckIfShouldPlaceAfterImage();
+                
+            }
+            else
+            {
+                player.SetVelocity(playerData.dashVelocity, dashDirection);
+                CheckIfShouldPlaceAfterImage();
 
-                    if (Time.time >= startTime + playerData.dashTime)
-                    {
-                        player.RB.drag = 0f;
-                        isAbilityDone = true;
-                        lastDashTime = Time.time;
-                    }
+                if (Time.time >= startTime + playerData.dashTime)
+                {
+                    player.RB.drag = 0f;
+                    isAbilityDone = true;
+                    lastDashTime = Time.time;
                 }
             }
         }

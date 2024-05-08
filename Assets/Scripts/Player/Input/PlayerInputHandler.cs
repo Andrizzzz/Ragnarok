@@ -31,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
 
-        int count = Enum.GetValues(typeof(CombatInputs)).Length;
+        //int count = Enum.GetValues(typeof(CombatInputs)).Length;
         //AttackInputs = new bool[count];
 
         cam = Camera.main;
