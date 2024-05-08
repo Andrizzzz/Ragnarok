@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVelocity: 10
   jumpVelocity: 15
-  amountOfJumps: 2
+  amountOfJumps: 1
   groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
@@ -30,13 +30,10 @@ MonoBehaviour:
   startOffset: {x: 0.5, y: 1}
   stopOffset: {x: 1, y: 1}
   dashCooldown: 0.5
-  maxHoldTime: 1
+  maxHoldTime: 2
   holdTimeScale: 0.25
   dashTime: 0.2
   dashVelocity: 30
   drag: 15
   dashEndYMultiplier: 0.2
   distBetweenAfterImages: 0.5
-  crouchMovementVelocity: 5
-  crouchColliderHeight: 0.8
-  standColliderHeight: 1.6

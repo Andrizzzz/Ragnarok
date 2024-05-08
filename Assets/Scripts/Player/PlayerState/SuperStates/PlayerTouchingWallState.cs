@@ -5,6 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerTouchingWallState : PlayerState
 {
+
     protected bool isGrounded;
     protected bool isTouchingWall;
     protected bool grabInput;
@@ -40,7 +41,7 @@ public class PlayerTouchingWallState : PlayerState
             player.LedgeClimbState.SetDetectedPosition(player.transform.position);
         }
 
-       
+     
     }
 
     public override void Enter()
