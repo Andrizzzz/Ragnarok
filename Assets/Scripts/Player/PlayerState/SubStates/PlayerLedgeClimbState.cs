@@ -89,5 +89,5 @@ public class PlayerLedgeClimbState : PlayerState
       
     }
 
-    public void SetDetectedPosition(Vector2 Pos) => detectedPos = Pos;
+    public void SetDetectedPosition(Vector2 pos) => detectedPos = pos;
 }
