@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7008239427657693201}
   - component: {fileID: 7008239427657693200}
-  - component: {fileID: 8371954651788117334}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,19 +48,6 @@ MonoBehaviour:
   respawnPoint: {fileID: 7008239427926900286}
   player: {fileID: 0}
   respawnTime: 5
---- !u!114 &8371954651788117334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7008239427657693215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe5b51c00745c34ea9551b603c7fd34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3742648335619413372, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
 --- !u!1 &7008239427926900285
 GameObject:
   m_ObjectHideFlags: 0
