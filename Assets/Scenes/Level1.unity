@@ -18725,11 +18725,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1281252118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 262976264618685559, guid: 58f83da03c215aa49b22f79cba272738, type: 3}
-  m_PrefabInstance: {fileID: 262976263607218017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1330070102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18785,10 +18780,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 961356811472672216, guid: 4060dc92069a35e48afc96875029ad20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.47
+      objectReference: {fileID: 0}
     - target: {fileID: 961356811472672217, guid: 4060dc92069a35e48afc96875029ad20, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1960003707}
+    - target: {fileID: 961356811895037708, guid: 4060dc92069a35e48afc96875029ad20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4060dc92069a35e48afc96875029ad20, type: 3}
 --- !u!1 &1462740529
@@ -19625,7 +19628,7 @@ PrefabInstance:
     - target: {fileID: 7008239427657693200, guid: c3702df83fd5e894f9ab844cfc850d43, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1281252118}
+      objectReference: {fileID: 8907904713311563283, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
     - target: {fileID: 7008239427657693201, guid: c3702df83fd5e894f9ab844cfc850d43, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -19725,6 +19728,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907904713311563281, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907904713311563281, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907904713311563283, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}

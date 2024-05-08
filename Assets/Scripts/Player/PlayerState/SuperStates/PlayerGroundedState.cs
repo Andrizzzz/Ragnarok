@@ -47,7 +47,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.LogicUpdate();
 
-        xInput = player.InputHandler.NormInputX;
+            xInput = player.InputHandler.NormInputX;
             JumpInput = player.InputHandler.JumpInput;
             grabInput = player.InputHandler.GrabInput;
             dashInput = player.InputHandler.DashInput;
@@ -71,10 +71,12 @@ public class PlayerGroundedState : PlayerState
         }
 
 
+
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
     }
 }
