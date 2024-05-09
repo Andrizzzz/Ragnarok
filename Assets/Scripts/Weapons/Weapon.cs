@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Weapon : MonoBehaviour
 {
@@ -49,6 +50,12 @@ public class Weapon : MonoBehaviour
     public virtual void AnimationFinishTrigger()
     {
         state.AnimationFinishTrigger();
+    }
+
+    public void InitializeWeapon(PlayerAttackState state)
+    {
+        this.state = state;
+        //this.core = core;
     }
 
 
