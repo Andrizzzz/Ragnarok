@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     public PlayerWallJumpState WallJumpState { get; private set; }
     public PlayerLedgeClimbState LedgeClimbState { get; private set; }
     public PlayerDashState DashState { get; private set; }
-    //public PlayerAttackState PrimaryAttackState { get; private set; }
-    //public PlayerAttackState SecondaryAttackState { get; private set; }
+    public PlayerAttackState PrimaryAttackState { get; private set; }
+    public PlayerAttackState SecondaryAttackState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public BoxCollider2D MovementCollider { get; private set; }
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
-    // public PlayerInventory Inventory { get; private set; }
+    public PlayerInventory Inventory { get; private set; }
 
 
     private Vector2 workspace;
@@ -61,8 +61,8 @@ public class Player : MonoBehaviour
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "ledgeClimbState");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
-        //PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
-        //SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
     }
 
     private void Start()
@@ -74,6 +74,12 @@ public class Player : MonoBehaviour
 
         FacingDirection = 1;
         StateMachine.Initialize(IdleState);
+
+        Inventory = GetComponent<PlayerInventory>();
+
+        PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
+        SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
+
     }
 
     private void Update()
