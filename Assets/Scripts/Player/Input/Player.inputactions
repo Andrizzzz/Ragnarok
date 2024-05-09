@@ -241,11 +241,11 @@
                 },
                 {
                     "name": "",
-                    "id": "34292315-1d1a-4b49-8440-3310f3c35814",
+                    "id": "605e455f-1a7e-4480-8297-d05b14e84c52",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "DashDirection",
                     "isComposite": false,
                     "isPartOfComposite": false
