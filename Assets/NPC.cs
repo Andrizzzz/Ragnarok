@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class NPC : MonoBehaviour
 {
     public GameObject dialoguePanel;
@@ -10,27 +11,27 @@ public class NPC : MonoBehaviour
     public string[] dialogue;
     private int index;
 
-    public GameObject contButton;
+    
     public float wordSpeed;
     public bool playerIsClose;
 
-    public PlayerController playerController;
+    
 
     
     void Update()
     {
         if (playerIsClose)
         {
-            if(!dialoguePanel.activeInHierarchy)
+            if(dialoguePanel.activeInHierarchy)
+            {
+                zeroText();
+                dialoguePanel.SetActive(true);
+                
+            }
+            else 
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
-                if(playerController != null)
-                    playerController.enabled = false;
-            }
-            if (dialogueText.text == dialogue[index])
-            {
-                contButton.SetActive(true);
             }
         }
     }
@@ -62,7 +63,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            contButton.SetActive(false); // Hide the continue button
+            zeroText();
         }
     }
 
@@ -74,6 +75,8 @@ public class NPC : MonoBehaviour
             playerIsClose = true;
         }
     }
+   
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
