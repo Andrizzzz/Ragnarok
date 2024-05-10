@@ -226,7 +226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 945, y: -103}
+  m_AnchoredPosition: {x: 861.09985, y: -81.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &521957698
@@ -412,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.772}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 944.9001, y: -102.5}
+  m_AnchoredPosition: {x: 861, y: -81}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1441367834
@@ -815,7 +815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: -277}
+  m_AnchoredPosition: {x: 394, y: -335}
   m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8062237399311366652
@@ -1095,7 +1095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -231, y: 5}
+  m_AnchoredPosition: {x: -231, y: -34}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &457944653435495681
@@ -2420,7 +2420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 201, y: 121}
+  m_AnchoredPosition: {x: 186, y: 132}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6156650007328282104
@@ -2498,7 +2498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1671, y: 422}
+  m_AnchoredPosition: {x: 1463, y: 411}
   m_SizeDelta: {x: 400, y: 406.25}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1468441914372410235
@@ -2632,7 +2632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -207, y: 254.89}
+  m_AnchoredPosition: {x: -170, y: 239}
   m_SizeDelta: {x: 180, y: 170}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7283757882842131304
@@ -2736,6 +2736,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4804311941203901339}
     m_Modifications:
+    - target: {fileID: 5816359135059194599, guid: 817494d93ed22a54bb8972af0dd96038, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -577.6549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816359135059194599, guid: 817494d93ed22a54bb8972af0dd96038, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 454.3496
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816359135790622953, guid: 817494d93ed22a54bb8972af0dd96038, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -531
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816359135790622953, guid: 817494d93ed22a54bb8972af0dd96038, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 5816359136445851130, guid: 817494d93ed22a54bb8972af0dd96038, type: 3}
       propertyPath: m_Name
       value: HealthSystem
