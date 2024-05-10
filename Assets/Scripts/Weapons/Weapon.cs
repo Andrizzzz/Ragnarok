@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Weapon : MonoBehaviour
 {
+    //[SerializeField] protected SO_WeaponData weaponData;
+
     protected Animator baseAnimator;
     protected Animator weaponAnimator;
 
-    protected int attackCounter;
     protected PlayerAttackState state;
 
+    //protected Core core;
 
+    protected int attackCounter;
 
     protected virtual void Awake()
     {
@@ -47,16 +49,41 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    #region Animation Triggers
+
     public virtual void AnimationFinishTrigger()
     {
         state.AnimationFinishTrigger();
     }
 
-    public void InitializeWeapon(PlayerAttackState state)
+    public virtual void AnimationStartMovementTrigger()
+    {
+        //state.SetPlayerVelocity(weaponData.movementSpeed[attackCounter]);
+    }
+
+    public virtual void AnimationStopMovementTrigger()
+    {
+        state.SetPlayerVelocity(0f);
+    }
+
+    public virtual void AnimationTurnOffFlipTrigger()
+    {
+        state.SetFlipCheck(false);
+    }
+
+    public virtual void AnimationTurnOnFlipTigger()
+    {
+        state.SetFlipCheck(true);
+    }
+
+    public virtual void AnimationActionTrigger() { }
+
+    #endregion
+
+    public void InitializeWeapon(PlayerAttackState state/*, Core core*/)
     {
         this.state = state;
         //this.core = core;
     }
-
 
 }

@@ -141,13 +141,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_0
+      name: Base_Sword_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f3e2883f1fff947b62f1361a16d88a
+      internalID: 2064783281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 156
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9294c1fb08a7b2438fc38a0f2fb35f6
+      internalID: 1275802465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 156
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a295bbf8211aa154487f38bf01261a34
+      internalID: 2102994548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 78
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ec581501d2a1e43822d1d04cde81ac
+      internalID: -1232107364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 78
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51657f40e829d2740bcb94004d0aa0da
+      internalID: -279122925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 78
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d91470bb05f5a48a40318c1f9976ce
+      internalID: 775525823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_1_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 133.14285
-        height: 60
+        width: 144
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,134 +281,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d37772af65b40b449fe2e5b13d3e378
-      internalID: -1355732786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_1
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06f8d8e61b2d89840b43a65e183b0556
-      internalID: -315231160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_2
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73106f12d991b284383bbf4a6d61927b
-      internalID: -428022801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_3
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ce7dd19fda165a4f9c43c855d0dcfe3
-      internalID: -462842801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_4
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1533d2371a922124593775ea1941f851
-      internalID: -927483180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_5
-      rect:
-        serializedVersion: 2
-        x: 665
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe58b4f719a3582479296eea61187cbd
-      internalID: -1207255569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1 croped-Sheet Player only (1)_6
-      rect:
-        serializedVersion: 2
-        x: 798
-        y: 0
-        width: 133.14285
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc8dbfe96fa4df340a3531b30c8cc2ee
-      internalID: 1492509146
+      spriteID: e160c9cefaa9df94ea8e1b29b8616696
+      internalID: -242808076
       vertices: []
       indices: 
       edges: []
@@ -298,13 +298,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ATTACK 1 croped-Sheet Player only (1)_0: -1355732786
-      ATTACK 1 croped-Sheet Player only (1)_1: -315231160
-      ATTACK 1 croped-Sheet Player only (1)_2: -428022801
-      ATTACK 1 croped-Sheet Player only (1)_3: -462842801
-      ATTACK 1 croped-Sheet Player only (1)_4: -927483180
-      ATTACK 1 croped-Sheet Player only (1)_5: -1207255569
-      ATTACK 1 croped-Sheet Player only (1)_6: 1492509146
+      Base_Sword_1_0: 2064783281
+      Base_Sword_1_1: 1275802465
+      Base_Sword_1_2: 2102994548
+      Base_Sword_1_3: -1232107364
+      Base_Sword_1_4: -279122925
+      Base_Sword_1_5: 775525823
+      Base_Sword_1_6: -242808076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

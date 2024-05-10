@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerAttackState : PlayerAbilityState
 {
@@ -43,8 +44,6 @@ public class PlayerAttackState : PlayerAbilityState
         {
             //core.Movement.CheckIfShouldFlip(xInput);
         }
-
-
         if (setVelocity)
         {
             //core.Movement.SetVelocityX(velocityToSet * core.Movement.FacingDirection);
@@ -54,7 +53,7 @@ public class PlayerAttackState : PlayerAbilityState
     public void SetWeapon(Weapon weapon)
     {
         this.weapon = weapon;
-        this.weapon.InitializeWeapon(this);
+        this.weapon.InitializeWeapon(this/*, core*/);
     }
 
     public void SetPlayerVelocity(float velocity)
