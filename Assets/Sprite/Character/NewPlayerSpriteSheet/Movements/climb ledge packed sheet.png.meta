@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55ca8cf051ac4d74c8911190a7557176
+guid: 8606f0badb36f1e4d92c20f0d9b39eab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,106 +141,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Base_Sword_2_0
+      name: climb ledge packed sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 73
-        width: 199
-        height: 73
+        x: 10
+        y: 109
+        width: 43
+        height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77e60778faca2464d8c99fe988dbe885
-      internalID: -606671219
+      spriteID: d362ddbc8277a0749a28a4ab567a7744
+      internalID: 1995511969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Sword_2_1
+      name: climb ledge packed sheet_1
       rect:
         serializedVersion: 2
-        x: 199
-        y: 73
-        width: 199
-        height: 73
+        x: 109
+        y: 94
+        width: 43
+        height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea06f3981df7cd249bad786ee2dbf2e9
-      internalID: 617926868
+      spriteID: 1a97efd8902ee5743873e85e81254834
+      internalID: 2028893299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Sword_2_2
+      name: climb ledge packed sheet_2
       rect:
         serializedVersion: 2
-        x: 398
-        y: 73
-        width: 199
-        height: 73
+        x: 210
+        y: 93
+        width: 43
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6e150864ff858c4fa8e04031bee51b6
-      internalID: 1012763461
+      spriteID: 512d475eaab355f4bb9da2bd6ce2e692
+      internalID: 144331314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Sword_2_3
+      name: climb ledge packed sheet_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 7
         y: 0
-        width: 199
-        height: 73
+        width: 43
+        height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 261f17aba619b5c429d95ca337f4721a
-      internalID: -165950807
+      spriteID: 61ce0f03be92b7a4faca9cec3b085f48
+      internalID: 197096309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Sword_2_4
+      name: climb ledge packed sheet_4
       rect:
         serializedVersion: 2
-        x: 199
+        x: 98
         y: 0
-        width: 199
-        height: 73
+        width: 80
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46cf6d9b68127e048a36adda1512c68f
-      internalID: 1136362123
+      spriteID: 53080e7a6d2277742b71c2b522fc09a2
+      internalID: 1316892247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: climb ledge packed sheet_5
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 80
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4b4527433b33c42a714f8be058171e
+      internalID: -725416196
       vertices: []
       indices: 
       edges: []
@@ -256,11 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Base_Sword_2_0: -606671219
-      Base_Sword_2_1: 617926868
-      Base_Sword_2_2: 1012763461
-      Base_Sword_2_3: -165950807
-      Base_Sword_2_4: 1136362123
+      climb ledge packed sheet_0: 1995511969
+      climb ledge packed sheet_1: 2028893299
+      climb ledge packed sheet_2: 144331314
+      climb ledge packed sheet_3: 197096309
+      climb ledge packed sheet_4: 1316892247
+      climb ledge packed sheet_5: -725416196
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
