@@ -1,89 +1,79 @@
+using Lance.Weapons;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Lance.Utilities;
 
-public class Weapon : MonoBehaviour
+namespace _Lance.Weapons
 {
-    //[SerializeField] protected SO_WeaponData weaponData;
-
-    protected Animator baseAnimator;
-    protected Animator weaponAnimator;
-
-    protected PlayerAttackState state;
-
-    //protected Core core;
-
-    protected int attackCounter;
-
-    protected virtual void Awake()
+    public class Weapon : MonoBehaviour
     {
-        baseAnimator = transform.Find("Base").GetComponent<Animator>();
-        weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
+        [SerializeField] private int numberOfAttacks;
+        [SerializeField] private float attackCounterResetCooldown;
 
-        gameObject.SetActive(false);
+        public int CurrentAttackCounter
+        {
+            get => currentAttackCounter;
+            private set => currentAttackCounter = value >= numberOfAttacks ? 0 : value;
+        }
+
+        public event Action OnExit;
+
+        private Animator anim;
+        private GameObject BaseGameObject;
+        private AnimationEventHandler eventHandler;
+
+
+        private int currentAttackCounter;
+        private Timer attackCounterResetTimer;
+        public void Enter()
+        {
+            print($"{transform.name} enter");
+
+            attackCounterResetTimer.StopTimer();
+
+            anim.SetBool("active", true);
+            anim.SetInteger("counter", CurrentAttackCounter);
+        }
+
+        private void Exit()
+        {
+            anim.SetBool("active", false);
+
+            CurrentAttackCounter++;
+            attackCounterResetTimer.StartTimer();
+            OnExit?.Invoke();
+        }
+
+        private void Awake()
+        {
+            BaseGameObject = transform.Find("Base").gameObject;
+            anim = BaseGameObject.GetComponent<Animator>();
+
+            eventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
+            attackCounterResetTimer = new Timer(attackCounterResetCooldown);
+        }
+
+        private void Update()
+        {
+            attackCounterResetTimer.Tick();
+        }
+
+        private void ResetAttackCounter() => CurrentAttackCounter = 0;
+
+        private void OnEnable()
+        {
+            eventHandler.OnFinish += Exit;
+            attackCounterResetTimer.OnTimerDone += ResetAttackCounter;
+        }
+
+        private void OnDisable()
+        {
+            eventHandler.OnFinish -= Exit;
+            attackCounterResetTimer.OnTimerDone -= ResetAttackCounter;
+
+        }
     }
-
-    public virtual void EnterWeapon()
-    {
-        gameObject.SetActive(true);
-
-        //if (attackCounter >= weaponData.amountOfAttacks)
-        //{
-        //    attackCounter = 0;
-        //}
-
-        baseAnimator.SetBool("attack", true);
-        weaponAnimator.SetBool("attack", true);
-
-        baseAnimator.SetInteger("attackCounter", attackCounter);
-        weaponAnimator.SetInteger("attackCounter", attackCounter);
-    }
-
-    public virtual void ExitWeapon()
-    {
-        baseAnimator.SetBool("attack", false);
-        weaponAnimator.SetBool("attack", false);
-
-        attackCounter++;
-
-        gameObject.SetActive(false);
-    }
-
-    #region Animation Triggers
-
-    public virtual void AnimationFinishTrigger()
-    {
-        state.AnimationFinishTrigger();
-    }
-
-    public virtual void AnimationStartMovementTrigger()
-    {
-        //state.SetPlayerVelocity(weaponData.movementSpeed[attackCounter]);
-    }
-
-    public virtual void AnimationStopMovementTrigger()
-    {
-        state.SetPlayerVelocity(0f);
-    }
-
-    public virtual void AnimationTurnOffFlipTrigger()
-    {
-        state.SetFlipCheck(false);
-    }
-
-    public virtual void AnimationTurnOnFlipTigger()
-    {
-        state.SetFlipCheck(true);
-    }
-
-    public virtual void AnimationActionTrigger() { }
-
-    #endregion
-
-    public void InitializeWeapon(PlayerAttackState state/*, Core core*/)
-    {
-        this.state = state;
-        //this.core = core;
-    }
-
+    
 }

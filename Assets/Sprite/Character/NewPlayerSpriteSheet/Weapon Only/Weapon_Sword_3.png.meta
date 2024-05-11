@@ -141,13 +141,181 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_0
+      name: Weapon_Sword_3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a419be7055079408eb03f74b0b6532
+      internalID: -1936893200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 176
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8463c1ca19b052f4c8925301367c8af6
+      internalID: -1926608074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 176
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d7ea4dc98d3f14f9f33683247f7eb6
+      internalID: 1360295484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 176
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85db102217d7f5b45a1741698ab1731e
+      internalID: 595935160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cef08e4ededd2a4aa54f08d00c52e95
+      internalID: 327093049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 88
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e050b82a78d4b743b64954643d46a9f
+      internalID: 1948868543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_6
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 88
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b01bef4c5ffe5d4c98976da6f109482
+      internalID: 1807123777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_7
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 88
+        width: 158
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255bea386aa2b4044a15dea4f4753d3e
+      internalID: -1562568681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_3_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 170
-        height: 69
+        width: 158
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e077632d617be04458eef9621f097b9c
-      internalID: -1232537584
+      spriteID: 32128e2cbc3c0834dab2d971967ba82a
+      internalID: 451021588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_1
+      name: Weapon_Sword_3_9
       rect:
         serializedVersion: 2
-        x: 170
+        x: 158
         y: 0
-        width: 170
-        height: 69
+        width: 158
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ce662a4903d69245864c0c5894bbbc0
-      internalID: -1842201966
+      spriteID: 1ff49a9d9da7ec346bd22ccc1b575cfb
+      internalID: -1030404469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_2
+      name: Weapon_Sword_3_10
       rect:
         serializedVersion: 2
-        x: 340
+        x: 316
         y: 0
-        width: 170
-        height: 69
+        width: 158
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +365,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d724b3fd95af455459709109b89f6099
-      internalID: -780419814
+      spriteID: 0aa562f827681fd4084a8a7363500039
+      internalID: -2035597420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_3
+      name: Weapon_Sword_3_11
       rect:
         serializedVersion: 2
-        x: 510
+        x: 474
         y: 0
-        width: 170
-        height: 69
+        width: 158
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,176 +386,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f0000609b271ed48a0911c4b53b4db4
-      internalID: -55909350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_4
-      rect:
-        serializedVersion: 2
-        x: 680
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dd7de2d86b693348ab3aff484a3bc3c
-      internalID: 1773470413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_5
-      rect:
-        serializedVersion: 2
-        x: 850
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61a56edaca573174cacbb29fd437d037
-      internalID: 1089849635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_6
-      rect:
-        serializedVersion: 2
-        x: 1020
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b29cb632b1863a64a8a8b5aaa8ae6f5c
-      internalID: 927942492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_7
-      rect:
-        serializedVersion: 2
-        x: 1190
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c2d94f3de15da04998346cf51a5c4ca
-      internalID: -390751955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_8
-      rect:
-        serializedVersion: 2
-        x: 1360
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1f037db76355f40829d5726433b494
-      internalID: -107146303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_9
-      rect:
-        serializedVersion: 2
-        x: 1530
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44f18399ce4aaed49b893702476cdbff
-      internalID: 848103161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_10
-      rect:
-        serializedVersion: 2
-        x: 1700
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b093f5f93be258499861327ebf3dc6b
-      internalID: -1028528759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_11
-      rect:
-        serializedVersion: 2
-        x: 1870
-        y: 0
-        width: 170
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f41961a0627b5c49971a96ea048a532
-      internalID: -97424514
+      spriteID: 5bb28066b6298f84a84d25fb143dfa76
+      internalID: 2008688121
       vertices: []
       indices: 
       edges: []
@@ -403,18 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 3 cropped-Sheet final weapon only_0: -1232537584
-      Attack 3 cropped-Sheet final weapon only_1: -1842201966
-      Attack 3 cropped-Sheet final weapon only_10: -1028528759
-      Attack 3 cropped-Sheet final weapon only_11: -97424514
-      Attack 3 cropped-Sheet final weapon only_2: -780419814
-      Attack 3 cropped-Sheet final weapon only_3: -55909350
-      Attack 3 cropped-Sheet final weapon only_4: 1773470413
-      Attack 3 cropped-Sheet final weapon only_5: 1089849635
-      Attack 3 cropped-Sheet final weapon only_6: 927942492
-      Attack 3 cropped-Sheet final weapon only_7: -390751955
-      Attack 3 cropped-Sheet final weapon only_8: -107146303
-      Attack 3 cropped-Sheet final weapon only_9: 848103161
+      Weapon_Sword_3_0: -1936893200
+      Weapon_Sword_3_1: -1926608074
+      Weapon_Sword_3_10: -2035597420
+      Weapon_Sword_3_11: 2008688121
+      Weapon_Sword_3_2: 1360295484
+      Weapon_Sword_3_3: 595935160
+      Weapon_Sword_3_4: 327093049
+      Weapon_Sword_3_5: 1948868543
+      Weapon_Sword_3_6: 1807123777
+      Weapon_Sword_3_7: -1562568681
+      Weapon_Sword_3_8: 451021588
+      Weapon_Sword_3_9: -1030404469
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

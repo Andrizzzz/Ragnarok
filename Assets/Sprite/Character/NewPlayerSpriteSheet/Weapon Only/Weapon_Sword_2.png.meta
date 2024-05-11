@@ -141,13 +141,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 2 cropped adjusted final weapon only_0
+      name: Weapon_Sword_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 199
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa04d108074cdd4aa862999a87c4dd0
+      internalID: -183577156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_2_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 73
+        width: 199
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baf3514b38a5224d83e23744446d5f7
+      internalID: 1279442630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_2_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 73
+        width: 199
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdc8a124a1951d4881e01df489ef9c9
+      internalID: 138077842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Sword_2_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 188
-        height: 54
+        width: 199
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b69ebd0b92c1d194ebce8ee926da7286
-      internalID: 498898066
+      spriteID: 9f2ab0dc1deb71348bfcf1b361a92e53
+      internalID: 827584058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 2 cropped adjusted final weapon only_1
+      name: Weapon_Sword_2_4
       rect:
         serializedVersion: 2
-        x: 188
+        x: 199
         y: 0
-        width: 188
-        height: 54
+        width: 199
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,71 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb0341b3c4ddd543b9364c23bdb8521
-      internalID: -1237269106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2 cropped adjusted final weapon only_2
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 0
-        width: 188
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bec470c5c577204ca187589fd15b80f
-      internalID: -668761070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2 cropped adjusted final weapon only_3
-      rect:
-        serializedVersion: 2
-        x: 564
-        y: 0
-        width: 188
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e1d8ceb5ea1b8a4989b3554c457b251
-      internalID: 1750003099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2 cropped adjusted final weapon only_4
-      rect:
-        serializedVersion: 2
-        x: 752
-        y: 0
-        width: 188
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90eb9502fe06ae041bacf31a8e3f043a
-      internalID: -547912977
+      spriteID: 210807c0a4285884d941461ce8653aac
+      internalID: 1819962519
       vertices: []
       indices: 
       edges: []
@@ -256,11 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 2 cropped adjusted final weapon only_0: 498898066
-      Attack 2 cropped adjusted final weapon only_1: -1237269106
-      Attack 2 cropped adjusted final weapon only_2: -668761070
-      Attack 2 cropped adjusted final weapon only_3: 1750003099
-      Attack 2 cropped adjusted final weapon only_4: -547912977
+      Weapon_Sword_2_0: -183577156
+      Weapon_Sword_2_1: 1279442630
+      Weapon_Sword_2_2: 138077842
+      Weapon_Sword_2_3: 827584058
+      Weapon_Sword_2_4: 1819962519
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

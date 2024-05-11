@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
+namespace Lance
 {
+    public class WeaponComponent : MonoBehaviour
+    {
+
+    }
 }
