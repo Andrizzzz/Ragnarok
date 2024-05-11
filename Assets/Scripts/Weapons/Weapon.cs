@@ -17,11 +17,13 @@ namespace _Lance.Weapons
             get => currentAttackCounter;
             private set => currentAttackCounter = value >= numberOfAttacks ? 0 : value;
         }
-
+        public event Action OnEnter;
         public event Action OnExit;
 
         private Animator anim;
-        private GameObject BaseGameObject;
+        public GameObject BaseGameObject { get; private set; }
+        public GameObject WeaponSpriteGameObject { get; private set; }
+
         private AnimationEventHandler eventHandler;
 
 
@@ -35,6 +37,8 @@ namespace _Lance.Weapons
 
             anim.SetBool("active", true);
             anim.SetInteger("counter", CurrentAttackCounter);
+
+            OnEnter?.Invoke();
         }
 
         private void Exit()
@@ -49,6 +53,7 @@ namespace _Lance.Weapons
         private void Awake()
         {
             BaseGameObject = transform.Find("Base").gameObject;
+            WeaponSpriteGameObject = transform.Find("WeaponSprite").gameObject;
             anim = BaseGameObject.GetComponent<Animator>();
 
             eventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
