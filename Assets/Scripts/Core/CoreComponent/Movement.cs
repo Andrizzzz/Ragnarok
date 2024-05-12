@@ -1,10 +1,8 @@
-using Lance;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-namespace Lance.CoreSystem
+namespace Lance.Weapons
 {
-    public class Movement : MonoBehaviour
+
+    public class Movement : CoreComponent
     {
         public Rigidbody2D RB { get; private set; }
 
@@ -16,8 +14,9 @@ namespace Lance.CoreSystem
 
         private Vector2 workspace;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
 
             RB = GetComponentInParent<Rigidbody2D>();
 
@@ -25,7 +24,7 @@ namespace Lance.CoreSystem
             CanSetVelocity = true;
         }
 
-        public void LogicUpdate()
+        public override void LogicUpdate()
         {
             CurrentVelocity = RB.velocity;
         }
@@ -84,6 +83,13 @@ namespace Lance.CoreSystem
         {
             FacingDirection *= -1;
             RB.transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
+
+        public Vector2 FindRelativePoint(Vector2 offset)
+        {
+            offset.x *= FacingDirection;
+
+            return transform.position + (Vector3)offset;
         }
 
         #endregion

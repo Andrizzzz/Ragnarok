@@ -12,7 +12,9 @@ namespace Lance
     {
         protected Weapon weapon;
 
-        protected AnimationEventHandler EventHandler => weapon.EventHandler;
+        //protected AnimationEventHandler eventHandler => weapon.eventHandler;
+        protected AnimationEventHandler eventHandler;
+
         protected Core Core => weapon.Core;
 
         protected bool isAttackActive;
@@ -20,6 +22,8 @@ namespace Lance
         protected virtual void Awake()
         {
             weapon = GetComponent<Weapon>();
+
+            eventHandler = GetComponentInChildren<AnimationEventHandler>();
         }
 
         protected virtual void HandleEnter()
