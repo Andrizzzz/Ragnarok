@@ -1,6 +1,7 @@
 using _Lance.Weapons;
 using Lance.CoreSystem;
 using Lance.Weapons;
+using Lance.Weapons.Components;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,5 +48,10 @@ namespace Lance
             weapon.OnEnter -= HandleEnter;
             weapon.OnExit -= HandleExit;
         }
+    }
+
+    public abstract class WeaponComponent<T> : WeaponComponent where T : ComponentData
+    {
+
     }
 }

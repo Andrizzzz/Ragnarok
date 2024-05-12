@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace Lance.Weapons.Components.ComponentData
+namespace Lance.Weapons.Components
 {
 
     [Serializable]
     public class ComponentData
     {
+        
     }
 }

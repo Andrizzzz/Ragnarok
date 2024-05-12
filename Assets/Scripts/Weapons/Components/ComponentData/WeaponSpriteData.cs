@@ -1,4 +1,4 @@
-using Lance.Weapons.Components.ComponentData;
+using Lance.Weapons.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

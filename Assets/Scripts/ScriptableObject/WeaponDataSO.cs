@@ -1,10 +1,10 @@
-using Lance.Weapons.Components.ComponentData;
+using Lance.Weapons.Components;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Lance.Weapons
+namespace Lance.Weapons.Components
 {
     [CreateAssetMenu(fileName = "newWeaponData", menuName = "Data/Weapon Data/Weapon")]
     public class WeaponDataSO : ScriptableObject

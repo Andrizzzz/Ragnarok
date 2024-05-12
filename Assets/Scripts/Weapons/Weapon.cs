@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lance.Utilities;
 using Lance.CoreSystem;
+using Lance.Weapons.Components;
 
 namespace _Lance.Weapons
 {
