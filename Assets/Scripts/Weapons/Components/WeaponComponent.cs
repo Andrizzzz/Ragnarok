@@ -1,4 +1,6 @@
 using _Lance.Weapons;
+using Lance.CoreSystem;
+using Lance.Weapons;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +11,9 @@ namespace Lance
     public abstract class WeaponComponent : MonoBehaviour
     {
         protected Weapon weapon;
+
+        protected AnimationEventHandler EventHandler => weapon.EventHandler;
+        protected Core Core => weapon.Core;
 
         protected bool isAttackActive;
 

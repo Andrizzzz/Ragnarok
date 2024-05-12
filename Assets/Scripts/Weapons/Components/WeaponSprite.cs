@@ -10,9 +10,10 @@ namespace Lance
         private SpriteRenderer baseSpriteRenderer;
         private SpriteRenderer weaponSpriteRenderer;
 
-        [SerializeField] private WeaponSprites[]  weaponSprites;
 
         private int currentWeaponSpriteIndex;
+
+        private WeaponSpriteData data;
 
         protected override void HandleEnter()
         {
@@ -28,7 +29,7 @@ namespace Lance
                 return;
             }
 
-            var currentAttackSprites = weaponSprites[weapon.CurrentAttackCounter].Sprites;
+            var currentAttackSprites = data.AttackData[weapon.CurrentAttackCounter].Sprites;
 
             if(currentWeaponSpriteIndex >= currentAttackSprites.Length)
             {
@@ -46,7 +47,9 @@ namespace Lance
 
             baseSpriteRenderer = transform.Find("Base").GetComponent<SpriteRenderer>();
             weaponSpriteRenderer = transform.Find("WeaponSprite").GetComponent <SpriteRenderer>();
-            
+
+            data = weapon.Data.GetData<WeaponSpriteData>();
+
             // TODO: Fix This When we Create weaponData
             //baseSpriteRenderer = weapon.BaseGameObject.GetComponent<SpriteRenderer>();
             //weaponSpriteRenderer = weapon.WeaponSpriteGameObject.GetComponent<SpriteRenderer>();
@@ -69,12 +72,5 @@ namespace Lance
             weapon.OnEnter -= HandleEnter;
 
         }
-    }
-
-    [Serializable]
-
-    public class WeaponSprites
-    {
-        [field: SerializeField]public Sprite[] Sprites { get; private set; }
-    }
+    }   
 }

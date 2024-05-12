@@ -15,11 +15,6 @@ MonoBehaviour:
   movementVelocity: 7
   jumpVelocity: 15
   amountOfJumps: 2
-  groundCheckRadius: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  wallCheckDistance: 1
   wallJumpVelocity: 20
   wallJumpTime: 0.4
   wallJumpAngle: {x: 1, y: 2}
@@ -27,8 +22,8 @@ MonoBehaviour:
   variableJumpHeightMultiplier: 0.5
   wallSlideVelocity: 2
   wallClimbVelocity: 3
-  startOffset: {x: 0.2, y: 1}
-  stopOffset: {x: 0.5, y: 0.5}
+  startOffset: {x: 0.4, y: 2.3}
+  stopOffset: {x: 1, y: 1}
   dashCooldown: 1.5
   maxHoldTime: 2
   holdTimeScale: 0.25

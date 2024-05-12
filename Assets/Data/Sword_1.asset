@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaa646c7e69d344386e2e5ef363a36d, type: 3}
+  m_Name: Sword_1
+  m_EditorClassIdentifier: 
+  <NumberOfAttacks>k__BackingField: 3
+  <componentData>k__BackingField:
+  - rid: 6342104293122768898
+  references:
+    version: 2
+    RefIds:
+    - rid: 6342104293122768898
+      type: {class: WeaponSpriteData, ns: Lance, asm: Assembly-CSharp}
+      data:
+        <AttackData>k__BackingField:
+        - <Sprites>k__BackingField:
+          - {fileID: -403025639, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: -250270173, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: -527308635, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: 668564391, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: 1110614518, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: 1954236197, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+          - {fileID: -671015047, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
+        - <Sprites>k__BackingField:
+          - {fileID: -190493969, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 2081717362, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1143058714, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1918414825, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -422687586, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+        - <Sprites>k__BackingField:
+          - {fileID: 1680438006, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1009900850, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 517713601, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1837734885, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1359318194, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -1979395417, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -1833527730, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -185406635, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -1782278407, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -843879137, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: -1748547780, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 544917659, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}

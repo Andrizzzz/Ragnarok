@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Lance.CoreSystem
+{
+    public class Core : MonoBehaviour
+    {
+        public Movement Movement {  get; private set; }
+        public CollisionSenses CollisionSenses { get; private set; }
+
+        private void Awake()
+        {
+            Movement = GetComponentInChildren<Movement>();
+            CollisionSenses = GetComponentInChildren<CollisionSenses>();
+
+            if (!Movement || !CollisionSenses)
+            {
+                Debug.LogError("Missing Core Components");
+            }
+        }
+
+        public void LogicUpdate()
+        {
+            Movement.LogicUpdate();
+        }
+    }
+}

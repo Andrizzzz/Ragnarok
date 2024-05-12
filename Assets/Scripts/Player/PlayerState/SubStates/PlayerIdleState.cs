@@ -18,7 +18,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-       player.SetVelocityX(0f);
+       core.Movement.SetVelocityX(0f);
       
     }
 
@@ -39,7 +39,7 @@ public class PlayerIdleState : PlayerGroundedState
             }
             else
             {
-                player.SetVelocityX(0f);
+                core.Movement.SetVelocityX(0f);
             }
 
         }
