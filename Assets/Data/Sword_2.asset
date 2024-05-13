@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaa646c7e69d344386e2e5ef363a36d, type: 3}
   m_Name: Sword_2
   m_EditorClassIdentifier: 
+  <Icon>k__BackingField: {fileID: 0}
+  <Name>k__BackingField: 
+  <Description>k__BackingField: 
+  <AnimatorController>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 3
   <ComponentData>k__BackingField:
   - rid: 6342104293122768897
@@ -32,24 +36,24 @@ MonoBehaviour:
           - {fileID: 1954236197, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
           - {fileID: -671015047, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
         - <Sprites>k__BackingField:
-          - {fileID: -190493969, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 2081717362, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 1143058714, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 1918414825, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -422687586, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 1376479908, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
+          - {fileID: -327225162, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
+          - {fileID: 1911831126, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
+          - {fileID: 1189129730, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
+          - {fileID: 225180186, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
         - <Sprites>k__BackingField:
-          - {fileID: 1680438006, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 1009900850, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 517713601, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 1837734885, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 1359318194, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -1979395417, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -1833527730, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -185406635, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -1782278407, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -843879137, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: -1748547780, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
-          - {fileID: 544917659, guid: 75969f42f6ecc8d4dabb3539b9218eb5, type: 3}
+          - {fileID: 959298012, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -667523954, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -967496869, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: 279102309, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: 1785162277, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -318098246, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: 1543095632, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: 230628989, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -474920813, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -812273444, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -873194566, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
+          - {fileID: -480659818, guid: c0d4352239594674282c0343a8c6a82a, type: 3}
     - rid: 6342104293122768900
       type: {class: MovementData, ns: Lance, asm: Assembly-CSharp}
       data:

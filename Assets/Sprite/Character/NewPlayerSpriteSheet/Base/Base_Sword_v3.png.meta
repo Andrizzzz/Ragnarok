@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef5352b0ddd0f6d44ac7b9fd6a34cb7b
+guid: 5aaad18ea7d73b34e83a4623cb466b71
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,181 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon_Sword_3_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 176
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6a419be7055079408eb03f74b0b6532
-      internalID: -1936893200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_1
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 176
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8463c1ca19b052f4c8925301367c8af6
-      internalID: -1926608074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_2
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 176
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55d7ea4dc98d3f14f9f33683247f7eb6
-      internalID: 1360295484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_3
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 176
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85db102217d7f5b45a1741698ab1731e
-      internalID: 595935160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 88
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cef08e4ededd2a4aa54f08d00c52e95
-      internalID: 327093049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_5
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 88
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e050b82a78d4b743b64954643d46a9f
-      internalID: 1948868543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_6
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 88
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b01bef4c5ffe5d4c98976da6f109482
-      internalID: 1807123777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_7
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 88
-        width: 158
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 255bea386aa2b4044a15dea4f4753d3e
-      internalID: -1562568681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_3_8
+      name: Base_Sword_v3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 158
-        height: 88
+        width: 274
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32128e2cbc3c0834dab2d971967ba82a
-      internalID: 451021588
+      spriteID: fd72e3a709e44f948ae3cb5dba48f163
+      internalID: 1650905384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_3_9
+      name: Base_Sword_v3_1
       rect:
         serializedVersion: 2
-        x: 158
+        x: 274
         y: 0
-        width: 158
-        height: 88
+        width: 274
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff49a9d9da7ec346bd22ccc1b575cfb
-      internalID: -1030404469
+      spriteID: c62f96504f9376f41b6dc8a426ee82ac
+      internalID: 1278290023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_3_10
+      name: Base_Sword_v3_2
       rect:
         serializedVersion: 2
-        x: 316
+        x: 548
         y: 0
-        width: 158
-        height: 88
+        width: 274
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aa562f827681fd4084a8a7363500039
-      internalID: -2035597420
+      spriteID: 87a8e02161447064bb82e3516ed8b8fa
+      internalID: -1186932529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_3_11
+      name: Base_Sword_v3_3
       rect:
         serializedVersion: 2
-        x: 474
+        x: 822
         y: 0
-        width: 158
-        height: 88
+        width: 274
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,8 +218,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bb28066b6298f84a84d25fb143dfa76
-      internalID: 2008688121
+      spriteID: 72e0bce0836fb864787a526b14e2b7cc
+      internalID: 1921158817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae138875123636438cac60b8dd905cf
+      internalID: 226567018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_5
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a2e8a28d3390b4ead022424f0eb640
+      internalID: -1725652222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475305a8a337626458ad02154787bb83
+      internalID: 80038675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_7
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6240ada88e14c245905ef1be5cc84e9
+      internalID: -1840323869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_8
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375c4da826525d14e8aaac276326ebac
+      internalID: -1968941051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_9
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb0741d245c1c249899b73751061be7
+      internalID: -2087254687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_10
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3332720cdc50234fa16428d38bd55cb
+      internalID: 1022468437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_Sword_v3_11
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 0
+        width: 274
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09af39b367c2044590860eb3d0ad020
+      internalID: -1727574472
       vertices: []
       indices: 
       edges: []
@@ -403,18 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapon_Sword_3_0: -1936893200
-      Weapon_Sword_3_1: -1926608074
-      Weapon_Sword_3_10: -2035597420
-      Weapon_Sword_3_11: 2008688121
-      Weapon_Sword_3_2: 1360295484
-      Weapon_Sword_3_3: 595935160
-      Weapon_Sword_3_4: 327093049
-      Weapon_Sword_3_5: 1948868543
-      Weapon_Sword_3_6: 1807123777
-      Weapon_Sword_3_7: -1562568681
-      Weapon_Sword_3_8: 451021588
-      Weapon_Sword_3_9: -1030404469
+      Base_Sword_v3_0: 1650905384
+      Base_Sword_v3_1: 1278290023
+      Base_Sword_v3_10: 1022468437
+      Base_Sword_v3_11: -1727574472
+      Base_Sword_v3_2: -1186932529
+      Base_Sword_v3_3: 1921158817
+      Base_Sword_v3_4: 226567018
+      Base_Sword_v3_5: -1725652222
+      Base_Sword_v3_6: 80038675
+      Base_Sword_v3_7: -1840323869
+      Base_Sword_v3_8: -1968941051
+      Base_Sword_v3_9: -2087254687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

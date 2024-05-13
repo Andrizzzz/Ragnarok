@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6474e5558459748488763ab0b29ab52b
+guid: e0c05d15db24b0d4a977ad8c61153ba5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,106 +141,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon_Sword_2_0
+      name: 1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 73
-        width: 199
-        height: 73
+        x: 13
+        y: 192
+        width: 36
+        height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa04d108074cdd4aa862999a87c4dd0
-      internalID: -183577156
+      spriteID: 5c37cba4bd6f650458ff91fe91163199
+      internalID: 926005426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_2_1
+      name: 2
       rect:
         serializedVersion: 2
-        x: 199
-        y: 73
-        width: 199
-        height: 73
+        x: 110
+        y: 180
+        width: 38
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8baf3514b38a5224d83e23744446d5f7
-      internalID: 1279442630
+      spriteID: 918d1558cf2ffb640a93f2a9b811581c
+      internalID: 1755917066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_2_2
+      name: 3
       rect:
         serializedVersion: 2
-        x: 398
-        y: 73
-        width: 199
-        height: 73
+        x: 209
+        y: 193
+        width: 43
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cdc8a124a1951d4881e01df489ef9c9
-      internalID: 138077842
+      spriteID: 0e60311ba09aee346aadd3bc24712f83
+      internalID: -642219338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_2_3
+      name: 4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 199
-        height: 73
+        x: 12
+        y: 24
+        width: 46
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2ab0dc1deb71348bfcf1b361a92e53
-      internalID: 827584058
+      spriteID: de3d483ebf516fa4d86e16e945fbc910
+      internalID: 1787012175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_2_4
+      name: 5
       rect:
         serializedVersion: 2
-        x: 199
-        y: 0
-        width: 199
-        height: 73
+        x: 101
+        y: 19
+        width: 77
+        height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 210807c0a4285884d941461ce8653aac
-      internalID: 1819962519
+      spriteID: bfe187c444b4e774eaff1c168c1b78f3
+      internalID: 350623381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 19
+        width: 77
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11ca835f6773494d807bf17801cb925
+      internalID: 2066238762
       vertices: []
       indices: 
       edges: []
@@ -256,11 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapon_Sword_2_0: -183577156
-      Weapon_Sword_2_1: 1279442630
-      Weapon_Sword_2_2: 138077842
-      Weapon_Sword_2_3: 827584058
-      Weapon_Sword_2_4: 1819962519
+      1: 926005426
+      2: 1755917066
+      3: -642219338
+      4: 1787012175
+      5: 350623381
+      6: 2066238762
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
