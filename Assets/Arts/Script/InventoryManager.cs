@@ -31,7 +31,7 @@ namespace Lance
         // AddItem method to add an item to the inventory
         public void AddItem(string itemName, int quantity, Sprite itemSprite)
         {
-            Debug.Log("itemName = " + itemName + ", quantity = " + quantity + ", itemSprite = " + itemSprite);
+            Debug.Log("itemName = " + itemName + " quantity = " + quantity + " itemSprite = " + itemSprite);
         }
     }
 }

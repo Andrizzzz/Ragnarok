@@ -19,47 +19,22 @@ namespace Lance
 
         // Start is called before the first frame update
         void Start()
+
         {
-            Debug.Log("Item position: " + transform.position);
-            GameObject inventoryCanvas = GameObject.Find("Canvas");
-            if (inventoryCanvas != null)
-            {
-                inventoryManager = inventoryCanvas.GetComponent<InventoryManager>();
-            }
-            else
-            {
-                Debug.LogError("InventoryCanvas not found!");
-            }
+            inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Trigger enter detected with: " + other.gameObject.name);
-
-            if (other.CompareTag("Player"))
+            if(collision.gameObject.tag == "Player")
             {
-                Debug.Log("Player entered item's vicinity!");
-
-                if (inventoryManager != null)
-                {
-                    inventoryManager.AddItem(itemName, quantity, sprite);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    Debug.LogError("InventoryManager not assigned!");
-                }
-            }
-            else
-            {
-                Debug.Log("Item triggered by non-player GameObject: " + other.gameObject.name);
+                inventoryManager.AddItem(itemName, quantity, sprite);
+                Destroy(gameObject);
             }
         }
     }
 }
-
-
-
 
 
 
