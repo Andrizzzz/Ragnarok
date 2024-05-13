@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace Lance
 {
@@ -20,9 +18,17 @@ namespace Lance
 
         private bool isTyping;
 
+        // Reference to the UI overlay image
+        public Image overlayImage;
+
         void Start()
         {
             dialogueStarted = false;
+            // Ensure the overlay is initially disabled
+            if (overlayImage != null)
+            {
+                overlayImage.gameObject.SetActive(false);
+            }
         }
 
         void Update()
@@ -42,6 +48,12 @@ namespace Lance
 
         void StartDialogue()
         {
+            // Enable the overlay to darken the background
+            if (overlayImage != null)
+            {
+                overlayImage.gameObject.SetActive(true);
+            }
+
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
             dialogueStarted = true;
@@ -69,22 +81,22 @@ namespace Lance
             if (index == dialogue.Length - 1)
             {
                 contButton.SetActive(false); // Disable the continue button
-                yield return new WaitForSeconds(2.5f); // Add a delay before hiding the dialogue panel
+                yield return new WaitForSeconds(1.5f); // Add a delay before hiding the dialogue panel
                 dialoguePanel.SetActive(false); // Disable the entire dialogue panel after the last line
                 dialogueText.text = ""; // Clear the dialogue text
                 index = 0; // Reset the dialogue index
+
+                // Disable the overlay after hiding the dialogue panel
+                if (overlayImage != null)
+                {
+                    overlayImage.gameObject.SetActive(false);
+                }
             }
             else
             {
                 contButton.SetActive(true); // Enable the continue button
             }
         }
-
-
-
-
-
-
 
         public void NextLine()
         {
@@ -106,6 +118,12 @@ namespace Lance
             dialoguePanel.SetActive(false); // Disable the entire dialogue panel
             contButton.SetActive(false); // Disable the continue button
             dialogueStarted = false;
+
+            // Disable the overlay when ending the dialogue
+            if (overlayImage != null)
+            {
+                overlayImage.gameObject.SetActive(false);
+            }
         }
 
         public void ContinueButtonClick()
@@ -132,6 +150,12 @@ namespace Lance
         }
     }
 }
+
+
+
+
+
+
 
 
 
