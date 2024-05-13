@@ -21,9 +21,16 @@ namespace Lance
         // Reference to the UI overlay image
         public Image overlayImage;
 
+        // Collider triggering the dialogue
+        public Collider2D dialogueCollider;
+
+        // Flag to track if the collider has triggered the dialogue
+        private bool colliderTriggered;
+
         void Start()
         {
             dialogueStarted = false;
+            colliderTriggered = false; // Initialize the flag
             // Ensure the overlay is initially disabled
             if (overlayImage != null)
             {
@@ -34,7 +41,7 @@ namespace Lance
         void Update()
         {
             // Check if the player is close and dialogue hasn't started yet
-            if (playerIsClose && !dialogueStarted)
+            if (playerIsClose && !dialogueStarted && !colliderTriggered)
             {
                 StartDialogue();
             }
@@ -57,6 +64,12 @@ namespace Lance
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
             dialogueStarted = true;
+            colliderTriggered = true; // Set the collider-triggered flag
+            // Disable the collider triggering the dialogue
+            if (dialogueCollider != null)
+            {
+                dialogueCollider.enabled = false;
+            }
         }
 
         IEnumerator Typing()
@@ -150,6 +163,7 @@ namespace Lance
         }
     }
 }
+
 
 
 
