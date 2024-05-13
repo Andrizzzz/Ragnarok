@@ -1,6 +1,7 @@
 ﻿using Lance.Assets.Scripts.Weapons.Components.ComponentData;
 using Lance.CoreSystem;
 using Lance.Weapons;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,27 @@ namespace Lance.Weapons.Components
 {
     public class ActionHitBox : WeaponComponent<ActionHitBoxData, AttackActionHitBox>
     {
+        public event Action<Collider2D[]> OnDetectedCollider2D;
+
         private CoreComp<CoreSystem.Movement> movement;
+
+        private Vector2 offset;
+
+        private Collider2D[] detected;
 
         private void HandleAttackAction()
         {
-            Debug.Log(movement.Comp.FacingDirection);
+            offset.Set(
+                transform.position.x + (currentAttackData.HitBox.center.x * movement.Comp.FacingDirection),
+                transform.position.y + currentAttackData.HitBox.center.y
+            );
+
+            detected = Physics2D.OverlapBoxAll(offset, currentAttackData.HitBox.size, 0f, data.DetectableLayers);
+
+            if (detected.Length == 0)
+                return;
+
+            OnDetectedCollider2D?.Invoke(detected);
         }
 
         protected override void Start()
@@ -21,18 +38,28 @@ namespace Lance.Weapons.Components
             base.Start();
 
             movement = new CoreComp<CoreSystem.Movement>(Core);
+
+            //AnimationEventHandler.OnAttackAction += HandleAttackAction;
         }
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-            eventHandler.OnAttackAction += HandleAttackAction;
-        }
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+        //    AnimationEventHandler.OnAttackAction -= HandleAttackAction;
+        //}
 
-        protected override void OnDisable()
+        private void OnDrawGizmosSelected()
         {
-            base.OnDisable();
-            eventHandler.OnAttackAction -= HandleAttackAction;
+            if (data == null)
+                return;
+
+            foreach (var item in data.AttackData)
+            {
+                if (!item.Debug)
+                    continue;
+
+                Gizmos.DrawWireCube(transform.position + (Vector3)item.HitBox.center, item.HitBox.size);
+            }
         }
     }
 }

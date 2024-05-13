@@ -8,6 +8,9 @@ namespace Lance.Weapons.Components
     [Serializable]
     public class ComponentData
     {
+        [SerializeField] private string name;
+
+        public void SetComponentName() => name = GetType().Name;
 
     }
 
