@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Lance
 {
-    public class WeaponSprite : WeaponComponent
+    public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
     {
         private SpriteRenderer baseSpriteRenderer;
         private SpriteRenderer weaponSpriteRenderer;
@@ -13,7 +13,6 @@ namespace Lance
 
         private int currentWeaponSpriteIndex;
 
-        private WeaponSpriteData data;
 
         protected override void HandleEnter()
         {
@@ -29,7 +28,7 @@ namespace Lance
                 return;
             }
 
-            var currentAttackSprites = data.AttackData[weapon.CurrentAttackCounter].Sprites;
+            var currentAttackSprites = currentAttackData.Sprites;
 
             if(currentWeaponSpriteIndex >= currentAttackSprites.Length)
             {
