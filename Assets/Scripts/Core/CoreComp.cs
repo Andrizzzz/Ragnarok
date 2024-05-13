@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lance
+namespace Lance.CoreSystem
 {
     public class CoreComp<T> where T : CoreComponent
     {

@@ -28929,6 +28929,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2837904815229611586, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_Size.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837904815229611586, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_Size.y
+      value: 4.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837904815229611586, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328790470782307971, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_Size.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328790470782307971, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_Size.y
+      value: 4.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328790470782307971, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7666412906733601968, guid: 2cc8ddcd7e6eb7f47b47836d8ee263e6, type: 3}
       propertyPath: m_Name
       value: Player

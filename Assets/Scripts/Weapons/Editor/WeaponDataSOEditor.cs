@@ -53,7 +53,7 @@ namespace Lance.Weapons
 
                         //comp.InitializeAttackData(dataSO.NumberOfAttacks);
 
-                        //dataSO.AddData(comp);
+                        dataSO.AddData(comp);
 
                         EditorUtility.SetDirty(dataSO);
                     }

@@ -1,5 +1,6 @@
 using UnityEngine;
-namespace Lance.Weapons
+
+namespace Lance.CoreSystem
 {
 
     public class Movement : CoreComponent

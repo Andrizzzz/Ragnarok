@@ -7,8 +7,8 @@ namespace Lance.Weapons
 {
     public class Movements : WeaponComponent<MovementData, AttackMovement>
     {
-        private Movement coreMovement;
-        private Movement CoreMovement => coreMovement ? coreMovement : Core.GetCoreComponent(ref coreMovement);
+        private CoreSystem.Movement coreMovement;
+        private CoreSystem.Movement CoreMovement => coreMovement ? coreMovement : Core.GetCoreComponent(ref coreMovement);
 
         private void HandleStartMovement()
         {
