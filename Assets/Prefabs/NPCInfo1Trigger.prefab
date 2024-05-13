@@ -86,7 +86,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogue:
-  - do you see that lava worm?
+  - do you see that archer
   - be careful he is agressive
   wordSpeed: 0.07
   lineDelay: 1.5
