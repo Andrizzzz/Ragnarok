@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +17,8 @@ namespace Lance
 
         void Update()
         {
-            // Check if S key is pressed and the player is colliding with the platform
-            if (Input.GetKeyDown(KeyCode.S) && IsPlayerColliding())
+            // Check if S key is pressed or joystick is moved down and the player is colliding with the platform
+            if ((Input.GetKeyDown(KeyCode.S) || Input.GetAxis("Vertical") < 0) && IsPlayerColliding())
             {
                 OpenPlatform(); // Open the platform
             }
@@ -63,20 +62,3 @@ namespace Lance
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
