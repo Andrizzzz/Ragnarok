@@ -5,9 +5,11 @@ using UnityEngine;
 public class ParallaxBackground : MonoBehaviour
 {
     public ParallaxCamera parallaxCamera;
-    List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
+    private List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
-    void Start()
+    private Vector3 previousCameraPosition;
+
+    private void Start()
     {
         if (parallaxCamera == null)
             parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
@@ -16,9 +18,13 @@ public class ParallaxBackground : MonoBehaviour
             parallaxCamera.onCameraTranslate += Move;
 
         SetLayers();
+
+        // Initialize previousCameraPosition
+        if (parallaxCamera != null)
+            previousCameraPosition = parallaxCamera.transform.position;
     }
 
-    void SetLayers()
+    private void SetLayers()
     {
         parallaxLayers.Clear();
 
@@ -34,7 +40,20 @@ public class ParallaxBackground : MonoBehaviour
         }
     }
 
-    void Move(float delta)
+    private void LateUpdate()
+    {
+        // Calculate delta movement of the camera
+        Vector3 delta = parallaxCamera.transform.position - previousCameraPosition;
+        previousCameraPosition = parallaxCamera.transform.position;
+
+        // Move the layers based on the camera's movement
+        Move(delta.x);
+
+        
+    }
+
+
+    private void Move(float delta)
     {
         foreach (ParallaxLayer layer in parallaxLayers)
         {
