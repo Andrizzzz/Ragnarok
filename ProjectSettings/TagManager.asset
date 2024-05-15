@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - CheckPoint
   - OneWayPlatform
+  - FxTemporaire
+  - Inventory
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -19,8 +22,8 @@ TagManager:
   - Player
   - Wall
   - OneWayPlatform
-  - 
-  - 
+  - Enemy
+  - Item
   - 
   - 
   - 
