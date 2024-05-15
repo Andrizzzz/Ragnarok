@@ -34,7 +34,7 @@ namespace Lance.Weapons
             {
                 foreach (var item in dataSO.ComponentData)
                 {
-                    //item.InitializeAttackData(dataSO.NumberOfAttacks);
+                    item.InitializeAttackData(dataSO.NumberOfAttacks);
                 }
             }
 
@@ -51,7 +51,7 @@ namespace Lance.Weapons
                         if (comp == null)
                             return;
 
-                        //comp.InitializeAttackData(dataSO.NumberOfAttacks);
+                        comp.InitializeAttackData(dataSO.NumberOfAttacks);
 
                         dataSO.AddData(comp);
 
@@ -68,7 +68,7 @@ namespace Lance.Weapons
                 {
                     foreach (var item in dataSO.ComponentData)
                     {
-                        //item.SetComponentName();
+                        item.SetComponentName();
                     }
                 }
 
@@ -76,7 +76,7 @@ namespace Lance.Weapons
                 {
                     foreach (var item in dataSO.ComponentData)
                     {
-                        //item.SetAttackDataNames();
+                        item.SetAttackDataNames();
                     }
                 }
             }

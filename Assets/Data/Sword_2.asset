@@ -27,8 +27,8 @@ MonoBehaviour:
     - rid: 6342104293122768897
       type: {class: WeaponSpriteData, ns: Lance, asm: Assembly-CSharp}
       data:
-        name: 
-        <AttackData>k__BackingField:
+        name: WeaponSpriteData
+        attackData:
         - name: 
           <Sprites>k__BackingField:
           - {fileID: -403025639, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
@@ -38,7 +38,7 @@ MonoBehaviour:
           - {fileID: 1110614518, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
           - {fileID: 1954236197, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
           - {fileID: -671015047, guid: aa9143725841c3d468e1fe40927b3cd8, type: 3}
-        - name: 
+        - name: Attack 3
           <Sprites>k__BackingField:
           - {fileID: 1376479908, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
           - {fileID: -327225162, guid: 3f4019f31d2a1424992c37c7a490a305, type: 3}
@@ -62,12 +62,12 @@ MonoBehaviour:
     - rid: 6342104293122768900
       type: {class: MovementData, ns: Lance, asm: Assembly-CSharp}
       data:
-        name: 
-        <AttackData>k__BackingField:
+        name: MovementData
+        attackData:
         - name: 
           <Direction>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 3
-        - name: 
+        - name: Attack 3
           <Direction>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 4
         - name: 
@@ -76,8 +76,8 @@ MonoBehaviour:
     - rid: 6342104328327659526
       type: {class: ActionHitBoxData, ns: Lance.Assets.Scripts.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
-        name: 
-        <AttackData>k__BackingField:
+        name: ActionHitBoxData
+        attackData:
         - name: 
           Debug: 0
           <HitBox>k__BackingField:
@@ -86,7 +86,7 @@ MonoBehaviour:
             y: -1.08
             width: 2.57
             height: 2.16
-        - name: 
+        - name: Attack 3
           Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
@@ -95,7 +95,7 @@ MonoBehaviour:
             width: 2.44
             height: 2.13
         - name: 
-          Debug: 0
+          Debug: 1
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: -0.14
