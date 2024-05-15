@@ -15,6 +15,10 @@ namespace Lance
         [SerializeField]
         private Sprite sprite;
 
+        [TextArea]
+        [SerializeField]
+        private string itemDescription;
+
         private InventoryManager inventoryManager;
 
         private void Start()
@@ -40,7 +44,7 @@ namespace Lance
                 Debug.Log("Player entered the vicinity!"); // Check if player collision is detected
                 if (inventoryManager != null)
                 {
-                    inventoryManager.AddItem(itemName, quantity, sprite);
+                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                     Destroy(gameObject);
                     Debug.Log("Item added to inventory"); // Check if item is added to the inventory
                 }

@@ -26,7 +26,7 @@ namespace Lance
         }
 
         // This method adds an item to the inventory
-        public void AddItem(string itemName, int quantity, Sprite itemsprite)
+        public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
         {
             for (int i = 0; i < itemSlot.Length; i++)
             {
@@ -41,7 +41,7 @@ namespace Lance
             {
                 if (itemSlot[i].isFull == false)
                 {
-                    itemSlot[i].AddItem(itemName, quantity, itemsprite);
+                    itemSlot[i].AddItem(itemName, quantity, itemsprite, itemDescription);
                     return;
                 }
             }

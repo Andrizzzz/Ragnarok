@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; // Add this directive
+using UnityEngine.EventSystems;
 
 namespace Lance
 {
@@ -13,12 +13,18 @@ namespace Lance
         public int quantity;
         public Sprite itemSprite;
         public bool isFull;
+        public string itemDescription;
+        public Sprite emptySprite;
 
         [SerializeField]
         private TMP_Text quantityText;
 
         [SerializeField]
         private Image itemImage;
+
+        public Image itemDescriptionImage;
+        public TMP_Text ItemDescriptionNameText;
+        public TMP_Text ItemDescriptionText;
 
         public GameObject selectedShader;
         public bool thisItemSelected;
@@ -34,13 +40,17 @@ namespace Lance
             {
                 Debug.LogError("InventoryManager not found in the scene.");
             }
+
+            // Initially turn off the selected panel
+            DeselectSlot();
         }
 
-        public void AddItem(string itemName, int quantity, Sprite itemsprite)
+        public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
         {
             this.itemName = itemName;
             this.quantity = quantity;
             this.itemSprite = itemsprite;
+            this.itemDescription = itemDescription;
             isFull = true;
 
             UpdateUI();
@@ -61,11 +71,12 @@ namespace Lance
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            // Check if left mouse button is clicked
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 OnLeftClick();
             }
-            if (eventData.button == PointerEventData.InputButton.Right)
+            else if (eventData.button == PointerEventData.InputButton.Right)
             {
                 OnRightClick();
             }
@@ -79,14 +90,53 @@ namespace Lance
                 return;
             }
 
-            inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
-            thisItemSelected = true;
+            // Check if the clicked object is the inventory
+            if (gameObject.CompareTag("Inventory"))
+            {
+                // If the slot is already selected, deselect it
+                if (thisItemSelected)
+                {
+                    DeselectSlot();
+                }
+                // Otherwise, do nothing
+                return;
+            }
+            else
+            {
+                // Deselect all slots before selecting the current one
+                inventoryManager.DeselectAllSlots();
+
+                // Select the current slot
+                SelectSlot();
+            }
         }
+
+
+
 
         public void OnRightClick()
         {
             // Implement right-click functionality here
+        }
+
+        // Method to select the current slot
+        private void SelectSlot()
+        {
+            selectedShader.SetActive(true);
+            thisItemSelected = true;
+            ItemDescriptionNameText.text = itemName;
+            ItemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemSprite != null ? itemSprite : emptySprite;
+        }
+
+        // Method to deselect the current slot
+        public void DeselectSlot()
+        {
+            selectedShader.SetActive(false);
+            thisItemSelected = false;
+            ItemDescriptionNameText.text = "";
+            ItemDescriptionText.text = "";
+            itemDescriptionImage.sprite = emptySprite;
         }
     }
 }
