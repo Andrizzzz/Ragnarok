@@ -6,24 +6,27 @@ public class ParallaxCamera : MonoBehaviour
     public delegate void ParallaxCameraDelegate(float deltaMovement);
     public ParallaxCameraDelegate onCameraTranslate;
 
-    private float oldPosition;
+    private float oldOrthographicSize;
 
     void Start()
     {
-        oldPosition = transform.position.x;
+        oldOrthographicSize = Camera.main.orthographicSize;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (transform.position.x != oldPosition)
+        float newOrthographicSize = Camera.main.orthographicSize;
+
+        if (newOrthographicSize != oldOrthographicSize)
         {
             if (onCameraTranslate != null)
             {
-                float delta = oldPosition - transform.position.x;
+                // Calculate delta movement based on the difference in orthographic size
+                float delta = oldOrthographicSize - newOrthographicSize;
                 onCameraTranslate(delta);
             }
 
-            oldPosition = transform.position.x;
+            oldOrthographicSize = newOrthographicSize;
         }
     }
 }
