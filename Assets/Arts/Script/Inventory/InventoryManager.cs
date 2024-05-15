@@ -9,6 +9,8 @@ namespace Lance
         public GameObject InventoryMenu;
         private bool menuActivated;
 
+        public ItemSlot[] itemSlot;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -26,12 +28,27 @@ namespace Lance
         // This method adds an item to the inventory
         public void AddItem(string itemName, int quantity, Sprite itemsprite)
         {
-            // Here you would write code to add the item to the inventory
-            // For now, let's just print a message
-            Debug.Log("Adding item: " + itemName + ", Quantity: " + quantity);
+            for (int i = 0; i < itemSlot.Length; i++)
+            {
+                if (itemSlot[i].isFull && itemSlot[i].itemName == itemName)
+                {
+                    itemSlot[i].IncreaseQuantity(quantity);
+                    return;
+                }
+            }
+
+            for (int i = 0; i < itemSlot.Length; i++)
+            {
+                if (itemSlot[i].isFull == false)
+                {
+                    itemSlot[i].AddItem(itemName, quantity, itemsprite);
+                    return;
+                }
+            }
         }
     }
 }
+
 
 
 
