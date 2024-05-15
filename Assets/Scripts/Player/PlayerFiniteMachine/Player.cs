@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public PlayerInventory Inventory { get; private set; }
     public Core Core { get; private set; }
 
+    
 
 
 
@@ -47,6 +48,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+
+        
+
+
         Core = GetComponentInChildren<Core>();
 
         primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
