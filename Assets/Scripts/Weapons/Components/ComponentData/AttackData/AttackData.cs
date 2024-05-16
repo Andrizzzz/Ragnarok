@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Lance.Assets.Scripts.Weapons.Components.ComponentData.AttackData
+namespace Lance.Weapons.Components
 {
     public class AttackData
     {

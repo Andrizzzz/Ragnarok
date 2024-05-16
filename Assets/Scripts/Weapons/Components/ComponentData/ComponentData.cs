@@ -1,4 +1,4 @@
-using Lance.Assets.Scripts.Weapons.Components.ComponentData.AttackData;
+using Lance.Weapons.Components;
 using System;
 using UnityEngine;
 

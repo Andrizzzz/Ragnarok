@@ -1,12 +1,8 @@
 using _Lance.Weapons;
-using Lance.Assets.Scripts.Weapons.Components.ComponentData.AttackData;
-using Lance.CoreSystem;
-using Lance.Weapons;
 using Lance.Weapons.Components;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Lance.CoreSystem;
 using UnityEngine;
+using Lance.Weapons;
 
 namespace Lance
 {
