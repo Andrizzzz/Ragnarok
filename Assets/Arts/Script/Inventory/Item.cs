@@ -23,7 +23,6 @@ namespace Lance
 
         private void Start()
         {
-            Debug.Log("Item position: " + transform.position);
             GameObject inventoryCanvas = GameObject.Find("Canvas");
 
             if (inventoryCanvas != null)
@@ -53,16 +52,19 @@ namespace Lance
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Player entered the vicinity!"); // Check if player collision is detected
                 if (inventoryManager != null)
                 {
+                    // Add the item to the inventory
                     inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+
+                    // Add the item to the crafting panel
+                    inventoryManager.AddItemToCraftingPanel(itemName, quantity, sprite, itemDescription);
+
                     Destroy(gameObject);
-                    Debug.Log("Item added to inventory"); // Check if item is added to the inventory
                 }
                 else
                 {
-                    Debug.LogError("Inventory manager not assigned"); // Log an error if inventoryManager is null
+                    Debug.LogError("Inventory manager not assigned");
                 }
             }
         }
