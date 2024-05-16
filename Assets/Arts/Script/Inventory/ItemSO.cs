@@ -8,19 +8,29 @@ namespace Lance
     public class ItemSO : ScriptableObject
     {
         public string itemName;
+<<<<<<< HEAD
         public StatToChange statToChang = new StatToChange();
         public int amountToChangeStat;
 
         
+=======
+>>>>>>> parent of 17b33ef (SAVE)
 
 
 
 
+<<<<<<< HEAD
         public enum StatToChange
         {
             none,
             health
         };
     }
+=======
+
+
+        public enum StatToChange
+
+>>>>>>> parent of 17b33ef (SAVE)
 }
 
