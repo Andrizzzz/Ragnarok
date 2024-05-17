@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Lance
 {
@@ -8,17 +9,20 @@ namespace Lance
         public GameObject InventoryMenu;
         public GameObject CraftingPanel; // Reference to the crafting panel
         public GameObject buttonToCraftingPanel; // Reference to the button for crafting panel
+        public Button inventoryButton; // Reference to the inventory button
         private bool menuActivated;
         private bool craftingPanelActive;
 
         public ItemSlot[] itemSlot;
 
-        // Start is called before the first frame update
         void Start()
         {
             menuActivated = InventoryMenu.activeSelf;
             craftingPanelActive = CraftingPanel.activeSelf; // Check initial state of crafting panel
             ToggleButtonVisibility(); // Initially hide the button
+
+            // Add listener to inventory button
+            inventoryButton.onClick.AddListener(ToggleInventory);
         }
 
         // This method can be called by the button to toggle the inventory
