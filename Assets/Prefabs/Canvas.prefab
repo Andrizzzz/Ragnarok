@@ -1087,7 +1087,7 @@ RectTransform:
   - {fileID: 521957696}
   - {fileID: 1441367831}
   m_Father: {fileID: 4804311941203901339}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2541,8 +2541,8 @@ RectTransform:
   - {fileID: 7690162103451738585}
   - {fileID: 3692298936928741634}
   - {fileID: 2108653982859733086}
-  - {fileID: 7602185392429789570}
   - {fileID: 1854959930}
+  - {fileID: 7602185392429789570}
   - {fileID: 1691896166991405305}
   - {fileID: 5792492199037263333}
   - {fileID: 8150940401450082954}
@@ -2636,6 +2636,7 @@ MonoBehaviour:
   InventoryMenu: {fileID: 245512856}
   CraftingPanel: {fileID: 3946202293273780736}
   buttonToCraftingPanel: {fileID: 1418356470074907636}
+  inventoryButton: {fileID: 0}
   itemSlot:
   - {fileID: 7170974983363623249}
   - {fileID: 8042847301887676848}
@@ -4215,7 +4216,7 @@ RectTransform:
   m_Children:
   - {fileID: 4260649231889764943}
   m_Father: {fileID: 4804311941203901339}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
