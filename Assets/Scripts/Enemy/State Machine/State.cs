@@ -1,4 +1,5 @@
-    using System.Collections;
+using Lance.CoreSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class State
 {
     protected FiniteStateMachine stateMachine;
     protected Entity entity;
+    protected Core core;
 
     protected string animBoolName;
 
@@ -17,6 +19,7 @@ public class State
         this.entity = entity;
         this.stateMachine = stateMachine;
         this.animBoolName = animBool;
+        core = entity.Core;
     }
 
     public virtual void Enter()

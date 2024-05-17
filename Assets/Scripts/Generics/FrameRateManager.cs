@@ -9,14 +9,21 @@ namespace Lance.Generics
         [Header("Frame Settings")]
         int MaxRate = 9999;
         public float TargetFrameRate = 60.0f;
+        
+
         float currentFrameTime;
-        void Awake()
+
+        void Start()
         {
+            // Set the screen resolution
+            Screen.SetResolution(1920,1080, true);
+
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = MaxRate;
             currentFrameTime = Time.realtimeSinceStartup;
             StartCoroutine("WaitForNextFrame");
         }
+
         IEnumerator WaitForNextFrame()
         {
             while (true)

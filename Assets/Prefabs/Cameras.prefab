@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961356811472672216}
   - component: {fileID: 961356811472672217}
-  - component: {fileID: 4131998505960121311}
+  - component: {fileID: 2234735999938770457}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -105,7 +105,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 961356812050923909}
---- !u!114 &4131998505960121311
+--- !u!114 &2234735999938770457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,10 +114,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 961356811472672223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72cc3a0dfba188e469e3f1dd1ec8ff12, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a4b1a9e3a9fa844bb4120247678c47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TargetFrameRate: 60
+  screenWidth: 1920
+  screenHeight: 1080
+  fullScreen: 0
 --- !u!1 &961356811895037936
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,9 +35,9 @@ public class Enemy1 : Entity
     [SerializeField]
     private D_DeadState deadStateData;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         moveState = new E1_MoveState(this, stateMachine, "move", moveStateData, this);
         idleState = new E1_IdleState(this, stateMachine, "idle", idleStateData, this);
@@ -47,7 +47,12 @@ public class Enemy1 : Entity
         meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData,this);
         stunState = new E1_StunState(this, stateMachine,"stun", stunStateData, this);
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
+    }
+
+    private void Start()
+    {
         stateMachine.Initialize(moveState);
+
     }
 
     public override void OnDrawGizmos()

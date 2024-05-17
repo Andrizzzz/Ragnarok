@@ -36,9 +36,9 @@ public class Enemy3 : Entity
     [SerializeField]
     private Transform rangedAttackPosition;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         movestate = new E3_MoveState(this, stateMachine, "move", moveStateData, this);
         idlestate = new E3_IdleState(this, stateMachine, "idle", idleStateData, this);
@@ -49,6 +49,10 @@ public class Enemy3 : Entity
         stunState = new E3_StunState(this, stateMachine, "stun", stunStateData, this);
         deadState = new E3_DeadState(this, stateMachine, "dead", deadStateData, this);
 
+    }
+
+    private void Start()
+    {
         stateMachine.Initialize(movestate);
 
     }
