@@ -35,6 +35,18 @@ namespace Lance
                 Debug.LogError("InventoryCanvas not found!");
                 inventoryManager = GameObject.FindObjectOfType<InventoryManager>();
             }
+
+            int itemLayer = LayerMask.NameToLayer("Item");
+            int enemyLayer = LayerMask.NameToLayer("Enemy");
+
+            if (itemLayer != -1 && enemyLayer != -1)
+            {
+                Physics2D.IgnoreLayerCollision(itemLayer, enemyLayer);
+            }
+            else
+            {
+                Debug.LogError("One or both of the specified layers do not exist.");
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
