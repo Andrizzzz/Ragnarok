@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6380267905256733730}
   - component: {fileID: 6380267905256733731}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Worm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267905745489204}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: LedgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267906130852195}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267906580514355}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: MeleeAttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 6380267906744879805}
   - component: {fileID: 6380267906744879806}
   - component: {fileID: 6380267906744879802}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Alive
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267906791701372}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267907006967384}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PlayerCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380267907036506660}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: RangedAttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
