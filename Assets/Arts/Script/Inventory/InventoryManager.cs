@@ -1,62 +1,107 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 namespace Lance
 {
     public class InventoryManager : MonoBehaviour
     {
         public GameObject InventoryMenu;
-        public GameObject CraftingPanel; // Reference to the crafting panel
-        public GameObject buttonToCraftingPanel; // Reference to the button for crafting panel
-        public Button inventoryButton; // Reference to the inventory button
+        public GameObject CraftingPanel;
+        public GameObject buttonToCraftingPanel;
+        public Button inventoryButton;
         private bool menuActivated;
         private bool craftingPanelActive;
 
         public ItemSlot[] itemSlot;
 
+        private float screenWidth;
+        private float screenHeight;
+
         void Start()
         {
             menuActivated = InventoryMenu.activeSelf;
-            craftingPanelActive = CraftingPanel.activeSelf; // Check initial state of crafting panel
-            ToggleButtonVisibility(); // Initially hide the button
+            craftingPanelActive = CraftingPanel.activeSelf;
+            ToggleButtonVisibility();
 
-            // Add listener to inventory button
             inventoryButton.onClick.AddListener(ToggleInventory);
+
+            screenWidth = Screen.width;
+            screenHeight = Screen.height;
         }
 
-        // This method can be called by the button to toggle the inventory
+        void Update()
+        {
+            if (Input.touchCount > 0)
+            {
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    Touch touch = Input.GetTouch(i);
+
+                    if (IsPointerOverUIObject(touch))
+                    {
+                        continue;
+                    }
+
+                    Vector2 touchPosition = touch.position;
+
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        // Example touch zones
+                        if (touchPosition.x < screenWidth / 2)
+                        {
+                            HandleMovementTouch(touchPosition);
+                        }
+                        else if (touchPosition.x > screenWidth / 2)
+                        {
+                            HandleJumpTouch(touchPosition);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void HandleMovementTouch(Vector2 touchPosition)
+        {
+            Debug.Log("Movement touch at: " + touchPosition);
+            // Implement your movement logic here
+        }
+
+        private void HandleJumpTouch(Vector2 touchPosition)
+        {
+            Debug.Log("Jump touch at: " + touchPosition);
+            // Implement your jump logic here
+        }
+
         public void ToggleInventory()
         {
+            Debug.Log("Inventory button pressed");
+
             menuActivated = !menuActivated;
             InventoryMenu.SetActive(menuActivated);
 
-            // Close the crafting panel when inventory is toggled
             if (craftingPanelActive)
             {
                 ToggleCraftingPanel();
             }
 
-            Time.timeScale = menuActivated ? 0f : 1f; // If menu is activated, set timeScale to 0, else set it to 1
+            Time.timeScale = menuActivated ? 0f : 1f;
 
-            ToggleButtonVisibility(); // Update button visibility
+            ToggleButtonVisibility();
         }
 
-        // Toggle visibility of the button based on inventory state
         private void ToggleButtonVisibility()
         {
-            buttonToCraftingPanel.SetActive(menuActivated); // Show button if inventory is active
+            buttonToCraftingPanel.SetActive(menuActivated);
         }
 
-        // Method to handle button click for toggling the crafting panel
         public void ToggleCraftingPanel()
         {
-            // Toggle the visibility of the crafting panel
             craftingPanelActive = !craftingPanelActive;
             CraftingPanel.SetActive(craftingPanelActive);
         }
 
-        // This method adds an item to the inventory
         public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
         {
             for (int i = 0; i < itemSlot.Length; i++)
@@ -70,7 +115,7 @@ namespace Lance
 
             for (int i = 0; i < itemSlot.Length; i++)
             {
-                if (itemSlot[i].isFull == false)
+                if (!itemSlot[i].isFull)
                 {
                     itemSlot[i].AddItem(itemName, quantity, itemsprite, itemDescription);
                     return;
@@ -78,7 +123,6 @@ namespace Lance
             }
         }
 
-        // Method to deselect all slots in the inventory
         public void DeselectAllSlots()
         {
             for (int i = 0; i < itemSlot.Length; i++)
@@ -86,6 +130,16 @@ namespace Lance
                 itemSlot[i].selectedShader.SetActive(false);
                 itemSlot[i].thisItemSelected = false;
             }
+        }
+
+        // Helper method to check if a touch is over a UI element
+        private bool IsPointerOverUIObject(Touch touch)
+        {
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(touch.position.x, touch.position.y);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
         }
     }
 }
