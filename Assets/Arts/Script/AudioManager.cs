@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;  // Add this namespace
+using UnityEngine.SceneManagement;
 
 namespace Lance
 {
@@ -11,7 +11,7 @@ namespace Lance
         public AudioSource audioSource2;
         public AudioClip[] musicClips;
         public float fadeDuration = 1.0f;
-        public float sceneTransitionFadeDuration = 0.5f;  // New field for scene transition fade duration
+        public float sceneTransitionFadeDuration = 0.5f;
 
         private int currentClipIndex = 0;
         private bool isFading = false;
@@ -19,11 +19,9 @@ namespace Lance
         private AudioSource inactiveSource;
 
         private static AudioManager instance;
-        private bool initialSceneLoaded = false;
 
         void Awake()
         {
-            // Ensure only one instance of AudioManager exists
             if (instance != null && instance != this)
             {
                 Destroy(gameObject);
@@ -33,7 +31,7 @@ namespace Lance
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            SceneManager.sceneLoaded += OnSceneLoaded;  // Subscribe to sceneLoaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
 
             if (musicClips.Length > 0)
             {
@@ -41,14 +39,11 @@ namespace Lance
                 activeSource = audioSource1;
                 inactiveSource = audioSource2;
 
-                // Start with zero volume and play the clip
                 activeSource.volume = 0;
                 activeSource.Play();
 
-                // Gradually increase the volume of the active source to achieve fade-in effect
                 StartCoroutine(FadeInMusic(activeSource, fadeDuration));
 
-                // Start coroutine to play the next track
                 StartCoroutine(PlayNextTrack());
             }
         }
@@ -67,31 +62,40 @@ namespace Lance
             source.volume = endVolume;
         }
 
-
-
         void OnDestroy()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;  // Unsubscribe from sceneLoaded event
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // Avoid fading out on initial scene load
-            if (initialSceneLoaded)
+            if (scene.name == "Main Menu")
             {
-                StartCoroutine(FadeOutMusicAndStop(sceneTransitionFadeDuration));  // Use scene transition fade duration
+                if (musicClips.Length > 0 && activeSource != null)
+                {
+                    int randomIndex;
+                    do
+                    {
+                        randomIndex = Random.Range(0, musicClips.Length);
+                    }
+                    while (musicClips[randomIndex] == activeSource.clip); // Ensure the selected clip is not the same as the currently playing clip
+
+                    activeSource.clip = musicClips[randomIndex];
+                    activeSource.Play();
+                }
             }
             else
             {
-                initialSceneLoaded = true;
+                StartCoroutine(FadeOutMusicAndStop(sceneTransitionFadeDuration));
             }
         }
+
+
 
         IEnumerator PlayNextTrack()
         {
             while (true)
             {
-                // Wait until the remaining time of the current clip is less than the fade duration
                 yield return new WaitForSeconds(Mathf.Max(activeSource.clip.length - fadeDuration, 0));
 
                 if (!isFading)
@@ -100,7 +104,6 @@ namespace Lance
                 }
             }
         }
-
 
         IEnumerator FadeOutIn()
         {
@@ -112,7 +115,6 @@ namespace Lance
 
             float startVolume = activeSource.volume;
 
-            // Fade out the active source and fade in the inactive source
             for (float t = 0; t <= fadeDuration; t += Time.deltaTime)
             {
                 float normalizedTime = t / fadeDuration;
@@ -124,7 +126,6 @@ namespace Lance
             activeSource.Stop();
             activeSource.volume = startVolume;
 
-            // Swap active and inactive sources
             AudioSource temp = activeSource;
             activeSource = inactiveSource;
             inactiveSource = temp;
