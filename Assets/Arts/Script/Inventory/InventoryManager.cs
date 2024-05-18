@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 namespace Lance
@@ -41,19 +42,7 @@ namespace Lance
             get { return instance; }
         }
 
-        // Awake method to initialize the singleton instance and prevent destruction on load
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject); // Prevents the GameObject from being destroyed when loading a new scene
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+       
 
         // Start method to initialize variables and event listeners
         void Start()

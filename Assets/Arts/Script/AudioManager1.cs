@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Lance
 {
@@ -14,6 +15,7 @@ namespace Lance
 
         [Header("--------------Fade Settings---------------")]
         public float fadeDuration = 2.0f; // Duration for fade-in and fade-out
+        public float mainMenuFadeDuration = 1.0f; // Fade duration specifically for main menu
 
         private void Start()
         {
@@ -67,14 +69,8 @@ namespace Lance
                 // Wait for the music to nearly finish
                 yield return new WaitForSeconds(background.length - fadeDuration);
 
-                // Start fading out
-                yield return StartCoroutine(FadeOut(musicSource, fadeDuration));
-
                 // Reset the playback position
                 musicSource.time = 0;
-
-                // Start fading in again
-                StartCoroutine(FadeIn(musicSource, fadeDuration));
             }
         }
 
@@ -88,7 +84,39 @@ namespace Lance
 
             // Start the coroutine to handle looping
             StartCoroutine(LoopMusic());
+
+            // Subscribe to scene change events
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
+        private void OnDestroy()
+        {
+            // Unsubscribe from scene change events
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name == "Main Menu")
+            {
+                StopMusic(mainMenuFadeDuration); // Use different fade duration for main menu
+            }
+            else
+            {
+                StartMusic();
+            }
+        }
+
+        private void StopMusic(float duration)
+        {
+            // Start fading out with the specified duration
+            StartCoroutine(FadeOut(musicSource, duration));
+        }
+
+        private void StartMusic()
+        {
+            // Start fading in with the default duration
+            StartCoroutine(FadeIn(musicSource, fadeDuration));
+        }
     }
 }

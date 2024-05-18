@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -157,7 +156,9 @@ namespace Lance
                 if (musicClips.Length > 0)
                 {
                     int randomIndex = Random.Range(0, musicClips.Length);
-                    activeSource.clip = musicClips[randomIndex];
+                    audioSource1.clip = musicClips[randomIndex];
+                    activeSource = audioSource1;
+                    inactiveSource = audioSource2;
                     activeSource.Play();
                     StartCoroutine(FadeInMusic(activeSource, fadeDuration));
                     isMusicPlaying = true;
