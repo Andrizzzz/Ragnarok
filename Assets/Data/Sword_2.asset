@@ -20,7 +20,8 @@ MonoBehaviour:
   <ComponentData>k__BackingField:
   - rid: 6342104293122768897
   - rid: 6342104293122768900
-  - rid: 6342104328327659526
+  - rid: 6342104438239920129
+  - rid: 6342104438239920131
   references:
     version: 2
     RefIds:
@@ -73,35 +74,46 @@ MonoBehaviour:
         - name: 
           <Direction>k__BackingField: {x: 1, y: 5}
           <Velocity>k__BackingField: 5
-    - rid: 6342104328327659526
+    - rid: 6342104438239920129
       type: {class: ActionHitBoxData, ns: Lance.Assets.Scripts.Weapons.Components.ComponentData, asm: Assembly-CSharp}
       data:
         name: ActionHitBoxData
         attackData:
         - name: 
-          Debug: 0
+          Debug: 1
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0.24
-            y: -1.08
-            width: 2.57
-            height: 2.16
+            y: -0.99
+            width: 2.79
+            height: 2.25
         - name: Attack 3
           Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
-            x: 0.4
-            y: -1.03
-            width: 2.44
-            height: 2.13
+            x: 0.11
+            y: -1.02
+            width: 2.68
+            height: 2.07
         - name: 
-          Debug: 1
+          Debug: 0
           <HitBox>k__BackingField:
             serializedVersion: 2
-            x: -0.14
-            y: -1.1
-            width: 2.78
-            height: 2.19
+            x: -0.11
+            y: -1.05
+            width: 2.66
+            height: 2.31
         <DetectableLayers>k__BackingField:
           serializedVersion: 2
           m_Bits: 64
+    - rid: 6342104438239920131
+      type: {class: DamageData, ns: Lance.Weapons.Components, asm: Assembly-CSharp}
+      data:
+        name: DamageData
+        attackData:
+        - name: 
+          <Amount>k__BackingField: 30
+        - name: Attack 3
+          <Amount>k__BackingField: 30
+        - name: 
+          <Amount>k__BackingField: 30

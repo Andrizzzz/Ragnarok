@@ -1,9 +1,6 @@
 ﻿using Lance.Assets.Scripts.Weapons.Components.ComponentData;
 using Lance.CoreSystem;
-using Lance.Weapons;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Lance.Weapons.Components
@@ -21,8 +18,8 @@ namespace Lance.Weapons.Components
         private void HandleAttackAction()
         {
             offset.Set(
-                transform.position.x + (currentAttackData.HitBox.center.x * movement.Comp.FacingDirection),
-                transform.position.y + currentAttackData.HitBox.center.y
+                transform.position.x + (currentAttackData.HitBox.x * movement.Comp.FacingDirection),
+                transform.position.y + currentAttackData.HitBox.y
             );
 
             detected = Physics2D.OverlapBoxAll(offset, currentAttackData.HitBox.size, 0f, data.DetectableLayers);
@@ -31,6 +28,8 @@ namespace Lance.Weapons.Components
                 return;
 
             OnDetectedCollider2D?.Invoke(detected);
+
+   
         }
 
         protected override void Start()
@@ -38,15 +37,19 @@ namespace Lance.Weapons.Components
             base.Start();
 
             movement = new CoreComp<CoreSystem.Movement>(Core);
-
-            //AnimationEventHandler.OnAttackAction += HandleAttackAction;
         }
 
-        //protected override void OnDestroy()
-        //{
-        //    base.OnDestroy();
-        //    AnimationEventHandler.OnAttackAction -= HandleAttackAction;
-        //}
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            eventHandler.OnAttackAction += HandleAttackAction;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            eventHandler.OnAttackAction -= HandleAttackAction;
+        }
 
         private void OnDrawGizmosSelected()
         {

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour 
+public class Projectile : MonoBehaviour
 {
-
-    private AttackDetails attackDetails;
+    //private AttackDetails attackDetails;
 
     private float speed;
     private float travelDistance;
@@ -27,6 +26,7 @@ public class Projectile : MonoBehaviour
     private LayerMask whatIsPlayer;
     [SerializeField]
     private Transform damagePosition;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
     {
         if (!hasHitGround)
         {
-            attackDetails.position = transform.position;
+            //attackDetails.position = transform.position;
 
             if (isGravityOn)
             {
@@ -52,6 +52,7 @@ public class Projectile : MonoBehaviour
             }
         }
     }
+
     private void FixedUpdate()
     {
         if (!hasHitGround)
@@ -61,7 +62,7 @@ public class Projectile : MonoBehaviour
 
             if (damageHit)
             {
-                damageHit.transform.SendMessage("Damage", attackDetails);
+                //damageHit.transform.SendMessage("Damage", attackDetails);
                 Destroy(gameObject);
             }
 
@@ -71,21 +72,21 @@ public class Projectile : MonoBehaviour
                 rb.gravityScale = 0f;
                 rb.velocity = Vector2.zero;
             }
-        }
+
+
             if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
-        {
-            isGravityOn = true;
-            rb.gravityScale = gravity;
+            {
+                isGravityOn = true;
+                rb.gravityScale = gravity;
+            }
         }
-
-
     }
 
     public void FireProjectile(float speed, float travelDistance, float damage)
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
-        attackDetails.damageAmount = damage;
+        //attackDetails.damageAmount = damage;
     }
 
     private void OnDrawGizmos()

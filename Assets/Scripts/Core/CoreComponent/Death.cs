@@ -13,7 +13,7 @@ namespace Lance.CoreSystem
 
         private ParticleManager particleManager;
 
-        private Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
+        private Stats Stats { get => stats ?? core?.GetCoreComponent(ref stats); }
         private Stats stats;
 
         public void Die()

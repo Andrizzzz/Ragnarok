@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Lance.CoreSystem
 {
+
     public class Stats : CoreComponent
     {
         public event Action OnHealthZero;

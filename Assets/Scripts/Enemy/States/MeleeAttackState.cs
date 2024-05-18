@@ -1,15 +1,20 @@
+using Lance;
 using Lance.CoreSystem;
 using Lance.Weapons.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MeleeAttackState : AttackState
 {
-   protected D_MeleeAttack stateData;
-   protected AttackDetails attackDetails;
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
 
-    public MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(entity, stateMachine, animBoolName, attackPosition)
+    private Movement movement;
+    private CollisionSenses collisionSenses;
+
+    protected D_MeleeAttack stateData;
+
+    public MeleeAttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(etity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
     }
@@ -22,16 +27,16 @@ public class MeleeAttackState : AttackState
     public override void Enter()
     {
         base.Enter();
-        attackDetails = new AttackDetails();
-
-        attackDetails.damageAmount = stateData.attackDamage;
-        attackDetails.position = entity.transform.position;
     }
 
     public override void Exit()
     {
         base.Exit();
+    }
 
+    public override void FinishAttack()
+    {
+        base.FinishAttack();
     }
 
     public override void LogicUpdate()
@@ -39,9 +44,9 @@ public class MeleeAttackState : AttackState
         base.LogicUpdate();
     }
 
-    public override void FinishAttack()
+    public override void PhysicsUpdate()
     {
-        base.FinishAttack();
+        base.PhysicsUpdate();
     }
 
     public override void TriggerAttack()
@@ -63,13 +68,8 @@ public class MeleeAttackState : AttackState
 
             //if (knockBackable != null)
             //{
-            //    knockBackable.KnockBack(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.FacingDirection);
+            //    knockBackable.KnockBack(stateData.knockbackAngle, stateData.knockbackStrength, Movement.FacingDirection);
             //}
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }
