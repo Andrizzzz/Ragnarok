@@ -1,62 +1,95 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 namespace Lance
 {
     public class InventoryManager : MonoBehaviour
     {
-        public GameObject InventoryMenu;
-        public GameObject CraftingPanel; // Reference to the crafting panel
-        public GameObject buttonToCraftingPanel; // Reference to the button for crafting panel
-        public Button inventoryButton; // Reference to the inventory button
-        private bool menuActivated;
-        private bool craftingPanelActive;
+        // Singleton instance
+        private static InventoryManager instance;
 
+        // Reference to the InventoryMenu GameObject
+        public GameObject InventoryMenu;
+
+        // Reference to the CraftingPanel GameObject
+        public GameObject CraftingPanel;
+
+        // Reference to the button to toggle the CraftingPanel
+        public GameObject buttonToCraftingPanel;
+
+        // Reference to the inventory button
+        public Button inventoryButton;
+
+        // Array of ItemSlot components
         public ItemSlot[] itemSlot;
 
+        // Flag to track if the InventoryMenu is activated
+        private bool menuActivated;
+
+        // Flag to track if the CraftingPanel is activated
+        private bool craftingPanelActive;
+
+        // Screen width and height
+        private float screenWidth;
+        private float screenHeight;
+
+        // Public property to access the singleton instance
+        public static InventoryManager Instance
+        {
+            get { return instance; }
+        }
+
+
+
+        // Start method to initialize variables and event listeners
         void Start()
         {
             menuActivated = InventoryMenu.activeSelf;
-            craftingPanelActive = CraftingPanel.activeSelf; // Check initial state of crafting panel
-            ToggleButtonVisibility(); // Initially hide the button
+            craftingPanelActive = CraftingPanel.activeSelf;
+            ToggleButtonVisibility();
 
-            // Add listener to inventory button
             inventoryButton.onClick.AddListener(ToggleInventory);
+
+            screenWidth = Screen.width;
+            screenHeight = Screen.height;
         }
 
-        // This method can be called by the button to toggle the inventory
+        // Update method to handle touch input
+        void Update()
+        {
+            // Touch input handling
+            // (You can keep your existing touch input logic here)
+        }
+
+        // Method to toggle the InventoryMenu
         public void ToggleInventory()
         {
+            Debug.Log("Inventory button pressed");
+
             menuActivated = !menuActivated;
             InventoryMenu.SetActive(menuActivated);
 
-            // Close the crafting panel when inventory is toggled
             if (craftingPanelActive)
             {
                 ToggleCraftingPanel();
             }
 
-            Time.timeScale = menuActivated ? 0f : 1f; // If menu is activated, set timeScale to 0, else set it to 1
+            Time.timeScale = menuActivated ? 0f : 1f;
 
-            ToggleButtonVisibility(); // Update button visibility
+            ToggleButtonVisibility();
         }
 
-        // Toggle visibility of the button based on inventory state
-        private void ToggleButtonVisibility()
-        {
-            buttonToCraftingPanel.SetActive(menuActivated); // Show button if inventory is active
-        }
-
-        // Method to handle button click for toggling the crafting panel
+        // Method to toggle the CraftingPanel
         public void ToggleCraftingPanel()
         {
-            // Toggle the visibility of the crafting panel
             craftingPanelActive = !craftingPanelActive;
             CraftingPanel.SetActive(craftingPanelActive);
         }
 
-        // This method adds an item to the inventory
+        // Method to add an item to the inventory
         public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
         {
             for (int i = 0; i < itemSlot.Length; i++)
@@ -70,7 +103,7 @@ namespace Lance
 
             for (int i = 0; i < itemSlot.Length; i++)
             {
-                if (itemSlot[i].isFull == false)
+                if (!itemSlot[i].isFull)
                 {
                     itemSlot[i].AddItem(itemName, quantity, itemsprite, itemDescription);
                     return;
@@ -86,6 +119,22 @@ namespace Lance
                 itemSlot[i].selectedShader.SetActive(false);
                 itemSlot[i].thisItemSelected = false;
             }
+        }
+
+        // Method to toggle button visibility
+        private void ToggleButtonVisibility()
+        {
+            buttonToCraftingPanel.SetActive(menuActivated);
+        }
+
+        // Helper method to check if a touch is over a UI element
+        private bool IsPointerOverUIObject(Touch touch)
+        {
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(touch.position.x, touch.position.y);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
         }
     }
 }

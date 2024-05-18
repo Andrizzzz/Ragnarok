@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +14,7 @@ namespace Lance
 
         private int currentClipIndex = 0;
         private bool isFading = false;
+        private bool isMusicPlaying = false; // Flag to track if music should be playing
         private AudioSource activeSource;
         private AudioSource inactiveSource;
 
@@ -33,6 +33,12 @@ namespace Lance
 
             SceneManager.sceneLoaded += OnSceneLoaded;
 
+            // Set initial music clip and start playing
+            SetInitialMusicClip();
+        }
+
+        void SetInitialMusicClip()
+        {
             if (musicClips.Length > 0)
             {
                 audioSource1.clip = musicClips[0];
@@ -60,6 +66,7 @@ namespace Lance
             }
 
             source.volume = endVolume;
+            isMusicPlaying = true; // Music is fully faded in and playing
         }
 
         void OnDestroy()
@@ -71,26 +78,16 @@ namespace Lance
         {
             if (scene.name == "Main Menu")
             {
-                if (musicClips.Length > 0 && activeSource != null)
-                {
-                    int randomIndex;
-                    do
-                    {
-                        randomIndex = Random.Range(0, musicClips.Length);
-                    }
-                    while (musicClips[randomIndex] == activeSource.clip); // Ensure the selected clip is not the same as the currently playing clip
-
-                    activeSource.clip = musicClips[randomIndex];
-                    activeSource.Play();
-                }
+                StartCoroutine(PlayMusicInMainMenu());
             }
             else
             {
-                StartCoroutine(FadeOutMusicAndStop(sceneTransitionFadeDuration));
+                if (isMusicPlaying && !isFading) // Check if music should be playing and not currently fading
+                {
+                    StartCoroutine(FadeOutMusicAndStop(sceneTransitionFadeDuration));
+                }
             }
         }
-
-
 
         IEnumerator PlayNextTrack()
         {
@@ -98,7 +95,7 @@ namespace Lance
             {
                 yield return new WaitForSeconds(Mathf.Max(activeSource.clip.length - fadeDuration, 0));
 
-                if (!isFading)
+                if (!isFading && isMusicPlaying)
                 {
                     StartCoroutine(FadeOutIn());
                 }
@@ -135,6 +132,8 @@ namespace Lance
 
         public IEnumerator FadeOutMusicAndStop(float duration)
         {
+            isMusicPlaying = false; // Music should not be playing anymore
+
             float startVolume = activeSource.volume;
 
             for (float t = 0; t <= duration; t += Time.deltaTime)
@@ -145,6 +144,26 @@ namespace Lance
 
             activeSource.Stop();
             activeSource.volume = startVolume;
+        }
+
+        IEnumerator PlayMusicInMainMenu()
+        {
+            yield return new WaitForSeconds(0.1f); // Adjust the delay time if needed
+
+            if (!isMusicPlaying)
+            {
+                // Play a random music clip if not already playing
+                if (musicClips.Length > 0)
+                {
+                    int randomIndex = Random.Range(0, musicClips.Length);
+                    audioSource1.clip = musicClips[randomIndex];
+                    activeSource = audioSource1;
+                    inactiveSource = audioSource2;
+                    activeSource.Play();
+                    StartCoroutine(FadeInMusic(activeSource, fadeDuration));
+                    isMusicPlaying = true;
+                }
+            }
         }
     }
 }
