@@ -42,7 +42,7 @@ namespace Lance
             get { return instance; }
         }
 
-       
+
 
         // Start method to initialize variables and event listeners
         void Start()

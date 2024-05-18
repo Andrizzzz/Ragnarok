@@ -14,113 +14,92 @@ namespace Lance
         public float wordSpeed;
         private bool playerIsClose;
         private bool dialogueStarted;
+        private bool dialogueFinished;
 
         private bool isTyping;
         private bool skipCurrentSentence;
 
-        // Reference to the UI overlay image
         public Image overlayImage;
-
-        // Collider triggering the dialogue
         public Collider2D dialogueCollider;
 
-        // Reference to the currently active dialogue panel
-        private GameObject currentDialoguePanel;
-
-        // Flag to track if the dialogue has finished
-        private bool dialogueFinished;
-
-        void Start()
+        private void Start()
         {
             dialogueStarted = false;
             dialogueFinished = false;
-            // Ensure the overlay is initially disabled
             if (overlayImage != null)
             {
                 overlayImage.gameObject.SetActive(false);
             }
         }
 
-        void Update()
+        private void Update()
         {
-            // Check if the player is close and dialogue hasn't started yet
-            if (playerIsClose && !dialogueStarted && currentDialoguePanel == null && !dialogueFinished)
+            if (playerIsClose && !dialogueStarted && !dialogueFinished)
             {
                 StartDialogue();
             }
 
-            // Check for input to proceed to the next dialogue
             if (dialogueStarted && (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0)))
             {
                 if (isTyping)
                 {
-                    // If currently typing, skip to the end of the sentence
                     skipCurrentSentence = true;
                 }
                 else
                 {
-                    // If not typing, proceed to the next dialogue
                     NextDialogue();
                 }
             }
         }
 
-        void StartDialogue()
+        private void StartDialogue()
         {
-            // Pause the game
             Time.timeScale = 0;
-
-            // Enable the overlay to darken the background
             if (overlayImage != null)
             {
                 overlayImage.gameObject.SetActive(true);
             }
-
             dialoguePanel.SetActive(true);
-            currentDialoguePanel = dialoguePanel;
-            StartCoroutine(Typing());
             dialogueStarted = true;
-            // Disable the collider triggering the dialogue
+            StartCoroutine(Typing());
             if (dialogueCollider != null)
             {
                 dialogueCollider.enabled = false;
             }
         }
 
-        IEnumerator Typing()
+        private IEnumerator Typing()
         {
-            if (isTyping) yield break; // If already typing, exit the coroutine
+            if (isTyping) yield break;
 
             isTyping = true;
-            dialogueText.text = ""; // Clear the dialogue text before starting typing
+            dialogueText.text = "";
 
-            string currentDialogue = dialogue[index]; // Get the current dialogue line
+            string currentDialogue = dialogue[index];
             int dialogueLength = currentDialogue.Length;
 
             for (int i = 0; i < dialogueLength; i++)
             {
                 if (skipCurrentSentence)
                 {
-                    // If skipping, display the full sentence immediately
                     dialogueText.text = currentDialogue;
                     break;
                 }
 
                 dialogueText.text += currentDialogue[i];
-                yield return new WaitForSecondsRealtime(wordSpeed); // Use WaitForSecondsRealtime to respect the paused timescale
+                yield return new WaitForSecondsRealtime(wordSpeed);
             }
 
             isTyping = false;
-            skipCurrentSentence = false; // Reset the skip flag
+            skipCurrentSentence = false;
 
-            // Check if the dialogue has finished typing
-            if (!skipCurrentSentence && index == dialogue.Length - 1)
+            if (index == dialogue.Length - 1 && !skipCurrentSentence) // Check if it's the last dialogue line and typing is not skipped
             {
                 dialogueFinished = true;
             }
         }
 
-        void NextDialogue()
+        private void NextDialogue()
         {
             if (index < dialogue.Length - 1)
             {
@@ -133,19 +112,12 @@ namespace Lance
             }
         }
 
-        void EndDialogue()
+        private void EndDialogue()
         {
-            // Resume the game
             Time.timeScale = 1;
-
-            dialogueText.text = "";
-            index = 0;
-            dialoguePanel.SetActive(false); // Disable the entire dialogue panel
+            dialoguePanel.SetActive(false);
             dialogueStarted = false;
-            currentDialoguePanel = null;
-            dialogueFinished = false; // Reset dialogue finished flag
-
-            // Disable the overlay when ending the dialogue
+            StopCoroutine(Typing()); // Ensure the typing coroutine is stopped when ending the dialogue
             if (overlayImage != null)
             {
                 overlayImage.gameObject.SetActive(false);
@@ -157,7 +129,6 @@ namespace Lance
             if (other.CompareTag("Player"))
             {
                 playerIsClose = true;
-                // Clear the dialogue text when the player collides with the NPC to prevent jumbled letters
                 dialogueText.text = "";
             }
         }
