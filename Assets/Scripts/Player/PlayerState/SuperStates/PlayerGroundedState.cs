@@ -1,3 +1,5 @@
+using Lance;
+using Lance.CoreSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +19,20 @@ public class PlayerGroundedState : PlayerState
     private bool isTouchingWall;
     private bool isTouchingLedge;
 
+    protected Movement Movement
+    {
+        get => movement ?? core.GetCoreComponent(ref movement);
+    }
+
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses
+    {
+        get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
+    }
+
+    private CollisionSenses collisionSenses;
+
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -25,9 +41,9 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = core.CollisionSenses.Ground;   
-        isTouchingWall = core.CollisionSenses.WallFront;
-        isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
+        isGrounded = CollisionSenses.Ground;   
+        isTouchingWall = CollisionSenses.WallFront;
+        isTouchingLedge = CollisionSenses.LedgeHorizontal;
     }
 
     public override void Enter()

@@ -1,9 +1,25 @@
+using Lance.CoreSystem;
+using Lance;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAbilityState : PlayerState
 {
+    protected Movement Movement
+    {
+        get => movement ?? core.GetCoreComponent(ref movement);
+    }
+
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses
+    {
+        get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
+    }
+
+    private CollisionSenses collisionSenses;
+
     protected bool isAbilityDone;
 
     private bool isGrounded;
@@ -15,8 +31,11 @@ public class PlayerAbilityState : PlayerState
     public override void DoChecks()
     {
         base.DoChecks();
+        if (CollisionSenses)
+        {
+            isGrounded = CollisionSenses.Ground;
 
-        isGrounded =core.CollisionSenses.Ground;
+        }
     }
 
     public override void Enter()
@@ -37,7 +56,7 @@ public class PlayerAbilityState : PlayerState
 
         if (isAbilityDone)
         {
-            if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
+            if (isGrounded && Movement?.CurrentVelocity.y < 0.01f)
             {
                 stateMachine.ChangeState(player.IdleState);
             }

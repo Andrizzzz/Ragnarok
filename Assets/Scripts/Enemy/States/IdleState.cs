@@ -1,9 +1,18 @@
+using Lance.CoreSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IdleState : State
 {
+    protected Movement Movement
+    {
+        get => movement ?? core.GetCoreComponent(ref movement);
+    }
+
+    private Movement movement;
+
+
     protected D_IdleState stateData;
 
     protected bool flipAfterIdle;
@@ -27,7 +36,7 @@ public class IdleState : State
     public override void Enter()
     {
         base.Enter();
-        core.Movement.SetVelocityX(0f);
+        Movement?.SetVelocityX(0f);
         isIdleTimeOver = false;
         SetRandomIdleTime();
     }
@@ -38,7 +47,7 @@ public class IdleState : State
 
         if (flipAfterIdle)
         {
-            core.Movement.Flip();
+            Movement?.Flip();
         }
     }
 

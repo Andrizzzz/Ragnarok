@@ -12,6 +12,7 @@ TagManager:
   - Item
   - InventoryItem
   - CraftingPanelItem
+  - ParticleContainer
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,5 @@
+using Lance.CoreSystem;
+using Lance;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,6 +8,21 @@ using UnityEngine;
 
 public class PlayerDetectedState : State
 {
+
+    protected Movement Movement
+    {
+        get => movement ?? core.GetCoreComponent(ref movement);
+    }
+
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses
+    {
+        get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
+    }
+
+    private CollisionSenses collisionSenses;
+
     protected D_PlayerDetected stateData;
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
@@ -21,18 +38,20 @@ public class PlayerDetectedState : State
     public override void DoChecks()
     {
         base.DoChecks();
+        
+            isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+            isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
+            isDetectingLedge = CollisionSenses.LedgeVertical;
 
-        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
-        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
-        isDetectingLedge = core.CollisionSenses.LedgeVertical;
-
-        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
+            performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
+        
+        
     }
 
     public override void Enter()
     {
         base.Enter();
-        core.Movement.SetVelocityX(0f);
+        Movement?.SetVelocityX(0f);
         performLongRangeAction = false;
 
       

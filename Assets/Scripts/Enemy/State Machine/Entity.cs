@@ -6,6 +6,14 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Entity : MonoBehaviour
 {
+    protected Movement Movement
+    {
+        get => movement ?? Core.GetCoreComponent(ref movement);
+    }
+
+    private Movement movement;
+
+
     public FiniteStateMachine stateMachine;
     public D_Entity entityData;
 
@@ -53,7 +61,7 @@ public class Entity : MonoBehaviour
         Core.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
 
-        anim.SetFloat("yVelocity", Core.Movement.RB.velocity.y);
+        anim.SetFloat("yVelocity", Movement.RB.velocity.y);
 
 
         if (Time.time >= lastDamageTime + entityData.stunRecoveryTime)
@@ -88,8 +96,8 @@ public class Entity : MonoBehaviour
 
     public virtual void DamageHop(float velocity)
     {
-      velocityWorksSpace.Set(Core.Movement.RB.velocity.x, velocity);
-       Core.Movement.RB.velocity = velocityWorksSpace;
+      velocityWorksSpace.Set(Movement.RB.velocity.x, velocity);
+       Movement.RB.velocity = velocityWorksSpace;
     }
 
     public virtual void ResetStunResistance()
@@ -134,7 +142,7 @@ public class Entity : MonoBehaviour
     {
         if(Core != null)
         {
-            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Core.Movement.FacingDirection * entityData.wallCheckDistance));
+            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Movement?.FacingDirection * entityData.wallCheckDistance));
             Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
 
             Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);

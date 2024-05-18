@@ -1,9 +1,15 @@
+using Lance.CoreSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class E1_PlayerDetectedState : PlayerDetectedState
 {
+
+
+    private Movement movement;
+
+
     protected Enemy1 enemy;
 
     public E1_PlayerDetectedState(Entity entity, FiniteStateMachine stateMachine, string animBool, D_PlayerDetected stateData, Enemy1 enemy) : base(entity, stateMachine, animBool, stateData)
@@ -41,7 +47,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
 
         else if (!isDetectingLedge)
         {
-            core.Movement.Flip();
+            Movement?.Flip();
             stateMachine.ChangeState(enemy.moveState);
         }
 

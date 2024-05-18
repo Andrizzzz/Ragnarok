@@ -7,13 +7,16 @@ namespace Lance.CoreSystem
 {
     public class KnockBackReceiver : CoreComponent, IKnockBackable
     {
+
         [SerializeField] private float maxKnockBackTime = 0.2f;
+
 
         private bool isKnockBackActive;
         private float knockBackStartTime;
 
         private CoreComp<Movement> movement;
         private CoreComp<CollisionSenses> collisionSenses;
+
 
         public override void LogicUpdate()
         {

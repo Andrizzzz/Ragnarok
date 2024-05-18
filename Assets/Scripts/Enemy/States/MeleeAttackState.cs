@@ -1,3 +1,5 @@
+using Lance.CoreSystem;
+using Lance.Weapons.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,9 +50,21 @@ public class MeleeAttackState : AttackState
 
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
 
-        foreach(Collider2D collider in detectedObjects){
-            
-            collider.transform.SendMessage("Damage", attackDetails);
+        foreach (Collider2D collider in detectedObjects)
+        {
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+
+            if (damageable != null)
+            {
+                damageable.Damage(stateData.attackDamage);
+            }
+
+            //IKnockBackable knockBackable = collider.GetComponent<IKnockBackable>();
+
+            //if (knockBackable != null)
+            //{
+            //    knockBackable.KnockBack(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.FacingDirection);
+            //}
         }
     }
 

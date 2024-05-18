@@ -1,9 +1,21 @@
+using Lance;
+using Lance.CoreSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChargeState : State
 {
+
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    private Movement movement;
+    private CollisionSenses CollisionSenses
+    {
+        get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
+    }
+
+    private CollisionSenses collisionSenses;
+
     protected D_ChargeState stateData;
     protected bool isPlayerInMinAgroRange;
     protected bool isDetectingLedge;
@@ -21,7 +33,7 @@ public class ChargeState : State
     {
         base.Enter();
         isChargeTimeOver = false;
-        core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
+        Movement?.SetVelocityX(stateData.chargeSpeed * Movement.FacingDirection);
     }
 
     public override void Exit()
@@ -47,10 +59,13 @@ public class ChargeState : State
     public override void DoChecks()
     {
         base.DoChecks();
-
-        isDetectingLedge = core.CollisionSenses.LedgeVertical;
-        isDetectingWall = core.CollisionSenses.WallFront;
-        isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+      
+        
+            isDetectingLedge = CollisionSenses.LedgeVertical;
+            isDetectingWall = CollisionSenses.WallFront;
+            isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        
+      
 
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
