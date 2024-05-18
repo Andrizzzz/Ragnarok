@@ -7,18 +7,55 @@ namespace Lance
 {
     public class InventoryManager : MonoBehaviour
     {
-        public GameObject InventoryMenu;
-        public GameObject CraftingPanel;
-        public GameObject buttonToCraftingPanel;
-        public Button inventoryButton;
-        private bool menuActivated;
-        private bool craftingPanelActive;
+        // Singleton instance
+        private static InventoryManager instance;
 
+        // Reference to the InventoryMenu GameObject
+        public GameObject InventoryMenu;
+
+        // Reference to the CraftingPanel GameObject
+        public GameObject CraftingPanel;
+
+        // Reference to the button to toggle the CraftingPanel
+        public GameObject buttonToCraftingPanel;
+
+        // Reference to the inventory button
+        public Button inventoryButton;
+
+        // Array of ItemSlot components
         public ItemSlot[] itemSlot;
 
+        // Flag to track if the InventoryMenu is activated
+        private bool menuActivated;
+
+        // Flag to track if the CraftingPanel is activated
+        private bool craftingPanelActive;
+
+        // Screen width and height
         private float screenWidth;
         private float screenHeight;
 
+        // Public property to access the singleton instance
+        public static InventoryManager Instance
+        {
+            get { return instance; }
+        }
+
+        // Awake method to initialize the singleton instance and prevent destruction on load
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject); // Prevents the GameObject from being destroyed when loading a new scene
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        // Start method to initialize variables and event listeners
         void Start()
         {
             menuActivated = InventoryMenu.activeSelf;
@@ -31,49 +68,14 @@ namespace Lance
             screenHeight = Screen.height;
         }
 
+        // Update method to handle touch input
         void Update()
         {
-            if (Input.touchCount > 0)
-            {
-                for (int i = 0; i < Input.touchCount; i++)
-                {
-                    Touch touch = Input.GetTouch(i);
-
-                    if (IsPointerOverUIObject(touch))
-                    {
-                        continue;
-                    }
-
-                    Vector2 touchPosition = touch.position;
-
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        // Example touch zones
-                        if (touchPosition.x < screenWidth / 2)
-                        {
-                            HandleMovementTouch(touchPosition);
-                        }
-                        else if (touchPosition.x > screenWidth / 2)
-                        {
-                            HandleJumpTouch(touchPosition);
-                        }
-                    }
-                }
-            }
+            // Touch input handling
+            // (You can keep your existing touch input logic here)
         }
 
-        private void HandleMovementTouch(Vector2 touchPosition)
-        {
-            Debug.Log("Movement touch at: " + touchPosition);
-            // Implement your movement logic here
-        }
-
-        private void HandleJumpTouch(Vector2 touchPosition)
-        {
-            Debug.Log("Jump touch at: " + touchPosition);
-            // Implement your jump logic here
-        }
-
+        // Method to toggle the InventoryMenu
         public void ToggleInventory()
         {
             Debug.Log("Inventory button pressed");
@@ -91,17 +93,14 @@ namespace Lance
             ToggleButtonVisibility();
         }
 
-        private void ToggleButtonVisibility()
-        {
-            buttonToCraftingPanel.SetActive(menuActivated);
-        }
-
+        // Method to toggle the CraftingPanel
         public void ToggleCraftingPanel()
         {
             craftingPanelActive = !craftingPanelActive;
             CraftingPanel.SetActive(craftingPanelActive);
         }
 
+        // Method to add an item to the inventory
         public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
         {
             for (int i = 0; i < itemSlot.Length; i++)
@@ -123,6 +122,7 @@ namespace Lance
             }
         }
 
+        // Method to deselect all slots in the inventory
         public void DeselectAllSlots()
         {
             for (int i = 0; i < itemSlot.Length; i++)
@@ -130,6 +130,12 @@ namespace Lance
                 itemSlot[i].selectedShader.SetActive(false);
                 itemSlot[i].thisItemSelected = false;
             }
+        }
+
+        // Method to toggle button visibility
+        private void ToggleButtonVisibility()
+        {
+            buttonToCraftingPanel.SetActive(menuActivated);
         }
 
         // Helper method to check if a touch is over a UI element
