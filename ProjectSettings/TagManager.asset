@@ -12,7 +12,7 @@ TagManager:
   - Item
   - InventoryItem
   - CraftingPanelItem
-  - ParticleContainer
+  - buttonTag
   layers:
   - Default
   - TransparentFX
