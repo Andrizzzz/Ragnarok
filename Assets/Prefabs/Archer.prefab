@@ -755,7 +755,7 @@ MonoBehaviour:
   ledgeCheckHorizontal: {fileID: 0}
   ledgeCheckVertical: {fileID: 6720662670577806254}
   groundCheckRadius: 0.5
-  wallCheckDistance: 0.3
+  wallCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
