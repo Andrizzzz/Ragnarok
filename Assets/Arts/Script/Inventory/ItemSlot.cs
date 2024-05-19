@@ -9,6 +9,8 @@ namespace Lance
 {
     public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
+        
+
         public string itemName;
         public int quantity;
         public Sprite itemSprite;

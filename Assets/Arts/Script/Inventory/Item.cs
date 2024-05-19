@@ -15,7 +15,7 @@ namespace Lance
         [SerializeField]
         private Sprite sprite;
 
-        [TextArea]
+        [TextArea]  
         [SerializeField]
         private string itemDescription;
 
