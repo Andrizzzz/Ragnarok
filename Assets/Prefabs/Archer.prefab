@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472567683869990219}
-  - component: {fileID: 8253852386980521969}
+  - component: {fileID: 1174123877}
   m_Layer: 6
   m_Name: ParticleManager
   m_TagString: Enemy
@@ -210,7 +210,7 @@ Transform:
   m_Father: {fileID: 6720662669463924078}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8253852386980521969
+--- !u!114 &1174123877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 873680959918428857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbdb7ac2cf715f41a8fc404eb845abf, type: 3}
+  m_Script: {fileID: 11500000, guid: 61025bbf5f96780449cb9efe2e400eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4590365065941577917

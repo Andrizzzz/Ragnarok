@@ -10,6 +10,8 @@ namespace Lance.Weapons.Components
     {
         [SerializeField, HideInInspector] private string name;
 
+        public Type ComponentDependency { get; protected set; }
+
         public ComponentData()
         {
             SetComponentName();
@@ -18,13 +20,12 @@ namespace Lance.Weapons.Components
         public void SetComponentName() => name = GetType().Name;
 
         public virtual void SetAttackDataNames() { }
-        public virtual void InitializeAttackData(int numberOfAttacks) { }
 
+        public virtual void InitializeAttackData(int numberOfAttacks) { }
     }
 
     [Serializable]
-
-    public class ComponentData<T> : ComponentData where T: AttackData 
+    public class ComponentData<T> : ComponentData where T : AttackData
     {
         [SerializeField] private T[] attackData;
         public T[] AttackData { get => attackData; private set => attackData = value; }
@@ -32,9 +33,10 @@ namespace Lance.Weapons.Components
         public override void SetAttackDataNames()
         {
             base.SetAttackDataNames();
-            for (var i = 0; i <  AttackData.Length; i++)
+
+            for (var i = 0; i < AttackData.Length; i++)
             {
-                AttackData[1].SetAttackName(i + 1);
+                AttackData[i].SetAttackName(i + 1);
             }
         }
 
@@ -44,14 +46,14 @@ namespace Lance.Weapons.Components
 
             var oldLen = attackData != null ? attackData.Length : 0;
 
-            if(oldLen == numberOfAttacks)
+            if (oldLen == numberOfAttacks)
                 return;
 
             Array.Resize(ref attackData, numberOfAttacks);
 
-            if(oldLen < numberOfAttacks)
+            if (oldLen < numberOfAttacks)
             {
-                for (var i = oldLen;  i < attackData.Length;  i++)
+                for (var i = oldLen; i < attackData.Length; i++)
                 {
                     var newObj = Activator.CreateInstance(typeof(T)) as T;
                     attackData[i] = newObj;

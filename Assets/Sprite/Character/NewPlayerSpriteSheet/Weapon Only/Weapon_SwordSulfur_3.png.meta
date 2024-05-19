@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0d4352239594674282c0343a8c6a82a
+guid: ab871c87db18d044d9eb76476c0070c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -137,23 +137,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_0
+      name: Weapon_SwordSulfur_3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,20 +149,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2cb95f7842cf4340821d749fb9f7308
-      internalID: 959298012
+      spriteID: 3f4d4d24938be7c4db0684fd7e0e4829
+      internalID: -72422712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_1
+      name: Weapon_SwordSulfur_3_1
       rect:
         serializedVersion: 2
         x: 170
@@ -182,20 +170,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99e3b4f7fea165347ae3f1e1f4585c33
-      internalID: -667523954
+      spriteID: d4dd16ce50e4f264aaa6365b09d7ecb2
+      internalID: -1602258098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_2
+      name: Weapon_SwordSulfur_3_2
       rect:
         serializedVersion: 2
         x: 340
@@ -203,20 +191,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fff39e1f56db0b843ad2852c2421ed5d
-      internalID: -967496869
+      spriteID: 73f8a44a4f971fe41841435b03e94836
+      internalID: -313671878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_3
+      name: Weapon_SwordSulfur_3_3
       rect:
         serializedVersion: 2
         x: 510
@@ -224,20 +212,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d36714e708d446459f50402f268c210
-      internalID: 279102309
+      spriteID: 394ec5985f3e8fc4389278659eaccd51
+      internalID: -1770124884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_4
+      name: Weapon_SwordSulfur_3_4
       rect:
         serializedVersion: 2
         x: 680
@@ -245,20 +233,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83d136efd1462124391a75c5fc285791
-      internalID: 1785162277
+      spriteID: 1fbd6e36fc9005040ad2e01c1efddca4
+      internalID: -1721596029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_5
+      name: Weapon_SwordSulfur_3_5
       rect:
         serializedVersion: 2
         x: 850
@@ -266,20 +254,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f504f5024393ada4f8dcca2fe181fca4
-      internalID: -318098246
+      spriteID: 757d07d6f3d474f4caa8e3e25e36eaa7
+      internalID: 1253311661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_6
+      name: Weapon_SwordSulfur_3_6
       rect:
         serializedVersion: 2
         x: 1020
@@ -287,20 +275,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 896a52046ebb83b4f97e5430553441f1
-      internalID: 1543095632
+      spriteID: 60343323f39e9c441a4c9346a79a543d
+      internalID: -1197127530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_7
+      name: Weapon_SwordSulfur_3_7
       rect:
         serializedVersion: 2
         x: 1190
@@ -308,20 +296,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9317c38e185fc94eb3c3b7a910545cd
-      internalID: 230628989
+      spriteID: 4c20018a4b455c44eb5ad181293b31bf
+      internalID: -759358092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_8
+      name: Weapon_SwordSulfur_3_8
       rect:
         serializedVersion: 2
         x: 1360
@@ -329,20 +317,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3c28376fe5df054893067e7db8dfb82
-      internalID: -474920813
+      spriteID: ca96c21b869980a4cbc5b95adc1daef6
+      internalID: 1649896917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_9
+      name: Weapon_SwordSulfur_3_9
       rect:
         serializedVersion: 2
         x: 1530
@@ -350,20 +338,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d370c5f688d6c4a847cb7eba8eec23
-      internalID: -812273444
+      spriteID: 79019bc40813ca746a2d40c2c929332f
+      internalID: 1223820521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_10
+      name: Weapon_SwordSulfur_3_10
       rect:
         serializedVersion: 2
         x: 1700
@@ -371,20 +359,20 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3319196830d561748bd6369b63b356da
-      internalID: -873194566
+      spriteID: 144f836a25f7f4048ad5d600aee3485c
+      internalID: 1116633493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 3 cropped-Sheet final weapon only_11
+      name: Weapon_SwordSulfur_3_11
       rect:
         serializedVersion: 2
         x: 1870
@@ -392,14 +380,14 @@ TextureImporter:
         width: 170
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b315b75853521e4295df7dfb4b92405
-      internalID: -480659818
+      spriteID: a720159d380b4fb4cb2a514cc05d2bb1
+      internalID: -690447551
       vertices: []
       indices: 
       edges: []
@@ -415,18 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 3 cropped-Sheet final weapon only_0: 959298012
-      Attack 3 cropped-Sheet final weapon only_1: -667523954
-      Attack 3 cropped-Sheet final weapon only_10: -873194566
-      Attack 3 cropped-Sheet final weapon only_11: -480659818
-      Attack 3 cropped-Sheet final weapon only_2: -967496869
-      Attack 3 cropped-Sheet final weapon only_3: 279102309
-      Attack 3 cropped-Sheet final weapon only_4: 1785162277
-      Attack 3 cropped-Sheet final weapon only_5: -318098246
-      Attack 3 cropped-Sheet final weapon only_6: 1543095632
-      Attack 3 cropped-Sheet final weapon only_7: 230628989
-      Attack 3 cropped-Sheet final weapon only_8: -474920813
-      Attack 3 cropped-Sheet final weapon only_9: -812273444
+      Weapon_SwordSulfur_3_0: -72422712
+      Weapon_SwordSulfur_3_1: -1602258098
+      Weapon_SwordSulfur_3_10: 1116633493
+      Weapon_SwordSulfur_3_11: -690447551
+      Weapon_SwordSulfur_3_2: -313671878
+      Weapon_SwordSulfur_3_3: -1770124884
+      Weapon_SwordSulfur_3_4: -1721596029
+      Weapon_SwordSulfur_3_5: 1253311661
+      Weapon_SwordSulfur_3_6: -1197127530
+      Weapon_SwordSulfur_3_7: -759358092
+      Weapon_SwordSulfur_3_8: 1649896917
+      Weapon_SwordSulfur_3_9: 1223820521
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

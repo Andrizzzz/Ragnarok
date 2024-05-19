@@ -12,9 +12,9 @@ namespace Lance.Assets.Scripts.Weapons.Components.ComponentData
     {
         [field: SerializeField] public LayerMask DetectableLayers { get; private set; }
 
-        //protected override void SetComponentDependency()
-        //{
-        //    ComponentDependency = typeof(ActionHitBox);
-        //}
+        public ActionHitBoxData()
+        {
+            ComponentDependency = typeof(ActionHitBox);
+        }
     }
 }

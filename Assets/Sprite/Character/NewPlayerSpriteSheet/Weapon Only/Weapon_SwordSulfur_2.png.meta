@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa9143725841c3d468e1fe40927b3cd8
+guid: 18b89a4f6ca269646ad9b42ed34c034c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,148 +141,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon_Sword_1_0
+      name: Weapon_SwordSulfur_2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 156
-        width: 144
+        y: 29
+        width: 224
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61dab965b82365a45843cbe8d9c881a2
-      internalID: -403025639
+      spriteID: 9ebbf63dd900ed643b94c24af6d57835
+      internalID: 47408688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_1_1
+      name: Weapon_SwordSulfur_2_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 156
-        width: 144
+        x: 224
+        y: 29
+        width: 224
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8acc249e1d953434e9bc3c31c7aee1c4
-      internalID: -250270173
+      spriteID: aeec022af70c3044ebbd4f2de171459c
+      internalID: 2030947205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_1_2
+      name: Weapon_SwordSulfur_2_2
       rect:
         serializedVersion: 2
-        x: 288
-        y: 156
-        width: 144
+        x: 448
+        y: 29
+        width: 224
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb0dd5de28dd6fe4a86045bc369df634
-      internalID: -527308635
+      spriteID: 1d18dce0e92d9dd4099b5921d2778e7e
+      internalID: -1694369751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_1_3
+      name: Weapon_SwordSulfur_2_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 78
-        width: 144
+        x: 672
+        y: 29
+        width: 224
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fe6654dffa9acb4893e56587f77d249
-      internalID: 668564391
+      spriteID: 14daaeef74b5dbb49a8fb281eeed4260
+      internalID: -1570753862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_Sword_1_4
+      name: Weapon_SwordSulfur_2_4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 78
-        width: 144
+        x: 896
+        y: 29
+        width: 222
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 232a71d7853ce1748b91dfaec1a99914
-      internalID: 1110614518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_1_5
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 78
-        width: 144
-        height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17fa0e10d75c6d6438709b3f244a926d
-      internalID: 1954236197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_Sword_1_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 144
-        height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 564d057bdc2d29f41a5850fc0c5eef13
-      internalID: -671015047
+      spriteID: de6e5daf221979a4a8fe0a5ea2dffcc4
+      internalID: -1582719506
       vertices: []
       indices: 
       edges: []
@@ -298,13 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapon_Sword_1_0: -403025639
-      Weapon_Sword_1_1: -250270173
-      Weapon_Sword_1_2: -527308635
-      Weapon_Sword_1_3: 668564391
-      Weapon_Sword_1_4: 1110614518
-      Weapon_Sword_1_5: 1954236197
-      Weapon_Sword_1_6: -671015047
+      Weapon_SwordSulfur_2_0: 47408688
+      Weapon_SwordSulfur_2_1: 2030947205
+      Weapon_SwordSulfur_2_2: -1694369751
+      Weapon_SwordSulfur_2_3: -1570753862
+      Weapon_SwordSulfur_2_4: -1582719506
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
