@@ -57,14 +57,14 @@ namespace Lance
                 interactButton.gameObject.SetActive(false);
                 doorOpened = true;
 
-                // Disable the trigger collider when the door is opened
+                
                 triggerCollider.enabled = false;
 
                 doorAnimator.SetTrigger("Open");
             }
             else
             {
-                // If the door is already opened, toggle the trigger collider state
+                
                 triggerCollider.enabled = !triggerCollider.enabled;
             }
         }
