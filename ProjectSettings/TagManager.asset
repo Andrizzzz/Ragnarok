@@ -13,6 +13,7 @@ TagManager:
   - InventoryItem
   - CraftingPanelItem
   - buttonTag
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - OneWayPlatform
   - Enemy
   - Item
-  - 
+  - Laser
   - 
   - 
   - 
