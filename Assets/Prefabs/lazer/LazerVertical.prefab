@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6336141948474551622}
   - component: {fileID: -3620716855189844409}
   - component: {fileID: -6810004995767392263}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LazerVertical
-  m_TagString: Enemy
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

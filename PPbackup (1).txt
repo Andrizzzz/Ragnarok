@@ -1,0 +1,44 @@
+//File Create with Player prefs editor Tool
+//Player prefs for product  : RagnarokCoreConQuest , Company :  Nigiro Origin
+//Created at : 21/05/2024 1:55:52 AM
+//Created by iangaming302002@gmail.com
+{
+    "exportlist": [
+        {
+            "isEncrypted": false,
+            "key": "UnityGraphicsQuality",
+            "type": 0,
+            "value": "5"
+        },
+        {
+            "isEncrypted": false,
+            "key": "playerPosition",
+            "type": 0,
+            "value": "0"
+        },
+        {
+            "isEncrypted": false,
+            "key": "musicVolume",
+            "type": 1,
+            "value": "1"
+        },
+        {
+            "isEncrypted": false,
+            "key": "unity.cloud_userid",
+            "type": 2,
+            "value": "5d7b6b9298f9bc74b955da2f0843e626"
+        },
+        {
+            "isEncrypted": false,
+            "key": "unity.player_session_count",
+            "type": 2,
+            "value": "702"
+        },
+        {
+            "isEncrypted": false,
+            "key": "unity.player_sessionid",
+            "type": 2,
+            "value": "8577010114468925016"
+        }
+    ]
+}
