@@ -1,144 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-namespace Lance
+public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
-    public class ItemSlot : MonoBehaviour, IPointerClickHandler
+    private InventoryManager inventoryManager;
+    // ITEM DATA
+    public string itemName;
+    public int quantity;
+    public Sprite itemSprite;
+    public bool isFull;
+    public string itemDescription;
+
+    // ITEM SLOT
+    [SerializeField]
+    private TMP_Text quantityText;
+    [SerializeField]
+    private Image itemImage;
+
+    // ITEM DESCRIPTION
+    public Image ItemDescriptionImage;
+    public TMP_Text ItemDescriptionNameText;
+    public TMP_Text ItemDescriptionText;
+
+    public GameObject selectedShader;
+    public bool thisItemIsSelected;
+
+    private void Start()
     {
-        
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+    }
 
-        public string itemName;
-        public int quantity;
-        public Sprite itemSprite;
-        public bool isFull;
-        public string itemDescription;
-        public Sprite emptySprite;
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        this.itemName = itemName;
+        this.quantity = quantity;
+        this.itemSprite = itemSprite;
+        this.itemDescription = itemDescription;
+        isFull = true;
 
-        [SerializeField]
-        private TMP_Text quantityText;
+        quantityText.text = quantity.ToString();
+        quantityText.enabled = true;
+        itemImage.sprite = itemSprite;
+        itemImage.enabled = true;  // Make sure itemImage is enabled when adding an item
+    }
 
-        [SerializeField]
-        private Image itemImage;
-
-        public Image itemDescriptionImage;
-        public TMP_Text ItemDescriptionNameText;
-        public TMP_Text ItemDescriptionText;
-
-        public GameObject selectedShader;
-        public bool thisItemSelected;
-
-        private InventoryManager inventoryManager;
-
-        private void Start()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            // Find the InventoryManager in the scene and assign it to the inventoryManager field
-            inventoryManager = GameObject.FindObjectOfType<InventoryManager>();
-
-            if (inventoryManager == null)
-            {
-                Debug.LogError("InventoryManager not found in the scene.");
-            }
-
-            // Initially turn off the selected panel
-            DeselectSlot();
+            OnLeftClick();
         }
 
-        public void AddItem(string itemName, int quantity, Sprite itemsprite, string itemDescription)
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
-            this.itemName = itemName;
-            this.quantity = quantity;
-            this.itemSprite = itemsprite;
-            this.itemDescription = itemDescription;
-            isFull = true;
-
-            UpdateUI();
+            OnRightClick();
         }
+    }
 
-        public void IncreaseQuantity(int quantity)
+    public void OnLeftClick()
+    {
+        inventoryManager.DeselectAllSlot();
+        selectedShader.SetActive(true);
+        thisItemIsSelected = true;
+
+        if (isFull)
         {
-            this.quantity += quantity;
-            UpdateUI();
-        }
-
-        private void UpdateUI()
-        {
-            quantityText.text = this.quantity.ToString();
-            quantityText.enabled = true;
-            itemImage.sprite = this.itemSprite;
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            // Check if left mouse button is clicked
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
-                OnLeftClick();
-            }
-            else if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                OnRightClick();
-            }
-        }
-
-        public void OnLeftClick()
-        {
-            if (inventoryManager == null)
-            {
-                Debug.LogError("InventoryManager is not assigned.");
-                return;
-            }
-
-            // Check if the clicked object is the inventory
-            if (gameObject.CompareTag("Inventory"))
-            {
-                // If the slot is already selected, deselect it
-                if (thisItemSelected)
-                {
-                    DeselectSlot();
-                }
-                // Otherwise, do nothing
-                return;
-            }
-            else
-            {
-                // Deselect all slots before selecting the current one
-                inventoryManager.DeselectAllSlots();
-
-                // Select the current slot
-                SelectSlot();
-            }
-        }
-
-
-
-
-        public void OnRightClick()
-        {
-            // Implement right-click functionality here
-        }
-
-        // Method to select the current slot
-        private void SelectSlot()
-        {
-            selectedShader.SetActive(true);
-            thisItemSelected = true;
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite != null ? itemSprite : emptySprite;
+            ItemDescriptionImage.sprite = itemSprite;
+            ItemDescriptionImage.gameObject.SetActive(true); // Activate the image
+            ItemDescriptionNameText.gameObject.SetActive(true); // Activate the name text
+            ItemDescriptionText.gameObject.SetActive(true); // Activate the description text
         }
-
-        // Method to deselect the current slot
-        public void DeselectSlot()
+        else
         {
-            selectedShader.SetActive(false);
-            thisItemSelected = false;
             ItemDescriptionNameText.text = "";
             ItemDescriptionText.text = "";
-            itemDescriptionImage.sprite = emptySprite;
+            ItemDescriptionImage.gameObject.SetActive(false); // Deactivate the description image
+            ItemDescriptionNameText.gameObject.SetActive(false); // Deactivate the name text
+            ItemDescriptionText.gameObject.SetActive(false); // Deactivate the description text
+            itemImage.gameObject.SetActive(false); // Deactivate the item image
         }
+    }
+
+    public void OnRightClick()
+    {
+        // Implement the right-click functionality if needed
     }
 }
