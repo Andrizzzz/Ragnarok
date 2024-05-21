@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1455826997
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -115,7 +115,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2269698138242569689}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -191,12 +191,10 @@ MonoBehaviour:
   ItemName: Nickle
   quantity: 1
   sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
-  itemDescription: 'DESCRIPTION : Nickel, with the chemical symbol Ni and atomic
-    number 28, is a silvery-white metal with a hint of gold. It''s hard, ductile,
-    and forms a protective layer of nickel oxide, preventing rapid corrosion. While
-    it occurs in small amounts in Earth''s crust and some meteorites, it''s primarily
-    found in ultramafic rocks.
+  itemDescription: 'Nickel, with the chemical symbol Ni and atomic number 28, is
+    a silvery-white metal with a hint of gold. It''s hard, ductile, and forms a protective
+    layer of nickel oxide, preventing rapid corrosion. While it occurs in small amounts
+    in Earth''s crust and some meteorites, it''s primarily found in ultramafic rocks.
 
-    
-
-    CHEMICAL NAME: Ni'
+    CHEMICAL
+    NAME: Ni'

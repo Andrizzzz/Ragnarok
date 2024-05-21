@@ -14,6 +14,7 @@ TagManager:
   - CraftingPanelItem
   - buttonTag
   - Laser
+  - ParticleContainer
   layers:
   - Default
   - TransparentFX
@@ -68,4 +69,7 @@ TagManager:
     locked: 0
   - name: PLAYER
     uniqueID: 3579392265
+    locked: 0
+  - name: Elements
+    uniqueID: 3942860743
     locked: 0

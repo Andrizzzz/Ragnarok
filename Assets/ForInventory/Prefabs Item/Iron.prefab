@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6689483599215223854}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -102,16 +102,13 @@ MonoBehaviour:
   ItemName: Iron
   quantity: 1
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
-  itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and
-    atomic number 26, is a dense, lustrous metal that makes up about 85% of Earth''s
-    core, contributing significantly to the planet''s magnetic field and geodynamic
-    processes. Under extreme pressure and temperature in the core, iron exists in
-    both solid and molten states, exhibiting unique crystalline structures
+  itemDescription: 'Iron, a chemical element with the symbol Fe and atomic number
+    26, is a dense, lustrous metal that makes up about 85% of Earth''s core, contributing
+    significantly to the planet''s magnetic field and geodynamic processes. Under
+    extreme pressure and temperature in the core, iron exists in both solid and molten
+    states, exhibiting unique crystalline structures
 
-    
-
-    CHEMICAL
-    NAME: Fe'
+    CHEMICAL NAME: Fe'
 --- !u!1 &7868325345382420639
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,8 +184,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1455826997
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

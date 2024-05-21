@@ -97,7 +97,7 @@ MonoBehaviour:
   quantity: 1
   itemSprite: {fileID: 0}
   isFull: 0
-  itemDescription: 9
+  itemDescription: 
   emptySprite: {fileID: 539420486, guid: 985794d4c3c63e24db97b8479c33d8de, type: 3}
   quantityText: {fileID: 1972606074177248950}
   itemImage: {fileID: 7550379977390239571}
