@@ -1,30 +1,41 @@
+using Lance.CoreSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lance
+
+[CreateAssetMenu]
+public class ItemSO : ScriptableObject
 {
-    [CreateAssetMenu]
-    public class ItemSO : ScriptableObject
-    {
-        public string itemName;
-        public StatToChange statToChang = new StatToChange();
-        public int amountToChangeStat;
+    public string itemName;
+    public StatToChange statToChange = new StatToChange();
+    public AttributesToChange attributesToChange = new AttributesToChange();
 
-        public enum StatToChange
+    public int amountOfChangeStat;
+    public int amountOfChangeAttributes;
+
+    public void UseItem()
+    {
+        if(statToChange == StatToChange.health)
         {
-            none,
-            health
-        };
+            GameObject.Find("Stats").GetComponent<Stats>().IncreaseHealth(amountOfChangeStat);
+        }
     }
 
+    public enum StatToChange 
+    { 
+        none,
+        health,
+        stamina
+     };
 
-
-    public enum StatToChange
+    public enum AttributesToChange
     {
+        none,
+        Strength,
+        Defense,
+        Agility
+        
+    };
 
-    }
 }
-
-
-

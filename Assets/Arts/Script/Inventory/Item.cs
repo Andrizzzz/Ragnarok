@@ -26,10 +26,13 @@ using UnityEngine;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            inventoryManager.AddItem(ItemName, quantity, sprite, itemDescription);
-            Destroy(gameObject);
+            int leftOverItems = inventoryManager.AddItem(ItemName, quantity, sprite, itemDescription);
+            if(leftOverItems <= 0)
+                 Destroy(gameObject);
+            else
+                 quantity = leftOverItems;
         }
     }
 

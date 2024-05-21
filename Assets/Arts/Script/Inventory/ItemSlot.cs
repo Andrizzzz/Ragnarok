@@ -1,29 +1,36 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
     private InventoryManager inventoryManager;
+
+    [SerializeField]
+    public int maxNumberOfItems;
+
     // ITEM DATA
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
+    public Sprite emptySprite;
 
-    // ITEM SLOT
+    // UI Elements
     [SerializeField]
     private TMP_Text quantityText;
     [SerializeField]
     private Image itemImage;
 
-    // ITEM DESCRIPTION
+    // Item Description UI Elements
     public Image ItemDescriptionImage;
     public TMP_Text ItemDescriptionNameText;
     public TMP_Text ItemDescriptionText;
 
+    // Selection Indicator
     public GameObject selectedShader;
     public bool thisItemIsSelected;
 
@@ -32,19 +39,41 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
+        if (isFull)
+            return quantity;
+
+        // Update item data
         this.itemName = itemName;
-        this.quantity = quantity;
         this.itemSprite = itemSprite;
         this.itemDescription = itemDescription;
-        isFull = true;
 
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
+        // Update UI
         itemImage.sprite = itemSprite;
-        itemImage.enabled = true;  // Make sure itemImage is enabled when adding an item
+        itemImage.enabled = true;
+
+        this.quantity += quantity;
+
+        // Update quantity text
+        if (this.quantity >= maxNumberOfItems)
+        {
+            quantityText.text = maxNumberOfItems.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+
+            int extraItems = this.quantity - maxNumberOfItems;
+            this.quantity = maxNumberOfItems;
+            return extraItems;
+        }
+
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+
+        return 0;
     }
+
+   
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -61,32 +90,45 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        inventoryManager.DeselectAllSlot();
-        selectedShader.SetActive(true);
-        thisItemIsSelected = true;
-
-        if (isFull)
+        if (thisItemIsSelected)
         {
-            ItemDescriptionNameText.text = itemName;
-            ItemDescriptionText.text = itemDescription;
-            ItemDescriptionImage.sprite = itemSprite;
-            ItemDescriptionImage.gameObject.SetActive(true); // Activate the image
-            ItemDescriptionNameText.gameObject.SetActive(true); // Activate the name text
-            ItemDescriptionText.gameObject.SetActive(true); // Activate the description text
+            inventoryManager.UseItem(itemName);
+            this.quantity -= quantity;
+            quantityText.text = this.quantity.ToString();
+            if(this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+
         }
         else
         {
-            ItemDescriptionNameText.text = "";
-            ItemDescriptionText.text = "";
-            ItemDescriptionImage.gameObject.SetActive(false); // Deactivate the description image
-            ItemDescriptionNameText.gameObject.SetActive(false); // Deactivate the name text
-            ItemDescriptionText.gameObject.SetActive(false); // Deactivate the description text
-            itemImage.gameObject.SetActive(false); // Deactivate the item image
+            inventoryManager.DeselectAllSlot();
+            selectedShader.SetActive(true);
+            thisItemIsSelected = true;
+            ItemDescriptionNameText.text = itemName;
+            ItemDescriptionText.text = itemDescription;
+            ItemDescriptionImage.sprite = itemSprite;
+            if (ItemDescriptionImage.sprite == null)
+                ItemDescriptionImage.sprite = emptySprite;
         }
+
+        
+        
+    }
+
+    private void EmptySlot()
+    {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+
+        ItemDescriptionNameText.text = "";
+        ItemDescriptionText.text = "";
+        ItemDescriptionImage.sprite = emptySprite;
     }
 
     public void OnRightClick()
     {
-        // Implement the right-click functionality if needed
+        
     }
 }
