@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Nickel
   quantity: 1
   sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   itemDescription: 'DESCRIPTION : Nickel, with the chemical symbol Ni and atomic

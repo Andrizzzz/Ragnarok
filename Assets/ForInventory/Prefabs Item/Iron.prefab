@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Iron
   quantity: 1
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and
