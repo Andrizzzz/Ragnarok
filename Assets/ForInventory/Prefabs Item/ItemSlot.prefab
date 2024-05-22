@@ -92,12 +92,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6f16898b5ae9541bb754259b8b1942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfItems: 9
+  maxNumberOfItems: 16
   itemName: 
   quantity: 0
   itemSprite: {fileID: 0}
   isFull: 0
-  itemDescription: 9
+  itemDescription: 
   emptySprite: {fileID: 539420486, guid: 985794d4c3c63e24db97b8479c33d8de, type: 3}
   quantityText: {fileID: 1972606074177248950}
   itemImage: {fileID: 7550379977390239571}
