@@ -17,6 +17,8 @@ namespace Lance
         public float fadeDuration = 2.0f; // Duration for fade-in and fade-out
         public float mainMenuFadeDuration = 1.0f; // Fade duration specifically for main menu
 
+        private bool isInCutscene = false; // Flag to indicate if currently in a cutscene
+
         private void Start()
         {
             // Set up the audio source with the background clip
@@ -101,9 +103,19 @@ namespace Lance
             {
                 StopMusic(mainMenuFadeDuration); // Use different fade duration for main menu
             }
+            else if (scene.name == "CutScene")
+            {
+                // Stop music if entering the cutscene
+                isInCutscene = true;
+                StopMusic(fadeDuration);
+            }
             else
             {
-                StartMusic();
+                // If not in cutscene, start music
+                if (!isInCutscene)
+                {
+                    StartMusic();
+                }
             }
         }
 
