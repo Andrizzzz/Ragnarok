@@ -93,13 +93,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (thisItemIsSelected)
         {
             inventoryManager.UseItem(itemName);
-            this.quantity -= quantity;
+            this.quantity -= 1;
             quantityText.text = this.quantity.ToString();
-            if(this.quantity <= 0)
+            if (this.quantity <= 0)
             {
                 EmptySlot();
             }
-
         }
         else
         {
@@ -112,10 +111,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             if (ItemDescriptionImage.sprite == null)
                 ItemDescriptionImage.sprite = emptySprite;
         }
-
-        
-        
     }
+
+
+
 
     private void EmptySlot()
     {
