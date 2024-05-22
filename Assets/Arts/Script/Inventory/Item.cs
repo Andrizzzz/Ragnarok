@@ -1,23 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-    public class Item : MonoBehaviour
-    {
+public class Item : MonoBehaviour
+{
     [SerializeField]
-    private string ItemName;
+    public string itemName; 
     [SerializeField]
-    private int quantity;
+    public int quantity; 
 
     [SerializeField]
-    private Sprite sprite;
+    public Sprite sprite; 
 
     [TextArea]
     [SerializeField]
-    private string itemDescription;
+    public string itemDescription; 
 
     private InventoryManager inventoryManager;
-
 
     private void Start()
     {
@@ -26,17 +23,13 @@ using UnityEngine;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            int leftOverItems = inventoryManager.AddItem(ItemName, quantity, sprite, itemDescription);
-            if(leftOverItems <= 0)
-                 Destroy(gameObject);
+            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            if (leftOverItems <= 0)
+                Destroy(gameObject);
             else
-                 quantity = leftOverItems;
+                quantity = leftOverItems;
         }
     }
-
-
 }
-    
-      

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Nickle
+  itemName: 
   quantity: 1
   sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   itemDescription: 'DESCRIPTION : Nickel, with the chemical symbol Ni and atomic
@@ -1032,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -465
       objectReference: {fileID: 0}
+    - target: {fileID: 1278730118469451765, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -368342104, guid: ef852f10514537543aed8c6a1ee3819f, type: 3}
     - target: {fileID: 4804311941203901338, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -29065,7 +29069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Nickle
+  itemName: 
   quantity: 1
   sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   itemDescription: 'DESCRIPTION : Nickel, with the chemical symbol Ni and atomic
@@ -29310,7 +29314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Iron
+  itemName: 
   quantity: 1
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and
@@ -29510,7 +29514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Iron
+  itemName: 
   quantity: 1
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and

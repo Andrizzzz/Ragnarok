@@ -16,7 +16,8 @@ public class ItemSO : ScriptableObject
 
     public void UseItem()
     {
-        if(statToChange == StatToChange.health)
+        Debug.Log("Using item: " + itemName);
+        if (statToChange == StatToChange.health)
         {
             GameObject.Find("Stats").GetComponent<Stats>().IncreaseHealth(amountOfChangeStat);
         }

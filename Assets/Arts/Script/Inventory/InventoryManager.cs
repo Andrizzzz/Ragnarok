@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
 
     public void UseItem(string itemName)
     {
+        Debug.Log("UseItem called for: " + itemName);
         for (int i = 0; i < itemSOs.Length; i++)
         {
             if (itemSOs[i].itemName == itemName)
