@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NewMap/Main Menu.unity
     guid: 617eae033b1763f4dbbeca83e18dbcfa
   - enabled: 1
+    path: Assets/Scenes/NewMap/CutScene.unity
+    guid: 276ab38bd33aec74d88524165634d04e
+  - enabled: 1
     path: Assets/Scenes/NewMap/Level1-1.unity
     guid: 405a7428884b78648a22f542ea49f4e6
   - enabled: 1

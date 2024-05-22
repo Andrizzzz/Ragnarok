@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
+    public GameObject DarkPanel;  // Add this line
     public ItemSO[] itemSOs;
 
     private bool menuActivated;
@@ -14,6 +15,7 @@ public class InventoryManager : MonoBehaviour
     {
         menuActivated = false;
         InventoryMenu.SetActive(false);
+        DarkPanel.SetActive(false);  // Add this line
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class InventoryManager : MonoBehaviour
     {
         menuActivated = !menuActivated;
         InventoryMenu.SetActive(menuActivated);
+        DarkPanel.SetActive(menuActivated);  // Add this line
 
         if (menuActivated)
         {
@@ -61,8 +64,7 @@ public class InventoryManager : MonoBehaviour
                 if (leftOverItems > 0)
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
 
-
-                    return leftOverItems;
+                return leftOverItems;
             }
         }
         return quantity;
@@ -70,7 +72,7 @@ public class InventoryManager : MonoBehaviour
 
     public void DeselectAllSlot()
     {
-        for(int i = 0;i < itemSlot.Length; i++)
+        for (int i = 0; i < itemSlot.Length; i++)
         {
             itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemIsSelected = false;
@@ -79,14 +81,11 @@ public class InventoryManager : MonoBehaviour
 
     private void PauseGame()
     {
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
     }
 
     private void ResumeGame()
     {
         Time.timeScale = 1f;
     }
-
-
 }
-
