@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7259651782388670425}
   - component: {fileID: 7259651782388670426}
-  - component: {fileID: 7259651782388670424}
   m_Layer: 0
   m_Name: SeismicWave
   m_TagString: Untagged
@@ -59,17 +58,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 6.157142}
   m_EdgeRadius: 0
---- !u!114 &7259651782388670424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7259651782388670428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2258c12459df41141b5ff45cbda36a3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraShaker: {fileID: 0}
-  earthquakeShakeData: {fileID: 11400000, guid: ff4299db7244c2541bfdb51ad0ae0e5d, type: 2}
