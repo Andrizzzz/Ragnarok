@@ -61,7 +61,7 @@ namespace Lance
             }
 
             
-            SceneManager.LoadScene("Level1-1");
+            SceneManager.LoadScene("Cutscene");
         }
 
         private void CreateFadeOverlay()
