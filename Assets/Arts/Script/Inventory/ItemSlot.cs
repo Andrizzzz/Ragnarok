@@ -143,7 +143,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
         itemToDrop.AddComponent<BoxCollider2D>();
 
-        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2, 0, 0);
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2.5f, 0, 0);
         itemToDrop.transform.localScale = new Vector3(.7f, .7f, .7f);
 
         this.quantity -= 1;

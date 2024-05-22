@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6689483599215223854
+--- !u!1 &5581320755875698601
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1311797681009412840}
-  - component: {fileID: 1988318113751227522}
-  - component: {fileID: 508985349694530938}
-  - component: {fileID: 3476491398237080008}
+  - component: {fileID: 5581320755875698597}
+  - component: {fileID: 5581320755875698598}
+  - component: {fileID: 5581320755875698599}
+  - component: {fileID: 5581320755875698600}
   m_Layer: 5
   m_Name: Iron
   m_TagString: Untagged
@@ -19,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1311797681009412840
+--- !u!224 &5581320755875698597
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6689483599215223854}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 5581320755875698601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 7175884004025305288}
+  - {fileID: 5581320756341278394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.41, y: -5.77}
+  m_AnchoredPosition: {x: 9.47, y: -6.11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!50 &1988318113751227522
+--- !u!50 &5581320755875698598
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6689483599215223854}
+  m_GameObject: {fileID: 5581320755875698601}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -61,13 +61,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &508985349694530938
+--- !u!61 &5581320755875698599
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6689483599215223854}
+  m_GameObject: {fileID: 5581320755875698601}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -87,32 +87,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2940063, y: 1.5389404}
   m_EdgeRadius: 0
---- !u!114 &3476491398237080008
+--- !u!114 &5581320755875698600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6689483599215223854}
+  m_GameObject: {fileID: 5581320755875698601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 247ea0c4702d2ba44bd14c51f449e0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Iron
+  itemName: 
   quantity: 1
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and
     atomic number 26, is a dense, lustrous metal that makes up about 85% of Earth''s
     core, contributing significantly to the planet''s magnetic field and geodynamic
     processes. Under extreme pressure and temperature in the core, iron exists in
-    both solid and molten states, exhibiting unique crystalline structures
-
+    both solid and molten states, exhibiting unique crystalline structures.
 
 
     CHEMICAL
     NAME: Fe'
---- !u!1 &7868325345382420639
+--- !u!1 &5581320756341278395
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,8 +119,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7175884004025305288}
-  - component: {fileID: 1424314565039630403}
+  - component: {fileID: 5581320756341278394}
+  - component: {fileID: 5581320756341278393}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -129,19 +128,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7175884004025305288
+--- !u!224 &5581320756341278394
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7868325345382420639}
+  m_GameObject: {fileID: 5581320756341278395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1311797681009412840}
+  m_Father: {fileID: 5581320755875698597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -149,13 +148,13 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!212 &1424314565039630403
+--- !u!212 &5581320756341278393
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7868325345382420639}
+  m_GameObject: {fileID: 5581320756341278395}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -187,8 +186,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -424731805
-  m_SortingLayer: 4
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
