@@ -11408,7 +11408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1059620476951533530, guid: 08f7b566b277b744caf13a759453ca3a, type: 3}
       propertyPath: maxNumberOfItems
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1059620476951533530, guid: 08f7b566b277b744caf13a759453ca3a, type: 3}
       propertyPath: ItemDescriptionText
