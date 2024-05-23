@@ -33,9 +33,14 @@ namespace Lance
         {
             base.LogicUpdate();
 
-             if (isDetectingWall || !isDetectingLedge)
+            if (isPlayerInMinAgroRange)
             {
-                Debug.Log("Gumalaw na sya");
+                stateMachine.ChangeState(enemy.playerDetectedState);
+            }
+
+            else if (isDetectingWall || !isDetectingLedge)
+            {
+                Debug.Log("Eh Gumalaw");
                 enemy.idleState.SetFlipAfterIdle(true);
                 stateMachine.ChangeState(enemy.idleState);
             }

@@ -32,10 +32,15 @@ namespace Lance
         {
             base.LogicUpdate();
 
-              if (isIdleTimeOver)
-            {
-                Debug.Log("Idle na sya");
 
+            if (isPlayerInMinAgroRange)
+            {
+                Debug.Log("Nadetect nya");
+                stateMachine.ChangeState(enemy.playerDetectedState); // Use enemy.playerDetectedState
+            }
+            else if (isIdleTimeOver)
+            {
+                Debug.Log("Eh Nag Estedi");
                 stateMachine.ChangeState(enemy.moveState);
             }
         }

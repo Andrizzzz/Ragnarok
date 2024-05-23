@@ -4,18 +4,55 @@ using UnityEngine;
 
 namespace Lance
 {
-    public class EB1_StunState : MonoBehaviour
+    public class EB1_StunState : StunState
     {
-        // Start is called before the first frame update
-        void Start()
+        EnemyBoss1 enemy;
+        public EB1_StunState(Entity entity, FiniteStateMachine stateMachine, string animBool, D_StunState stateData, EnemyBoss1 enemy)
+            : base(entity, stateMachine, animBool, stateData)
         {
-        
+            this.enemy = enemy;
         }
 
-        // Update is called once per frame
-        void Update()
+        public override void DoChecks()
         {
-        
+            base.DoChecks();
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+        }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            if (isStunTimeOver)
+            {
+                if (performCloseRangeAction)
+                {
+                    stateMachine.ChangeState(enemy.meleeAttackState);
+                }
+                else if (isPlayerInMinAgroRange)
+                {
+                    stateMachine.ChangeState(enemy.chargeState);
+                }
+                else
+                {
+                    enemy.lookForPlayerState.SetTurnImmediately(true);
+                    stateMachine.ChangeState(enemy.lookForPlayerState);
+                }
+            }
+        }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
         }
     }
 }

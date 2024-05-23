@@ -4,18 +4,38 @@ using UnityEngine;
 
 namespace Lance
 {
-    public class EB1_DeadState : MonoBehaviour
+    public class EB1_DeadState : DeadState
     {
-        // Start is called before the first frame update
-        void Start()
+        EnemyBoss1 enemy;
+        public EB1_DeadState(Entity entity, FiniteStateMachine stateMachine, string animBool, D_DeadState stateData, EnemyBoss1 enemy)
+            : base(entity, stateMachine, animBool, stateData)
         {
-        
+            this.enemy = enemy;
         }
 
-        // Update is called once per frame
-        void Update()
+        public override void DoChecks()
         {
-        
+            base.DoChecks();
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+        }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+        }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
         }
     }
 }
