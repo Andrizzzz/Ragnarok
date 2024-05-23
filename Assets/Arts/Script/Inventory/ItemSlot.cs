@@ -3,10 +3,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemSlot : MonoBehaviour
 {
     private InventoryManager inventoryManager;
-    private Canvas canvas;
 
     [SerializeField]
     public int maxNumberOfItems;
@@ -21,9 +20,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 
     // UI Elements
     [SerializeField]
-    private TMP_Text quantityText;
+    public Image itemImage;
     [SerializeField]
-    private Image itemImage;
+    public TMP_Text quantityText;
 
     // Item Description UI Elements
     public Image ItemDescriptionImage;
@@ -34,14 +33,34 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     public GameObject selectedShader;
     public bool thisItemIsSelected;
 
-    private RectTransform rectTransform;
-    private bool isDragging = false;
+    // UI Buttons
+    public Button useButton;
+    public Button dropButton;
+    public Button incrementButton;
+    public Button decrementButton;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
-        rectTransform = GetComponent<RectTransform>();
+
+        // Hide buttons initially
+        useButton.gameObject.SetActive(false);
+        dropButton.gameObject.SetActive(false);
+
+
+        // Attach button click listeners
+        useButton.onClick.AddListener(UseItem);
+        dropButton.onClick.AddListener(DropItem);
+   
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // Check if it's a left-click
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            // Let the UseButton handle the action
+        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
@@ -78,45 +97,30 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         return 0;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void UseItem()
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
+        Debug.Log("Item used: " + itemName);
+        inventoryManager.UseItem(itemName);
+        quantity--;
+        quantityText.text = quantity.ToString();
+        if (quantity <= 0)
         {
-            OnLeftClick();
-        }
-        if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            OnRightClick();
+            EmptySlot();
         }
     }
 
-    public void OnLeftClick()
+    public void DropItem()
     {
-        Debug.Log("Item left-clicked: " + itemName);
-        if (thisItemIsSelected)
-        {
-            inventoryManager.UseItem(itemName);
-            this.quantity -= 1;
-            quantityText.text = this.quantity.ToString();
-            if (this.quantity <= 0)
-            {
-                EmptySlot();
-            }
-        }
-        else
-        {
-            inventoryManager.DeselectAllSlot();
-            selectedShader.SetActive(true);
-            thisItemIsSelected = true;
-            ItemDescriptionNameText.text = itemName;
-            ItemDescriptionText.text = itemDescription;
-            ItemDescriptionImage.sprite = itemSprite;
-            if (ItemDescriptionImage.sprite == null)
-                ItemDescriptionImage.sprite = emptySprite;
-        }
+        Debug.Log("Item dropped: " + itemName);
+        // Call a method in the InventoryManager to handle dropping the item
+        inventoryManager.DropItem(itemName);
+        // Clear the slot
+        EmptySlot();
     }
 
-    private void EmptySlot()
+
+
+    public void EmptySlot()
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;
@@ -126,49 +130,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         ItemDescriptionImage.sprite = emptySprite;
     }
 
-    public void OnRightClick()
+    public void ShowButtons()
     {
-        GameObject itemToDrop = new GameObject(itemName);
-        Item newItem = itemToDrop.AddComponent<Item>();
-
-        newItem.quantity = 1;
-        newItem.itemName = itemName;
-        newItem.sprite = itemSprite;
-        newItem.itemDescription = itemDescription;
-
-        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
-        sr.sprite = itemSprite;
-        sr.sortingOrder = 5;
-        sr.sortingLayerName = "Ground";
-
-        itemToDrop.AddComponent<BoxCollider2D>();
-
-        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2.5f, 0, 0);
-        itemToDrop.transform.localScale = new Vector3(.7f, .7f, .7f);
-
-        this.quantity -= 1;
-        quantityText.text = this.quantity.ToString();
-        if (this.quantity <= 0)
-        {
-            EmptySlot();
-        }
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        isDragging = true;
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (isDragging)
-        {
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        isDragging = false;
+        // Show buttons
+        useButton.gameObject.SetActive(true);
+        dropButton.gameObject.SetActive(true);
     }
 }
