@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace Lance
 {
@@ -8,9 +8,8 @@ namespace Lance
     {
         public GameObject dialoguePanel;
         public Text dialogueText;
-        public DialogueText[] dialogueTexts;
-        private int dialogueIndex;
-        private int lineIndex;
+        public DialogueLine[] dialogueLines;
+        private int index;
 
         public float wordSpeed;
         private bool playerIsClose;
@@ -24,9 +23,9 @@ namespace Lance
         public Collider2D dialogueCollider;
 
         [System.Serializable]
-        public class DialogueText
+        public class DialogueLine
         {
-            public string[] dialogueLines;
+            public string dialogue;
             public GameObject[] uiToShow;
             public GameObject[] uiToHide;
         }
@@ -45,7 +44,10 @@ namespace Lance
         {
             if (playerIsClose && !dialogueStarted && !dialogueFinished)
             {
-                StartDialogue();
+                if (!Input.GetButtonDown("Inventory")) // Check if the inventory button is not pressed
+                {
+                    StartDialogue();
+                }
             }
 
             if (dialogueStarted && (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0)))
@@ -70,33 +72,32 @@ namespace Lance
             }
             dialoguePanel.SetActive(true);
             dialogueStarted = true;
-            dialogueIndex = 0;
-            lineIndex = 0;
             StartCoroutine(Typing());
             if (dialogueCollider != null)
             {
                 dialogueCollider.enabled = false;
             }
 
-            // Show UI elements specified for the current dialogue text
+            // Show UI elements specified for the current dialogue line
             ShowUIForCurrentDialogue();
         }
 
         private void ShowUIForCurrentDialogue()
         {
-            if (dialogueIndex < dialogueTexts.Length)
+            if (index < dialogueLines.Length)
             {
-                foreach (GameObject uiElement in dialogueTexts[dialogueIndex].uiToShow)
+                foreach (GameObject uiElement in dialogueLines[index].uiToShow)
                 {
                     uiElement.SetActive(true);
                 }
-                // Hide UI elements not specified for the current dialogue text
-                foreach (GameObject uiElement in dialogueTexts[dialogueIndex].uiToHide)
+                // Hide UI elements not specified for the current dialogue line
+                foreach (GameObject uiElement in dialogueLines[index].uiToHide)
                 {
                     uiElement.SetActive(false);
                 }
             }
         }
+
         private IEnumerator Typing()
         {
             if (isTyping) yield break;
@@ -104,49 +105,41 @@ namespace Lance
             isTyping = true;
             dialogueText.text = "";
 
-            string[] currentDialogue = dialogueTexts[dialogueIndex].dialogueLines;
+            string currentDialogue = dialogueLines[index].dialogue;
             int dialogueLength = currentDialogue.Length;
 
-            for (int i = lineIndex; i < dialogueLength; i++)
+            for (int i = 0; i < dialogueLength; i++)
             {
                 if (skipCurrentSentence)
                 {
-                    dialogueText.text = currentDialogue[i];
+                    dialogueText.text = currentDialogue;
                     break;
                 }
 
-                dialogueText.text = currentDialogue[i];
+                dialogueText.text += currentDialogue[i];
                 yield return new WaitForSecondsRealtime(wordSpeed);
-
-                // Move lineIndex increment here to properly display all lines
-                lineIndex++;
-
-                // Check if it's the last dialogue line
-                if (lineIndex == dialogueLength - 1)
-                {
-                    NextDialogue();
-                }
             }
 
             isTyping = false;
             skipCurrentSentence = false;
+
+            if (index == dialogueLines.Length - 1 && !skipCurrentSentence) // Check if it's the last dialogue line and typing is not skipped
+            {
+                dialogueFinished = true;
+            }
         }
-
-
 
         private void NextDialogue()
         {
-            if (dialogueIndex < dialogueTexts.Length - 1)
+            if (index < dialogueLines.Length - 1)
             {
-                dialogueIndex++;
-                lineIndex = 0;
+                index++;
                 StartCoroutine(Typing());
                 ShowUIForCurrentDialogue();
             }
             else
             {
                 EndDialogue();
-                dialogueFinished = true;
             }
         }
 
@@ -167,9 +160,9 @@ namespace Lance
 
         private void ShowAllUI()
         {
-            foreach (DialogueText dialogueText in dialogueTexts)
+            foreach (DialogueLine dialogueLine in dialogueLines)
             {
-                foreach (GameObject uiElement in dialogueText.uiToHide)
+                foreach (GameObject uiElement in dialogueLine.uiToHide)
                 {
                     uiElement.SetActive(true);
                 }
