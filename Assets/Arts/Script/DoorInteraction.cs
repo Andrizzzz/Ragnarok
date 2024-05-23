@@ -13,12 +13,12 @@ namespace Lance
         public Animator doorAnimator;
 
         private bool doorOpened = false;
+        private List<Collider2D> collidersToIgnore = new List<Collider2D>();
 
         void Start()
         {
             interactButton.gameObject.SetActive(false);
             interactButton.onClick.AddListener(OnButtonClick);
-
 
             if (doorAnimator == null)
             {
@@ -36,6 +36,10 @@ namespace Lance
             {
                 Debug.Log("Player entered the trigger area.");
                 interactButton.gameObject.SetActive(true);
+                // Ignore collision between the trigger collider and the player
+                Physics2D.IgnoreCollision(triggerCollider, other, true);
+                // Add the collider to the list of colliders to ignore
+                collidersToIgnore.Add(other);
             }
         }
 
@@ -45,6 +49,12 @@ namespace Lance
             {
                 Debug.Log("Player exited the trigger area.");
                 interactButton.gameObject.SetActive(false);
+                // Re-enable collision between the trigger collider and the player
+                collidersToIgnore.Remove(other);
+                foreach (Collider2D collider in collidersToIgnore)
+                {
+                    Physics2D.IgnoreCollision(triggerCollider, collider, false);
+                }
             }
         }
 
@@ -57,18 +67,21 @@ namespace Lance
                 interactButton.gameObject.SetActive(false);
                 doorOpened = true;
 
-                
+                // Disable collision between the player and barrier collider
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    Physics2D.IgnoreCollision(barrierCollider, player.GetComponent<Collider2D>());
+                }
+
                 triggerCollider.enabled = false;
 
                 doorAnimator.SetTrigger("Open");
             }
             else
             {
-                
                 triggerCollider.enabled = !triggerCollider.enabled;
             }
         }
-
-
     }
 }
