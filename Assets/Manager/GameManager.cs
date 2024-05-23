@@ -37,14 +37,35 @@ public class GameManager : MonoBehaviour
 
     private void CheckRespawn()
     {
-        if (Time.time >= respawnTimeStart + respawnTime && respawn)
+        if (respawn)
         {
-            //var playerTemp = Instantiate(player, respawnPoint.position, respawnPoint.rotation);
-            //CVC.m_Follow = playerTemp.transform;
-            player.gameObject.SetActive(true);
-            player.transform.position = respawnPoint.position;
-            respawn = false;
+            if (Time.time >= respawnTimeStart + respawnTime)
+            {
+                // Spawn a new player object at the respawn point
+                GameObject newPlayer = Instantiate(player, respawnPoint.position, respawnPoint.rotation);
+
+                // Deactivate the old player object
+                player.gameObject.SetActive(false);
+
+                // Set the camera to follow the new player
+                CVC.m_Follow = newPlayer.transform;
+
+                // Reset respawn flag
+                respawn = false;
+
+                // Reset respawnTimeStart
+                respawnTimeStart = Time.time;
+
+                Debug.Log("Player respawned successfully.");
+            }
+            else
+            {
+                Debug.Log("Respawn time not yet reached.");
+            }
         }
     }
+
+
+
     //orig
 }
