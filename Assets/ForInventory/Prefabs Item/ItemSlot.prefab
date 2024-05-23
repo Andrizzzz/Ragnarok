@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6f16898b5ae9541bb754259b8b1942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfItems: 16
+  maxNumberOfItems: 9
   itemName: 
   quantity: 0
   itemSprite: {fileID: 0}
@@ -109,8 +109,6 @@ MonoBehaviour:
   thisItemIsSelected: 0
   useButton: {fileID: 0}
   dropButton: {fileID: 0}
-  incrementButton: {fileID: 0}
-  decrementButton: {fileID: 0}
 --- !u!114 &4465193803977581226
 MonoBehaviour:
   m_ObjectHideFlags: 0

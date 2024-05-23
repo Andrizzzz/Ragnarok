@@ -16,15 +16,17 @@
                 DarkPanel.SetActive(false);
             }
 
-            private void Update()
-            {
-                if (Input.GetButtonDown("Inventory"))
-                {
-                    ToggleInventory();
-                }
-            }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Inventory"))
+        {
+            Debug.Log("Inventory button pressed");
+            ToggleInventory();
+        }
+    }
 
-            public void UseItem(string itemName)
+
+    public void UseItem(string itemName)
             {
                 Debug.Log("UseItem called for: " + itemName);
                 for (int i = 0; i < itemSOs.Length; i++)
