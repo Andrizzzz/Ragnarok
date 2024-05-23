@@ -1,25 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI; // Add this to access the UI components
-using TMPro; // Add this to access TextMeshPro components
+using UnityEngine.UI;
+using TMPro; 
 using FirstGearGames.SmoothCameraShaker;
 
 namespace Lance
 {
     public class StopShakingTrigger : MonoBehaviour
     {
-        public CameraShaker cameraShaker; // Reference to the CameraShaker component
-        public GameObject stopButton; // Reference to the Button UI GameObject
-        public GameObject dialoguePanel; // Reference to the dialogue panel GameObject
-        public TMP_Text dialogueText; // Reference to the TMP_Text component
+        public CameraShaker cameraShaker; 
+        public GameObject stopButton; 
+        public GameObject dialoguePanel;
+        public TMP_Text dialogueText;
+        public GameObject objectToDestroy; 
 
         private void Start()
         {
             if (stopButton != null)
             {
-                // Ensure the button is initially inactive
                 stopButton.SetActive(false);
 
-                // Add the listener for the button click
                 Button buttonComponent = stopButton.GetComponent<Button>();
                 if (buttonComponent != null)
                 {
@@ -35,7 +34,6 @@ namespace Lance
                 Debug.LogError("StopButton reference is missing.");
             }
 
-            // Ensure the dialogue panel is initially inactive
             if (dialoguePanel != null)
             {
                 dialoguePanel.SetActive(false);
@@ -48,11 +46,10 @@ namespace Lance
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player")) // Replace "Player" with the tag of the object that triggers the camera shaking stop
+            if (other.CompareTag("Player")) 
             {
                 Debug.Log("Player entered the stop shaking trigger.");
 
-                // Activate the stop button
                 if (stopButton != null)
                 {
                     stopButton.SetActive(true);
@@ -64,6 +61,22 @@ namespace Lance
         {
             StopShaking();
             ShowDialogue("Shaking stopped.");
+
+            // Disable the button to prevent further clicks
+            if (stopButton != null)
+            {
+                stopButton.GetComponent<Button>().interactable = false;
+            }
+
+            // Destroy the object containing this script
+            if (objectToDestroy != null)
+            {
+                Destroy(objectToDestroy);
+            }
+            else
+            {
+                Debug.LogWarning("Object to destroy is not assigned.");
+            }
         }
 
         private void StopShaking()
@@ -100,4 +113,3 @@ namespace Lance
         }
     }
 }
-
