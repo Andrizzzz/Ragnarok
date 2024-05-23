@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI; // Add this to access the UI components
+using TMPro; // Add this to access TextMeshPro components
 using FirstGearGames.SmoothCameraShaker;
 
 namespace Lance
@@ -8,6 +9,8 @@ namespace Lance
     {
         public CameraShaker cameraShaker; // Reference to the CameraShaker component
         public GameObject stopButton; // Reference to the Button UI GameObject
+        public GameObject dialoguePanel; // Reference to the dialogue panel GameObject
+        public TMP_Text dialogueText; // Reference to the TMP_Text component
 
         private void Start()
         {
@@ -20,7 +23,7 @@ namespace Lance
                 Button buttonComponent = stopButton.GetComponent<Button>();
                 if (buttonComponent != null)
                 {
-                    buttonComponent.onClick.AddListener(StopShaking);
+                    buttonComponent.onClick.AddListener(OnStopButtonClick);
                 }
                 else
                 {
@@ -30,6 +33,16 @@ namespace Lance
             else
             {
                 Debug.LogError("StopButton reference is missing.");
+            }
+
+            // Ensure the dialogue panel is initially inactive
+            if (dialoguePanel != null)
+            {
+                dialoguePanel.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("DialoguePanel reference is missing.");
             }
         }
 
@@ -45,6 +58,12 @@ namespace Lance
                     stopButton.SetActive(true);
                 }
             }
+        }
+
+        private void OnStopButtonClick()
+        {
+            StopShaking();
+            ShowDialogue("Shaking stopped.");
         }
 
         private void StopShaking()
@@ -66,5 +85,19 @@ namespace Lance
                 stopButton.SetActive(false);
             }
         }
+
+        private void ShowDialogue(string message)
+        {
+            if (dialoguePanel != null && dialogueText != null)
+            {
+                dialoguePanel.SetActive(true);
+                dialogueText.text = message;
+            }
+            else
+            {
+                Debug.LogError("DialoguePanel or DialogueText reference is missing.");
+            }
+        }
     }
 }
+
