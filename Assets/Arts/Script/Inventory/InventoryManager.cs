@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
-    public GameObject DarkPanel;  // Add this line
     public ItemSO[] itemSOs;
 
     private bool menuActivated;
@@ -15,7 +14,6 @@ public class InventoryManager : MonoBehaviour
     {
         menuActivated = false;
         InventoryMenu.SetActive(false);
-        DarkPanel.SetActive(false);  // Add this line
     }
 
     private void Update()
@@ -42,7 +40,6 @@ public class InventoryManager : MonoBehaviour
     {
         menuActivated = !menuActivated;
         InventoryMenu.SetActive(menuActivated);
-        DarkPanel.SetActive(menuActivated);  // Add this line
 
         if (menuActivated)
         {
