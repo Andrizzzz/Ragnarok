@@ -36,8 +36,7 @@ public class ItemSlot : MonoBehaviour
     // UI Buttons
     public Button useButton;
     public Button dropButton;
-    public Button incrementButton;
-    public Button decrementButton;
+   
 
     private void Start()
     {
