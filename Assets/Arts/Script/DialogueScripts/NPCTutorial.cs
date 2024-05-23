@@ -44,7 +44,7 @@ namespace Lance
         {
             if (playerIsClose && !dialogueStarted && !dialogueFinished)
             {
-                if (!Input.GetButtonDown("Inventory")) // Check if the inventory button is not pressed
+                if (!Input.GetButtonDown("InventoryBag")) // Check if the inventory button is not pressed
                 {
                     StartDialogue();
                 }
