@@ -139,7 +139,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Hurt_Demon_Boss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e28ee6724129c4f83c722616c3d8c3
+      internalID: 777220939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_Demon_Boss_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f6716d493c05a47b8be68a74d79387
+      internalID: 1247845283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_Demon_Boss_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 160
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba98b3c7bda6da34fad503024e45b7da
+      internalID: 2144589099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_Demon_Boss_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0a59669f8d65045a4db1ecadbaba38
+      internalID: -1609647075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_Demon_Boss_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 288
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb371e5f0660714187bbe06dcaaf334
+      internalID: 1875734098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +255,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hurt_Demon_Boss_0: 777220939
+      Hurt_Demon_Boss_1: 1247845283
+      Hurt_Demon_Boss_2: 2144589099
+      Hurt_Demon_Boss_3: -1609647075
+      Hurt_Demon_Boss_4: 1875734098
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
