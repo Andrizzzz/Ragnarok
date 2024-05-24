@@ -5,6 +5,9 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public static event System.Action OnPlayerRespawn; // Static event for player respawn
+
     [SerializeField]
     private Transform respawnPoint;
     [SerializeField]
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
         respawn = true;
     }
 
+
     private void CheckRespawn()
     {
         if (respawn)
@@ -55,6 +59,9 @@ public class GameManager : MonoBehaviour
                 respawn = false;
 
                 Debug.Log("Player respawned successfully.");
+
+                // Trigger the respawn event
+                OnPlayerRespawn?.Invoke();
             }
             else
             {

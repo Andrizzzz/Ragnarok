@@ -169,17 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 116929886}
   earthquakeShakeData: {fileID: 11400000, guid: ff4299db7244c2541bfdb51ad0ae0e5d, type: 2}
---- !u!114 &604339025 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7008239427657693200, guid: c3702df83fd5e894f9ab844cfc850d43, type: 3}
-  m_PrefabInstance: {fileID: 7008239428192039944}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb8824d1a88350458b2a5de6fa426e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,18 +287,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 78029167, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025026665, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -37.000244
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134281666, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 604339025}
     - target: {fileID: 1134281666, guid: bb2f387dbe27b02438895389fca1319c, type: 3}
       propertyPath: playerStats
       value: 
@@ -28668,26 +28645,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1196598950603977701, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196598950603977701, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1455826997
-      objectReference: {fileID: 0}
     - target: {fileID: 1196598950603977720, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
       propertyPath: m_Name
       value: SlimeBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 1196598950608566829, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
-      propertyPath: deathParticles.Array.data[0]
-      value: 
-      objectReference: {fileID: 2367550737886102788, guid: 781a415e31a95e44880e7779f3f8b502, type: 3}
-    - target: {fileID: 1196598950608566829, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
-      propertyPath: deathParticles.Array.data[1]
-      value: 
-      objectReference: {fileID: 2367550737886102788, guid: 781a415e31a95e44880e7779f3f8b502, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc2aa1b619b753b41a183d361b06505b, type: 3}
 --- !u!1001 &2070674426090620430

@@ -542,8 +542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles:
-  - {fileID: 3836196999372202544, guid: 092040384b180e94b894cbfe0f4c13de, type: 3}
-  - {fileID: 3836196999372202544, guid: a5d6eec93e4ec9a428782973b20fc1ca, type: 3}
+  - {fileID: 2367550737886102788, guid: 781a415e31a95e44880e7779f3f8b502, type: 3}
+  - {fileID: 2367550737886102788, guid: 781a415e31a95e44880e7779f3f8b502, type: 3}
 --- !u!1 &1196598950825301375
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 300
+  currentHealth: 0
 --- !u!1 &1196598951175188921
 GameObject:
   m_ObjectHideFlags: 0

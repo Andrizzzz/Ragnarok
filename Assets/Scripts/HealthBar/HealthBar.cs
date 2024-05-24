@@ -7,6 +7,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Stats playerStats; // Reference to the player's Stats script
     [SerializeField] private Image healthBarFill; // Reference to the Image component for the health bar fill
 
+    private float maxHealth; // Store the max health value
+
     private void Start()
     {
         if (playerStats == null)
@@ -23,16 +25,10 @@ public class HealthBar : MonoBehaviour
 
         // Subscribe to the health change event
         playerStats.OnHealthZero += HandleHealthZero;
-    }
-
-    private void OnEnable()
-    {
         playerStats.OnHealthChanged += UpdateHealthBar;
-    }
 
-    private void OnDisable()
-    {
-        playerStats.OnHealthChanged -= UpdateHealthBar;
+        // Store the max health value
+        maxHealth = playerStats.MaxHealth;
     }
 
     private void HandleHealthZero()
@@ -45,5 +41,23 @@ public class HealthBar : MonoBehaviour
     {
         float fillAmount = currentHealth / maxHealth;
         healthBarFill.fillAmount = fillAmount;
+    }
+
+    // Method to reset the health bar fill to max
+    private void ResetHealthBar()
+    {
+        healthBarFill.fillAmount = 1f;
+    }
+
+    private void OnEnable()
+    {
+        // Listen for the respawn event
+        GameManager.OnPlayerRespawn += ResetHealthBar;
+    }
+
+    private void OnDisable()
+    {
+        // Stop listening for the respawn event
+        GameManager.OnPlayerRespawn -= ResetHealthBar;
     }
 }
