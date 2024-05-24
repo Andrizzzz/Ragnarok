@@ -9,6 +9,7 @@ namespace Lance.CoreSystem
         public event Action<float, float> OnHealthChanged;
 
         [SerializeField] private float maxHealth;
+        [SerializeField] private bool isPlayer;  // Add this to identify if this is the player
         public float currentHealth;
         private GameManager GM;
 
@@ -47,7 +48,10 @@ namespace Lance.CoreSystem
 
         private void Die()
         {
-            GM.Respawn();
+            if (isPlayer)
+            {
+                GM.Respawn(); // Only respawn if this is the player
+            }
             gameObject.SetActive(false);
         }
     }

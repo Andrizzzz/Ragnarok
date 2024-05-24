@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
-
     public static event System.Action OnPlayerRespawn; // Static event for player respawn
 
     [SerializeField]
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
         respawnTimeStart = Time.time;
         respawn = true;
     }
-
 
     private void CheckRespawn()
     {
