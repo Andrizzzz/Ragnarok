@@ -17,11 +17,11 @@ MonoBehaviour:
   _shakeCanvases: 1
   _shakeObjects: 1
   _iterationPercent: 1
-  _unlimitedDuration: 0
-  _totalDuration: 4
+  _unlimitedDuration: 1
+  _totalDuration: 100000
   _fadeInDuration: 0.5
   _fadeOutDuration: 1
-  _magnitude: 4.5
+  _magnitude: 4
   _magnitudeNoise: 0.1
   _magnitudeCurve:
     serializedVersion: 2
