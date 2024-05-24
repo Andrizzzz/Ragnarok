@@ -18,7 +18,7 @@ namespace Lance.CoreSystem
         protected override void Awake()
         {
             base.Awake();
-            currentHealth = maxHealth;
+            LoadHealth();
             GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 
@@ -43,6 +43,20 @@ namespace Lance.CoreSystem
         {
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log("Health increased to: " + currentHealth);
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        }
+
+        public void SaveHealth()
+        {
+            Debug.Log("Saving Health: " + currentHealth);
+            PlayerPrefs.SetFloat("PlayerHealth", currentHealth);
+            PlayerPrefs.Save();
+        }
+
+        public void LoadHealth()
+        {
+            currentHealth = PlayerPrefs.GetFloat("PlayerHealth", maxHealth);
+            Debug.Log("Loaded Health: " + currentHealth);
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
         }
 
