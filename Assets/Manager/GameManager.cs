@@ -8,19 +8,23 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform respawnPoint;
     [SerializeField]
-    private GameObject player;
+    private GameObject playerPrefab;  // Changed variable name to avoid confusion
     [SerializeField]
     private float respawnTime;
 
     private float respawnTimeStart;
-
     private bool respawn;
-
     private CinemachineVirtualCamera CVC;
+    private GameObject currentPlayer;
 
     private void Start()
     {
         CVC = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
+        currentPlayer = GameObject.FindWithTag("Player"); // Find the initial player
+        if (currentPlayer != null)
+        {
+            CVC.m_Follow = currentPlayer.transform;
+        }
     }
 
     private void Update()
@@ -32,7 +36,6 @@ public class GameManager : MonoBehaviour
     {
         respawnTimeStart = Time.time;
         respawn = true;
-
     }
 
     private void CheckRespawn()
@@ -41,20 +44,15 @@ public class GameManager : MonoBehaviour
         {
             if (Time.time >= respawnTimeStart + respawnTime)
             {
-                // Spawn a new player object at the respawn point
-                GameObject newPlayer = Instantiate(player, respawnPoint.position, respawnPoint.rotation);
+                if (currentPlayer != null)
+                {
+                    currentPlayer.SetActive(false); // Deactivate the old player
+                }
 
-                // Deactivate the old player object
-                player.gameObject.SetActive(false);
+                currentPlayer = Instantiate(playerPrefab, respawnPoint.position, respawnPoint.rotation); // Instantiate new player
+                CVC.m_Follow = currentPlayer.transform; // Set camera to follow new player
 
-                // Set the camera to follow the new player
-                CVC.m_Follow = newPlayer.transform;
-
-                // Reset respawn flag
                 respawn = false;
-
-                // Reset respawnTimeStart
-                respawnTimeStart = Time.time;
 
                 Debug.Log("Player respawned successfully.");
             }
@@ -64,8 +62,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-
-
-    //orig
 }
