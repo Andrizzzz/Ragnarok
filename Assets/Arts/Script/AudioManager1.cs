@@ -111,10 +111,18 @@ namespace Lance
             }
             else
             {
-                // If not in cutscene, start music
+                // Continue playing music on other scenes (e.g., Level 2)
                 if (!isInCutscene)
                 {
-                    StartMusic();
+                    // Ensure music is playing
+                    if (!musicSource.isPlaying)
+                    {
+                        StartMusic();
+                    }
+                }
+                else
+                {
+                    isInCutscene = false; // Reset cutscene flag
                 }
             }
         }

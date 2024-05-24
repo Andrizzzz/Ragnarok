@@ -433,6 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1413858172685029053}
   SFXSource: {fileID: 1413858172810477446}
-  background: {fileID: 8300000, guid: b28816bfb16df22498d703d24f297960, type: 3}
+  background: {fileID: 8300000, guid: 3a55368118357f14f946ab79443818c5, type: 3}
   fadeDuration: 6
   mainMenuFadeDuration: 1
