@@ -9,6 +9,8 @@ public class HealthBar : MonoBehaviour
 
     private float maxHealth; // Store the max health value
 
+    private const string HealthPlayerPrefsKey = "PlayerHealth"; // Key for Player Prefs
+
     private void Start()
     {
         if (playerStats == null)
@@ -21,6 +23,13 @@ public class HealthBar : MonoBehaviour
         {
             Debug.LogError("HealthBarFill reference is missing!");
             return;
+        }
+
+        // Load saved health value from Player Prefs
+        if (PlayerPrefs.HasKey(HealthPlayerPrefsKey))
+        {
+            float savedHealth = PlayerPrefs.GetFloat(HealthPlayerPrefsKey);
+            playerStats.currentHealth = savedHealth;
         }
 
         // Subscribe to the health change event
@@ -41,12 +50,19 @@ public class HealthBar : MonoBehaviour
     {
         float fillAmount = currentHealth / maxHealth;
         healthBarFill.fillAmount = fillAmount;
+
+        // Save current health to Player Prefs
+        PlayerPrefs.SetFloat(HealthPlayerPrefsKey, currentHealth);
+        PlayerPrefs.Save(); // Make sure to save changes immediately
     }
 
     // Method to reset the health bar fill to max
     private void ResetHealthBar()
     {
         healthBarFill.fillAmount = 1f;
+        // Reset saved health in Player Prefs
+        PlayerPrefs.DeleteKey(HealthPlayerPrefsKey);
+        PlayerPrefs.Save(); // Make sure to save changes immediately
     }
 
     private void OnEnable()
