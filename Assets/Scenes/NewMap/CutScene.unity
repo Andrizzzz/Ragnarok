@@ -481,38 +481,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -3052188458298193864, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
     value: {fileID: 47225855}
-  - key: {fileID: 4968042536306419513, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -2379751121835675231, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -3488338665731388970, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 3414989552321944891, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -3002824322678292299, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -3527144154067339987, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 5960070514910527262, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -4243977601072504094, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -5062560042447269757, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -2264727454564417058, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -777534280742468156, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 4453923328721768369, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 7906990385674631485, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -2148067639434439905, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 6689109675394870511, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 2227900579034048675, guid: ae5b54227fca31a4da391d0da7a13bea, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 602f4a436360d944594dec12775e4762: {fileID: 0}
