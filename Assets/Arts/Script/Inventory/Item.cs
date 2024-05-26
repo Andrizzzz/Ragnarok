@@ -29,18 +29,24 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            if (leftOverItems <= 0)
-            {
-                Destroy(gameObject);
-                ClearItem(); // Clear PlayerPrefs for this item
-            }
-            else
-            {
-                quantity = leftOverItems;
-                SaveItem(); // Save the remaining quantity
-            }
+            CollectItem();
         }
+    }
+
+    public void CollectItem()
+    {
+        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+        if (leftOverItems <= 0)
+        {
+            Destroy(gameObject);
+            ClearItem(); // Clear PlayerPrefs for this item
+        }
+        else
+        {
+            quantity = leftOverItems;
+            SaveItem(); // Save the remaining quantity
+        }
+        Debug.Log("Collect");
     }
 
     private void SaveItem()

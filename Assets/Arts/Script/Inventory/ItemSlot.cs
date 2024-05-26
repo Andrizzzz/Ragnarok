@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
 {
     private InventoryManager inventoryManager;
 
+    public GameObject itemPrefab;
     [SerializeField]
     public int maxNumberOfItems;
 
@@ -67,16 +68,22 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         ItemDescriptionNameText.text = itemName;
         ItemDescriptionText.text = itemDescription;
         ItemDescriptionImage.sprite = itemSprite;
+        selectedShader.SetActive(true);
+        thisItemIsSelected = true;
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (itemSprite != null && itemName != string.Empty)
         {
+            Debug.Log("Begin Drag: " + itemName);
             parentAfterDrag = transform.parent;
             transform.SetParent(transform.root);
             transform.SetAsLastSibling();
             isDragging = true;
+
+            inventoryManager.DeselectAllSlot();
         }
     }
 
@@ -139,6 +146,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     public void UseItem()
     {
         Debug.Log("Item used: " + itemName);
+       
         inventoryManager.UseItem(itemName);
         this.quantity -= 1;
         quantityText.text = quantity.ToString();
@@ -171,7 +179,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         itemToDrop.AddComponent<BoxCollider2D>();
 
         // Location
-        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(.5f, 0, 0);
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2, 0, 0);
         itemToDrop.transform.localScale = new Vector3(.7f, .7f, .7f);
 
         // Subtract the item from slot
