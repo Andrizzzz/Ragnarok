@@ -17,56 +17,63 @@ namespace Lance
         public AudioClip dashSFX;
         public AudioClip landingSFX;
         public AudioClip grabSFX;
+        public AudioClip runningSFX;
 
 
         void Start()
         {
             instance = this; // Set the singleton instance
-
             audioSource = GetComponent<AudioSource>();
         }
 
         public void PlaySwordSwingSound1()
         {
-            PlaySound(swordSwingSFX1);
+            StartCoroutine(PlaySoundCoroutine(swordSwingSFX1));
         }
 
         public void PlaySwordSwingSound2()
         {
-            PlaySound(swordSwingSFX2);
+            StartCoroutine(PlaySoundCoroutine(swordSwingSFX2));
         }
 
         public void PlaySwordSwingSound3()
         {
-            PlaySound(swordSwingSFX3);
+            StartCoroutine(PlaySoundCoroutine(swordSwingSFX3));
         }
 
         public void PlayJumpSound()
         {
-            PlaySound(jumpSFX);
+            StartCoroutine(PlaySoundCoroutine(jumpSFX));
         }
 
         public void PlayDashSound()
         {
-            PlaySound(dashSFX);
+            StartCoroutine(PlaySoundCoroutine(dashSFX));
         }
 
         public void PlayLandingSound()
         {
-            PlaySound(landingSFX);
+            StartCoroutine(PlaySoundCoroutine(landingSFX));
         }
 
         public void PlayGrabSound()
         {
-            PlaySound(grabSFX);
+            StartCoroutine(PlaySoundCoroutine(grabSFX));
         }
 
-        private void PlaySound(AudioClip clip)
+        public void PlayRunningSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(runningSFX));
+        }
+
+        private IEnumerator PlaySoundCoroutine(AudioClip clip)
         {
             if (audioSource != null && clip != null)
             {
                 audioSource.clip = clip;
                 audioSource.Play();
+                // Wait until the sound finishes playing
+                yield return new WaitForSeconds(clip.length);
             }
             else
             {

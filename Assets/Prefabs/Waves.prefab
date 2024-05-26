@@ -73,6 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: 60da71b5162656047839280b7ee5c52f, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 2.5
 --- !u!1 &9134976450136167770
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: b8b27383dba72b042a293d4d8e831f01, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 4
 --- !u!1 &9134976450515977260
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: fa4036666c018324db022a79ee7fe4aa, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 1.5
 --- !u!1 &9134976450700715649
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: 05891ff73f19dce4ab0b86ff7b957740, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 7
 --- !u!1 &9134976450701741057
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: 0c9b5d99df970a14a8382579bfd487c9, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 5
 --- !u!1 &9134976450810549881
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: 16ee65b7dc2b3bd42a8da45d8c6dda35, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 4
 --- !u!1 &9134976451196753392
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,3 +561,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShaker: {fileID: 0}
   earthquakeShakeData: {fileID: 11400000, guid: 81b00ff0eb812f34180883fa445275dc, type: 2}
+  audioClip: {fileID: 8300000, guid: 4603f6adef7bb774cb137838773d5b39, type: 3}
+  shakeDuration: 4
