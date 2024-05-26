@@ -154,30 +154,65 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            PlayerPrefs.SetString("ItemName" + i, itemSlot[i].itemName);
-            PlayerPrefs.SetInt("ItemQuantity" + i, itemSlot[i].quantity);
-            // Assuming you have a way to save the sprite and description as well
-            PlayerPrefs.SetString("ItemDescription" + i, itemSlot[i].itemDescription);
-            // Sprite saving can be handled differently, e.g., saving a sprite index or path
-            // PlayerPrefs.SetString("ItemSpritePath" + i, itemSlot[i].itemSprite.name);
+            if (itemSlot[i] != null)
+            {
+                PlayerPrefs.SetString("ItemName" + i, itemSlot[i].itemName);
+                PlayerPrefs.SetInt("ItemQuantity" + i, itemSlot[i].quantity);
+                PlayerPrefs.SetString("ItemDescription" + i, itemSlot[i].itemDescription);
+
+                // Ensure itemSprite is not null before accessing its name
+                if (itemSlot[i].itemSprite != null)
+                {
+                    PlayerPrefs.SetString("ItemSpritePath" + i, itemSlot[i].itemSprite.name);
+                }
+                else
+                {
+                    PlayerPrefs.SetString("ItemSpritePath" + i, string.Empty);
+                }
+            }
         }
         PlayerPrefs.Save();
     }
+
 
     private void Load()
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            itemSlot[i].itemName = PlayerPrefs.GetString("ItemName" + i, string.Empty);
-            itemSlot[i].quantity = PlayerPrefs.GetInt("ItemQuantity" + i, 0);
-            itemSlot[i].itemDescription = PlayerPrefs.GetString("ItemDescription" + i, string.Empty);
-            // Load sprite if saved
-            // string spritePath = PlayerPrefs.GetString("ItemSpritePath" + i, string.Empty);
-            // if (!string.IsNullOrEmpty(spritePath)) 
-            // {
-            //     itemSlot[i].itemSprite = Resources.Load<Sprite>(spritePath);
-            // }
-            UpdateSlotUI(itemSlot[i]);
+            string itemNameKey = "ItemName" + i;
+            string itemQuantityKey = "ItemQuantity" + i;
+            string itemDescriptionKey = "ItemDescription" + i;
+            string itemSpritePathKey = "ItemSpritePath" + i;
+
+            if (PlayerPrefs.HasKey(itemNameKey))
+            {
+                itemSlot[i].itemName = PlayerPrefs.GetString(itemNameKey, string.Empty);
+                itemSlot[i].quantity = PlayerPrefs.GetInt(itemQuantityKey, 0);
+                itemSlot[i].itemDescription = PlayerPrefs.GetString(itemDescriptionKey, string.Empty);
+                string spritePath = PlayerPrefs.GetString(itemSpritePathKey, string.Empty);
+
+                if (!string.IsNullOrEmpty(spritePath) && itemSlot[i].quantity > 0)
+                {
+                    itemSlot[i].itemSprite = GetItemSprite(spritePath);
+                }
+                else
+                {
+                    itemSlot[i].itemSprite = null;
+                }
+
+                UpdateSlotUI(itemSlot[i]);
+            }
         }
+    }
+
+
+    public Sprite GetItemSprite(string spriteName)
+    {
+        Sprite sprite = Resources.Load<Sprite>(spriteName);
+        if (sprite == null)
+        {
+            Debug.LogWarning("Sprite not found for item: " + spriteName);
+        }
+        return sprite;
     }
 }

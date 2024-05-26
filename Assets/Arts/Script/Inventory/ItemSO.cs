@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu]
 public class ItemSO : ScriptableObject
 {
     public string itemName;
+    public Sprite itemSprite; // Add this line for the item sprite
     public StatToChange statToChange = new StatToChange();
     public AttributesToChange attributesToChange = new AttributesToChange();
 
@@ -23,12 +23,12 @@ public class ItemSO : ScriptableObject
         }
     }
 
-    public enum StatToChange 
-    { 
+    public enum StatToChange
+    {
         none,
         health,
         stamina
-     };
+    };
 
     public enum AttributesToChange
     {
@@ -36,7 +36,7 @@ public class ItemSO : ScriptableObject
         Strength,
         Defense,
         Agility
-        
+
     };
 
 }

@@ -36,7 +36,6 @@ public class ItemSlot : MonoBehaviour
     // UI Buttons
     public Button useButton;
     public Button dropButton;
-   
 
     private void Start()
     {
@@ -46,11 +45,12 @@ public class ItemSlot : MonoBehaviour
         useButton.gameObject.SetActive(false);
         dropButton.gameObject.SetActive(false);
 
-
         // Attach button click listeners
         useButton.onClick.AddListener(UseItem);
         dropButton.onClick.AddListener(DropItem);
-   
+
+        // Load item data
+        LoadItem();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -87,11 +87,13 @@ public class ItemSlot : MonoBehaviour
 
             int extraItems = this.quantity - maxNumberOfItems;
             this.quantity = maxNumberOfItems;
+            SaveItem();
             return extraItems;
         }
 
         quantityText.text = this.quantity.ToString();
         quantityText.enabled = true;
+        SaveItem();
 
         return 0;
     }
@@ -106,6 +108,7 @@ public class ItemSlot : MonoBehaviour
         {
             EmptySlot();
         }
+        SaveItem();
     }
 
     public void DropItem()
@@ -115,9 +118,8 @@ public class ItemSlot : MonoBehaviour
         inventoryManager.DropItem(itemName);
         // Clear the slot
         EmptySlot();
+        SaveItem();
     }
-
-
 
     public void EmptySlot()
     {
@@ -127,12 +129,77 @@ public class ItemSlot : MonoBehaviour
         ItemDescriptionNameText.text = "";
         ItemDescriptionText.text = "";
         ItemDescriptionImage.sprite = emptySprite;
+
+        // Reset item data
+        itemName = "";
+        itemDescription = "";
+        quantity = 0;
+        itemSprite = null;
+        isFull = false;
+
+        SaveItem();
     }
 
-    public void ShowButtons()
+    private void SaveItem()
     {
-        // Show buttons
-        useButton.gameObject.SetActive(true);
-        dropButton.gameObject.SetActive(true);
+        PlayerPrefs.SetString("ItemName" + GetInstanceID(), itemName);
+        PlayerPrefs.SetInt("ItemQuantity" + GetInstanceID(), quantity);
+        PlayerPrefs.SetString("ItemDescription" + GetInstanceID(), itemDescription);
+
+        if (itemSprite != null)
+        {
+            PlayerPrefs.SetString("ItemSpritePath" + GetInstanceID(), itemSprite.name);
+        }
+        else
+        {
+            PlayerPrefs.SetString("ItemSpritePath" + GetInstanceID(), string.Empty);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    private void LoadItem()
+    {
+        int instanceID = GetInstanceID();
+        string itemNameKey = "ItemName" + instanceID;
+        string itemQuantityKey = "ItemQuantity" + instanceID;
+        string itemDescriptionKey = "ItemDescription" + instanceID;
+        string itemSpritePathKey = "ItemSpritePath" + instanceID;
+
+        if (PlayerPrefs.HasKey(itemNameKey))
+        {
+            itemName = PlayerPrefs.GetString(itemNameKey, string.Empty);
+            quantity = PlayerPrefs.GetInt(itemQuantityKey, 0);
+            itemDescription = PlayerPrefs.GetString(itemDescriptionKey, string.Empty);
+            string spritePath = PlayerPrefs.GetString(itemSpritePathKey, string.Empty);
+
+            if (!string.IsNullOrEmpty(spritePath))
+            {
+                itemSprite = inventoryManager.GetItemSprite(spritePath);
+            }
+            else
+            {
+                itemSprite = null;
+            }
+
+            UpdateUI();
+        }
+    }
+
+
+    private void UpdateUI()
+    {
+        if (itemSprite != null)
+        {
+            itemImage.sprite = itemSprite;
+            itemImage.enabled = true;
+        }
+        else
+        {
+            itemImage.enabled = false;
+        }
+
+        quantityText.text = quantity.ToString();
+        quantityText.enabled = quantity > 0;
     }
 }
