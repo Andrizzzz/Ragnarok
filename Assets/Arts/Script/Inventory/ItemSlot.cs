@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private InventoryManager inventoryManager;
 
@@ -33,32 +33,70 @@ public class ItemSlot : MonoBehaviour
     public GameObject selectedShader;
     public bool thisItemIsSelected;
 
-    // UI Buttons
-    public Button useButton;
-    public Button dropButton;
+    private float lastClickTime;
+    private const float doubleClickThreshold = 0.5f; // Adjust the threshold as needed
+    private bool isDragging = false;
+
+    Transform parentAfterDrag;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-
-        // Hide buttons initially
-        useButton.gameObject.SetActive(false);
-        dropButton.gameObject.SetActive(false);
-
-        // Attach button click listeners
-        useButton.onClick.AddListener(UseItem);
-        dropButton.onClick.AddListener(DropItem);
-
-        // Load item data
         LoadItem();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Check if it's a left-click
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            // Let the UseButton handle the action
+            if (Time.time - lastClickTime < doubleClickThreshold)
+            {
+                UseItem();
+            }
+            else
+            {
+                SingleClick();
+            }
+            lastClickTime = Time.time;
+        }
+    }
+
+    public void SingleClick()
+    {
+        Debug.Log("Item single clicked: " + itemName);
+        ItemDescriptionNameText.text = itemName;
+        ItemDescriptionText.text = itemDescription;
+        ItemDescriptionImage.sprite = itemSprite;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (itemSprite != null && itemName != string.Empty)
+        {
+            parentAfterDrag = transform.parent;
+            transform.SetParent(transform.root);
+            transform.SetAsLastSibling();
+            isDragging = true;
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (isDragging)
+        {
+            // Follow the cursor
+            transform.position = Input.mousePosition;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (isDragging)
+        {
+            isDragging = false;
+            transform.SetParent(parentAfterDrag);
+            transform.localPosition = Vector3.zero; // Reset position within the parent
+            DropItem();
         }
     }
 
@@ -102,7 +140,7 @@ public class ItemSlot : MonoBehaviour
     {
         Debug.Log("Item used: " + itemName);
         inventoryManager.UseItem(itemName);
-        quantity--;
+        this.quantity -= 1;
         quantityText.text = quantity.ToString();
         if (quantity <= 0)
         {
@@ -114,10 +152,42 @@ public class ItemSlot : MonoBehaviour
     public void DropItem()
     {
         Debug.Log("Item dropped: " + itemName);
-        // Call a method in the InventoryManager to handle dropping the item
         inventoryManager.DropItem(itemName);
-        // Clear the slot
-        EmptySlot();
+
+        GameObject itemToDrop = new GameObject(itemName);
+        Item newItem = itemToDrop.AddComponent<Item>();
+        newItem.quantity = 1;
+        newItem.itemName = itemName;
+        newItem.sprite = itemSprite;
+        newItem.itemDescription = itemDescription;
+
+        // Manipulate SpriteRenderer
+        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
+        sr.sprite = itemSprite;
+        sr.sortingOrder = 5;
+        sr.sortingLayerName = "Ground";
+
+        // Collider
+        itemToDrop.AddComponent<BoxCollider2D>();
+
+        // Location
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(.5f, 0, 0);
+        itemToDrop.transform.localScale = new Vector3(.7f, .7f, .7f);
+
+        // Subtract the item from slot
+        this.quantity -= 1;
+        quantityText.text = quantity.ToString();
+
+        if (quantity <= 0)
+        {
+            EmptySlot();
+        }
+        else
+        {
+            // Update UI without emptying the slot completely
+            UpdateUI();
+        }
+
         SaveItem();
     }
 
@@ -185,7 +255,6 @@ public class ItemSlot : MonoBehaviour
             UpdateUI();
         }
     }
-
 
     private void UpdateUI()
     {

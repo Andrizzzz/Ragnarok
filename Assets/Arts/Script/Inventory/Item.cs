@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Item : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Item : MonoBehaviour
     public string itemDescription;
 
     private InventoryManager inventoryManager;
+
+    
 
     private void Start()
     {
