@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 1025026664}
   - {fileID: 1010146233}
   darkPanel: {fileID: 6849211363507677408}
-  typingSpeed: 0.01
+  typingSpeed: 0.001
 --- !u!1 &89818920
 GameObject:
   m_ObjectHideFlags: 0

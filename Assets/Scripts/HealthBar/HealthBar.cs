@@ -38,6 +38,25 @@ public class HealthBar : MonoBehaviour
 
         // Store the max health value
         maxHealth = playerStats.MaxHealth;
+    } 
+
+    public void GetPlayerHealth()
+    {
+        playerStats = FindObjectOfType<Stats>();
+
+        // Load saved health value from Player Prefs
+        if (PlayerPrefs.HasKey(HealthPlayerPrefsKey))
+        {
+            float savedHealth = PlayerPrefs.GetFloat(HealthPlayerPrefsKey);
+            playerStats.currentHealth = savedHealth;
+        }
+
+        // Subscribe to the health change event
+        playerStats.OnHealthZero += HandleHealthZero;
+        playerStats.OnHealthChanged += UpdateHealthBar;
+
+        // Store the max health value
+        maxHealth = playerStats.MaxHealth;
     }
 
     private void HandleHealthZero()

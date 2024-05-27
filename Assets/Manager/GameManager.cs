@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float respawnTime;
 
+    public HealthBar healthBar;
+
     private float respawnTimeStart;
     private bool respawn;
     private CinemachineVirtualCamera CVC;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
 
                 // Trigger the respawn event
                 OnPlayerRespawn?.Invoke();
+                healthBar.GetPlayerHealth();
             }
             else
             {
