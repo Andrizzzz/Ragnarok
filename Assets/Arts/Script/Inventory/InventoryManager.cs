@@ -146,6 +146,8 @@ public class InventoryManager : MonoBehaviour
         Save();
     }
 
+    public Sprite emptySprite; // Declare emptySprite variable
+
     private void UpdateSlotUI(ItemSlot slot)
     {
         slot.quantityText.text = slot.quantity.ToString();
@@ -158,9 +160,12 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
+            slot.itemImage.sprite = emptySprite; // Use emptySprite for empty slots
             slot.itemImage.enabled = false;
         }
     }
+
+
 
 
     private void PauseGame()

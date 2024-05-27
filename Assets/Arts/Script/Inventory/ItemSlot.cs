@@ -153,21 +153,24 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void EmptySlot()
     {
+        // Logic for emptying the slot...
         itemName = string.Empty;
         quantity = 0;
         itemDescription = string.Empty;
         itemSprite = null;
         isFull = false;
 
-        itemImage.sprite = emptySprite;
+        itemImage.sprite = emptySprite; // Set to empty sprite or null
         itemImage.enabled = false;
 
         quantityText.text = "0";
         quantityText.enabled = false;
 
-        SaveItem();
-        DeselectItem(); // Deselect the item slot when the slot is emptied
+        // Hide Use and Drop buttons after emptying the slot
+        useButton.gameObject.SetActive(false);
+        dropButton.gameObject.SetActive(false);
     }
+
 
 
 
