@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -424731805
-  m_SortingLayer: 4
-  m_SortingOrder: 3
+  m_SortingLayerID: 1455826997
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2653752685667484368}
   - component: {fileID: 2653752685667484371}
   m_Layer: 5
-  m_Name: Nickel.Prefabs
+  m_Name: Nickel
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Nickel
-  quantity: 1
+  quantity: 3
   sprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   itemDescription: 'DESCRIPTION : Nickel, with the chemical symbol Ni and atomic
     number 28, is a silvery-white metal with a hint of gold. It''s hard, ductile,

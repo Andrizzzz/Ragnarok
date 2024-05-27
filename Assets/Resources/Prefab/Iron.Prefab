@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5581320755875698599}
   - component: {fileID: 5581320755875698600}
   m_Layer: 5
-  m_Name: Iron.Prefabs
+  m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Iron
-  quantity: 2
+  quantity: 3
   sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   itemDescription: 'DESCRIPTION :Iron, a chemical element with the symbol Fe and
     atomic number 26, is a dense, lustrous metal that makes up about 85% of Earth''s
@@ -186,9 +186,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -424731805
-  m_SortingLayer: 4
-  m_SortingOrder: 3
+  m_SortingLayerID: 1455826997
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

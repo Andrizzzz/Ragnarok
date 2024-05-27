@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1d6a46b8365534fbb09734f07b4b56, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 0}
-  statToChange: 0
+  itemName: Iron
+  itemSprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
+  statToChange: 1
   attributesToChange: 0
-  amountOfChangeStat: 0
+  amountOfChangeStat: 20
   amountOfChangeAttributes: 0

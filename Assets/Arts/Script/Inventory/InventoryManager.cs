@@ -58,6 +58,9 @@ public class InventoryManager : MonoBehaviour
         if (slotToRemove != null)
         {
             slotToRemove.EmptySlot();
+
+            // Update UI to reflect dropped item
+            UpdateSlotUI(slotToRemove);
         }
         else
         {
@@ -65,6 +68,7 @@ public class InventoryManager : MonoBehaviour
         }
         Save();
     }
+
 
     public void ToggleInventory()
     {
@@ -82,23 +86,33 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            if (!itemSlot[i].isFull && (itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0))
             {
-                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
-                if (leftOverItems > 0)
-                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
+                itemSlot[i].itemName = itemName;
+                itemSlot[i].itemSprite = itemSprite;
+                itemSlot[i].itemDescription = itemDescription;
+                itemSlot[i].quantity += quantity; // Increase the quantity by the given amount
 
+                UpdateSlotUI(itemSlot[i]);
                 Save();
-                return leftOverItems;
+
+                // If the quantity becomes zero, empty the slot
+                if (itemSlot[i].quantity == 0)
+                {
+                    itemSlot[i].EmptySlot();
+                }
+
+                return;
             }
         }
         Save();
-        return quantity;
     }
+
+
 
     public void DeselectAllSlot()
     {
@@ -134,11 +148,20 @@ public class InventoryManager : MonoBehaviour
 
     private void UpdateSlotUI(ItemSlot slot)
     {
-        slot.itemImage.sprite = slot.itemSprite;
         slot.quantityText.text = slot.quantity.ToString();
         slot.quantityText.enabled = slot.quantity > 0;
-        slot.itemImage.enabled = slot.quantity > 0;
+
+        if (slot.quantity > 0)
+        {
+            slot.itemImage.sprite = slot.itemSprite;
+            slot.itemImage.enabled = true;
+        }
+        else
+        {
+            slot.itemImage.enabled = false;
+        }
     }
+
 
     private void PauseGame()
     {
