@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a53f68a4089ff04ba4fd1fd7702c75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 40
   isPlayer: 0
   currentHealth: 0
 --- !u!1 &873680959918428857
@@ -616,6 +616,9 @@ MonoBehaviour:
   bowLoadingSFX: {fileID: 8300000, guid: ac5e252cc36ccc64587045b82b7f9a5c, type: 3}
   bowReleaseSFX: {fileID: 8300000, guid: 1b95dddde5a91c143a048a28f1ba95b6, type: 3}
   enemyPunchSFX: {fileID: 8300000, guid: 11328f0d920cce64aa920fb5c998c1bf, type: 3}
+  slimeBiteSFX: {fileID: 0}
+  wormAttackSFX: {fileID: 0}
+  wormAttackSFX2: {fileID: 0}
 --- !u!82 &4999371925450930810
 AudioSource:
   m_ObjectHideFlags: 0
