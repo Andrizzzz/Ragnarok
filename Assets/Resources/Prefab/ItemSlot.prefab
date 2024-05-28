@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6f16898b5ae9541bb754259b8b1942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 0}
   maxNumberOfItems: 9
   itemName: 
   quantity: 0
@@ -122,22 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 4
+  - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1059620476951533530}
-          m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
-          m_MethodName: ShowButtons
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &636806015673556104
 GameObject:
   m_ObjectHideFlags: 0

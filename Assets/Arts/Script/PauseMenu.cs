@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject additionalPanel;
     private bool isPaused = false;
     private Button currentlyPressedButton;
 
@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        additionalPanel.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
@@ -64,6 +65,35 @@ public class PauseMenu : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Time.timeScale = 1;
             isPaused = false;
+        }
+    }
+
+    public void OpenAdditionalPanel()
+    {
+        if (CanProcessButtonClick())
+        {
+            additionalPanel.SetActive(true);
+            additionalPanel.transform.SetAsLastSibling();  // Bring the panel to the front
+            Debug.Log("Additional panel opened.");
+        }
+    }
+
+    public void CloseAdditionalPanel()
+    {
+        if (CanProcessButtonClick())
+        {
+            additionalPanel.SetActive(false);
+            Debug.Log("Additional panel closed.");
+        }
+    }
+
+    public void BackToPauseMenu()
+    {
+        if (CanProcessButtonClick())
+        {
+            additionalPanel.SetActive(false);
+            pauseMenu.SetActive(true);
+            Debug.Log("Returned to pause menu.");
         }
     }
 

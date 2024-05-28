@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nickel
   m_EditorClassIdentifier: 
   itemName: Nickel
+  itemSprite: {fileID: 0}
   statToChange: 1
   attributesToChange: 0
   amountOfChangeStat: 5

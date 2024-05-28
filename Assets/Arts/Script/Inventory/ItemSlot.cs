@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
     private InventoryManager inventoryManager;
 
@@ -34,11 +34,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     public GameObject selectedShader;
     public bool thisItemIsSelected;
 
-    private float lastClickTime;
-    private const float doubleClickThreshold = 0.5f; // Adjust the threshold as needed
-    private bool isDragging = false;
+    // Use and Drop Buttons
+    public Button useButton;
+    public Button dropButton;
 
-    Transform parentAfterDrag;
+    private static ItemSlot selectedSlot; // Track the currently selected slot
 
     private void Start()
     {
@@ -50,15 +50,14 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (Time.time - lastClickTime < doubleClickThreshold)
+            SingleClick();
+
+            // Deselect the previously selected slot (if any)
+            if (selectedSlot != null && selectedSlot != this)
             {
-                UseItem();
+                selectedSlot.DeselectItem();
             }
-            else
-            {
-                SingleClick();
-            }
-            lastClickTime = Time.time;
+            selectedSlot = this; // Update the currently selected slot
         }
     }
 
@@ -71,41 +70,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
         selectedShader.SetActive(true);
         thisItemIsSelected = true;
 
+        // Display Use and Drop buttons
+        useButton.gameObject.SetActive(true);
+        dropButton.gameObject.SetActive(true);
+
+        // Set the functions for Use and Drop buttons
+        useButton.onClick.RemoveAllListeners();
+        useButton.onClick.AddListener(UseItem);
+        dropButton.onClick.RemoveAllListeners();
+        dropButton.onClick.AddListener(DropItem);
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (itemSprite != null && itemName != string.Empty)
-        {
-            Debug.Log("Begin Drag: " + itemName);
-            parentAfterDrag = transform.parent;
-            transform.SetParent(transform.root);
-            transform.SetAsLastSibling();
-            isDragging = true;
-
-            inventoryManager.DeselectAllSlot();
-        }
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (isDragging)
-        {
-            // Follow the cursor
-            transform.position = Input.mousePosition;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if (isDragging)
-        {
-            isDragging = false;
-            transform.SetParent(parentAfterDrag);
-            transform.localPosition = Vector3.zero; // Reset position within the parent
-            DropItem();
-        }
-    }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -146,77 +121,70 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
     public void UseItem()
     {
         Debug.Log("Item used: " + itemName);
-       
         inventoryManager.UseItem(itemName);
-        this.quantity -= 1;
-        quantityText.text = quantity.ToString();
-        if (quantity <= 0)
+
+        // Check if quantity is already zero before decrementing
+        if (quantity > 0)
         {
-            EmptySlot();
+            this.quantity -= 1;
+            quantityText.text = quantity.ToString();
+            if (quantity <= 0)
+            {
+                EmptySlot();
+            }
+            SaveItem();
         }
-        SaveItem();
     }
+
 
     public void DropItem()
     {
         Debug.Log("Item dropped: " + itemName);
         inventoryManager.DropItem(itemName);
-
-        GameObject itemToDrop = new GameObject(itemName);
-        Item newItem = itemToDrop.AddComponent<Item>();
-        newItem.quantity = 1;
-        newItem.itemName = itemName;
-        newItem.sprite = itemSprite;
-        newItem.itemDescription = itemDescription;
-
-        // Manipulate SpriteRenderer
-        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
-        sr.sprite = itemSprite;
-        sr.sortingOrder = 5;
-        sr.sortingLayerName = "Ground";
-
-        // Collider
-        itemToDrop.AddComponent<BoxCollider2D>();
-
-        // Location
-        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2, 0, 0);
-        itemToDrop.transform.localScale = new Vector3(.7f, .7f, .7f);
-
-        // Subtract the item from slot
-        this.quantity -= 1;
-        quantityText.text = quantity.ToString();
-
+        // Logic for dropping the item...
+        quantity -= 1;
+        SaveItem();
         if (quantity <= 0)
         {
             EmptySlot();
+            DeselectItem(); // Deselect the item slot when the item is gone
         }
-        else
-        {
-            // Update UI without emptying the slot completely
-            UpdateUI();
-        }
-
-        SaveItem();
     }
 
     public void EmptySlot()
     {
-        quantityText.enabled = false;
-        itemImage.sprite = emptySprite;
-
-        ItemDescriptionNameText.text = "";
-        ItemDescriptionText.text = "";
-        ItemDescriptionImage.sprite = emptySprite;
-
-        // Reset item data
-        itemName = "";
-        itemDescription = "";
+        // Logic for emptying the slot...
+        itemName = string.Empty;
         quantity = 0;
+        itemDescription = string.Empty;
         itemSprite = null;
         isFull = false;
 
-        SaveItem();
+        itemImage.sprite = emptySprite; // Set to empty sprite or null
+        itemImage.enabled = false;
+
+        quantityText.text = "0";
+        quantityText.enabled = false;
+
+        // Hide Use and Drop buttons after emptying the slot
+        useButton.gameObject.SetActive(false);
+        dropButton.gameObject.SetActive(false);
     }
+
+
+
+
+    // This method is called when the item is deselected
+    // This method is called when the item is deselected
+    public void DeselectItem()
+    {
+        selectedShader.SetActive(false);
+        thisItemIsSelected = false;
+        // Hide Use and Drop buttons when item is deselected
+        useButton.gameObject.SetActive(false);
+        dropButton.gameObject.SetActive(false);
+    }
+
 
     private void SaveItem()
     {

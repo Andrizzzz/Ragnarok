@@ -3,21 +3,11 @@ using UnityEngine.EventSystems;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField]
-    public string itemName;
-    [SerializeField]
-    public int quantity;
-
-    [SerializeField]
-    public Sprite sprite;
-
-    [TextArea]
-    [SerializeField]
-    public string itemDescription;
-
+    [SerializeField] public string itemName;
+    [SerializeField] public int quantity;
+    [SerializeField] public Sprite sprite;
+    [TextArea][SerializeField] public string itemDescription;
     private InventoryManager inventoryManager;
-
-    
 
     private void Start()
     {
@@ -35,19 +25,21 @@ public class Item : MonoBehaviour
 
     public void CollectItem()
     {
-        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-        if (leftOverItems <= 0)
+        // Check if quantity is greater than zero before adding the item to the inventory
+        if (quantity > 0)
         {
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
             Destroy(gameObject);
             ClearItem(); // Clear PlayerPrefs for this item
+            Debug.Log("Collect");
         }
         else
         {
-            quantity = leftOverItems;
-            SaveItem(); // Save the remaining quantity
+            // If quantity is zero or less, destroy the item without adding it to the inventory
+            Destroy(gameObject);
         }
-        Debug.Log("Collect");
     }
+
 
     private void SaveItem()
     {
