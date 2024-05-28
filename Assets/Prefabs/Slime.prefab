@@ -91,6 +91,15 @@ MonoBehaviour:
   maxHealth: 30
   isPlayer: 0
   currentHealth: 0
+  lootTables:
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropcChance: 90.5
+  - itemPrefabs: {fileID: 2653752685667484370, guid: 2e50515c6dc5b494a96531f6a9f0889c, type: 3}
+    dropcChance: 9.5
+  - itemPrefabs: {fileID: 2242705141300242646, guid: 546ef1f3bb88ba14bae888b017159b14, type: 3}
+    dropcChance: 4.5
+  - itemPrefabs: {fileID: 6311617161750811229, guid: 5e9a25a1cbf4f5240b483b214326c84d, type: 3}
+    dropcChance: 5
 --- !u!1 &1240739806
 GameObject:
   m_ObjectHideFlags: 0

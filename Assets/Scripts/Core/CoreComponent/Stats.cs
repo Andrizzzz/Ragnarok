@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 namespace Lance.CoreSystem
@@ -14,6 +16,9 @@ namespace Lance.CoreSystem
         private GameManager GM;
 
         public float MaxHealth => maxHealth;
+
+        [Header("Loot")]
+        public List<LootTables> lootTables = new List<LootTables> ();
 
         protected override void Awake()
         {
@@ -61,8 +66,25 @@ namespace Lance.CoreSystem
                 GM.Respawn(); // Only respawn if this is the player
             }
 
+            foreach(LootTables lootTables in lootTables)
+            {
+                if (UnityEngine.Random.Range(0f, 100f) <= lootTables.dropcChance)
+                {
+                    InstantitateLoot(lootTables.itemPrefabs);
+                }
+            }
             Destroy(gameObject);
             //gameObject.SetActive(false);
+        }
+
+        void InstantitateLoot(GameObject loot)
+        {
+            if (loot)
+            {
+                GameObject droppedLoot = Instantiate(loot, transform.position, UnityEngine.Quaternion.identity);
+
+                droppedLoot.GetComponent<SpriteRenderer>();
+            }
         }
 
         private void Save()

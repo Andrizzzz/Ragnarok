@@ -726,7 +726,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 300
+  isPlayer: 0
   currentHealth: 0
+  lootTables:
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
+  - itemPrefabs: {fileID: 0}
+    dropcChance: 100
 --- !u!1 &1196598951175188921
 GameObject:
   m_ObjectHideFlags: 0

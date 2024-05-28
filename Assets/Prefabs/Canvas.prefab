@@ -656,6 +656,9 @@ MonoBehaviour:
   itemSOs:
   - {fileID: 11400000, guid: 0b28f7add793f22469ea73c578c09e8c, type: 2}
   - {fileID: 11400000, guid: e4a9f9778a9654246ba49cd8ea9ae70c, type: 2}
+  - {fileID: 11400000, guid: 445e7ca78c8fa0b4cb46ab0b43d24722, type: 2}
+  - {fileID: 11400000, guid: 61371f1eb74b8e249be4fc370601d0fd, type: 2}
+  - {fileID: 11400000, guid: aff059ea36bd75349946e284af130095, type: 2}
   itemSlot:
   - {fileID: 884015461808384780}
   - {fileID: 7079968405713972953}
