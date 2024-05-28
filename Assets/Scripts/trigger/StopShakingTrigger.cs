@@ -13,16 +13,16 @@ namespace Lance
         public GameObject continueButton;
         public GameObject dialoguePanel;
         public TMP_Text dialogueText;
-        public TMP_Text characterNameText; // Text element for the character's name
+        public TMP_Text characterNameText;
         public GameObject objectToDestroy;
         public Image characterImage;
-        public GameObject backgroundPanel; // Reference to the background panel
-        public GameObject[] uiElementsToHide; // Array to store references to UI elements to hide
+        public GameObject backgroundPanel;
+        public GameObject[] uiElementsToHide;
 
         [System.Serializable]
         public struct DialogueLine
         {
-            public string characterName; // Name of the character
+            public string characterName;
             public string text;
             public Sprite characterSprite;
         }
@@ -121,11 +121,6 @@ namespace Lance
                 stopButton.GetComponent<Button>().interactable = false;
             }
 
-            if (continueButton != null)
-            {
-                continueButton.SetActive(true);
-            }
-
             if (objectToDestroy != null)
             {
                 Destroy(objectToDestroy);
@@ -179,12 +174,19 @@ namespace Lance
                         element.SetActive(false);
                     }
                 }
+
+                // Enable the continue button
+                if (continueButton != null)
+                {
+                    continueButton.SetActive(true);
+                }
             }
             else
             {
                 Debug.LogError("DialoguePanel, DialogueText, CharacterImage, CharacterNameText, or BackgroundPanel reference is missing.");
             }
         }
+
 
         private IEnumerator TypeText(string message)
         {
@@ -203,6 +205,12 @@ namespace Lance
             if (currentLineIndex < dialogueLines.Length)
             {
                 ShowDialogue(dialogueLines[currentLineIndex].characterName, dialogueLines[currentLineIndex].text, dialogueLines[currentLineIndex].characterSprite);
+
+                // Enable continue button again
+                if (continueButton != null)
+                {
+                    continueButton.SetActive(true);
+                }
             }
             else
             {

@@ -730,21 +730,21 @@ MonoBehaviour:
   currentHealth: 0
   lootTables:
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
   - itemPrefabs: {fileID: 0}
-    dropcChance: 100
+    dropChance: 0
 --- !u!1 &1196598951175188921
 GameObject:
   m_ObjectHideFlags: 0

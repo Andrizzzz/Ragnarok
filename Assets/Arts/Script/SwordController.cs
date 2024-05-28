@@ -18,6 +18,13 @@ namespace Lance
         public AudioClip landingSFX;
         public AudioClip grabSFX;
         public AudioClip runningSFX;
+        public AudioClip slimebossSLASHSFX;
+        public AudioClip slimebossTHUMPSFX;
+        public AudioClip slimebossSCREAMSFX;
+        public AudioClip minibossSLASHSFX;
+        public AudioClip minibosswalkSFX1;
+        public AudioClip minibosswalkSFX2;
+        public AudioClip minibosswalkSFX3;
 
 
         void Start()
@@ -64,6 +71,41 @@ namespace Lance
         public void PlayRunningSound()
         {
             StartCoroutine(PlaySoundCoroutine(runningSFX));
+        }
+
+        public void PlaySlashingSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(slimebossSLASHSFX));
+        }
+
+        public void PlayThumpingSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(slimebossTHUMPSFX));
+        }
+
+        public void PlayScreamingSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(slimebossSCREAMSFX));
+        }
+
+        public void PlayMiniSlashingSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibossSLASHSFX));
+        }
+
+        public void PlayMiniWalkSound1()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibosswalkSFX1));
+        }
+
+        public void PlayMiniWalkSound2()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibosswalkSFX2));
+        }
+
+        public void PlayMiniWalkSound3()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibosswalkSFX3));
         }
 
         private IEnumerator PlaySoundCoroutine(AudioClip clip)
