@@ -677,7 +677,7 @@ MonoBehaviour:
   - {fileID: 4836763191492236301}
   - {fileID: 7449573411941359481}
   - {fileID: 6005106793296487883}
-  emptySprite: {fileID: 0}
+  emptySprite: {fileID: 539420486, guid: 985794d4c3c63e24db97b8479c33d8de, type: 3}
 --- !u!1 &295246117
 GameObject:
   m_ObjectHideFlags: 0

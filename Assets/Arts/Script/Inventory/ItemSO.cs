@@ -1,25 +1,27 @@
 using Lance.CoreSystem;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class ItemSO : ScriptableObject
 {
     public string itemName;
-    public Sprite itemSprite; // Add this line for the item sprite
-    public StatToChange statToChange = new StatToChange();
-    public AttributesToChange attributesToChange = new AttributesToChange();
-
+    public Sprite itemSprite;
+    public StatToChange statToChange;
     public int amountOfChangeStat;
-    public int amountOfChangeAttributes;
 
     public void UseItem()
     {
         Debug.Log("Using item: " + itemName);
-        if (statToChange == StatToChange.health)
+
+        // Find the player object
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            GameObject.Find("Stats").GetComponent<Stats>().IncreaseHealth(amountOfChangeStat);
+            Stats playerStats = player.GetComponent<Stats>();
+            if (playerStats != null && statToChange == StatToChange.health)
+            {
+                playerStats.IncreaseHealth(amountOfChangeStat);
+            }
         }
     }
 
@@ -29,14 +31,4 @@ public class ItemSO : ScriptableObject
         health,
         stamina
     };
-
-    public enum AttributesToChange
-    {
-        none,
-        Strength,
-        Defense,
-        Agility
-
-    };
-
 }
