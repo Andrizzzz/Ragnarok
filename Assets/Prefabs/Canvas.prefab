@@ -5169,7 +5169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &542855622108951215
 Transform:
   m_ObjectHideFlags: 0
@@ -5185,7 +5185,7 @@ Transform:
   - {fileID: 8143949436181905304}
   - {fileID: 8604642985453557230}
   m_Father: {fileID: 4804311941203901339}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078112640857889775
 GameObject:
@@ -5428,7 +5428,7 @@ GameObject:
   - component: {fileID: 7615031673372934612}
   - component: {fileID: 4308857157792362177}
   - component: {fileID: 8042539813626760159}
-  - component: {fileID: 3578169628155952195}
+  - component: {fileID: 1858736663}
   m_Layer: 5
   m_Name: DialogueBox(Always checked if play)seismic
   m_TagString: Untagged
@@ -5498,7 +5498,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3578169628155952195
+--- !u!114 &1858736663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5507,7 +5507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2539344103924837935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9340e78f08016418e27d5def3ff988, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7bed5095a32fe4d95de0ea24926a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterIcon: {fileID: 2419779158140865823}
@@ -5521,8 +5521,8 @@ MonoBehaviour:
   - {fileID: 6592040055287734507}
   - {fileID: 1854959929}
   - {fileID: 6463386661277721123}
-  - {fileID: 1025026664}
   - {fileID: 1010146233}
+  - {fileID: 1025026664}
   darkPanel: {fileID: 3799672975304490592}
   typingSpeed: 0.001
 --- !u!1 &2554678891864662634
@@ -6048,7 +6048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8166373341572860486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6151,8 +6151,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3578169628155952195}
-        m_TargetAssemblyTypeName: Lance.DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 1858736663}
+        m_TargetAssemblyTypeName: Lance.DialogueManager1, Assembly-CSharp
         m_MethodName: DisplayNextDialogueLine
         m_Mode: 1
         m_Arguments:
@@ -6284,7 +6284,7 @@ Transform:
   - {fileID: 5309495248987737586}
   - {fileID: 78029168}
   m_Father: {fileID: 4804311941203901339}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3263653899825377783
 GameObject:
@@ -7230,14 +7230,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456697644069664505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -36, z: 0}
+  m_LocalPosition: {x: 0, y: 36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3325850737868637898}
   - {fileID: 7615031673372934612}
   m_Father: {fileID: 4804311941203901339}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4530760740348804577
 GameObject:
@@ -7775,9 +7775,9 @@ RectTransform:
   - {fileID: 6007840212633909771}
   - {fileID: 192568871}
   - {fileID: 6909816445975794175}
-  - {fileID: 9185737445036156559}
   - {fileID: 2463912890592212594}
   - {fileID: 542855622108951215}
+  - {fileID: 9185737445036156559}
   - {fileID: 7698721278033754218}
   - {fileID: 4804311942077663276}
   - {fileID: 954173862260131857}
@@ -9246,12 +9246,12 @@ GameObject:
   - component: {fileID: 3156473323499151647}
   - component: {fileID: 8527589680640463577}
   m_Layer: 5
-  m_Name: ContinueButton
+  m_Name: ContinueButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7665876821626725760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11723,7 +11723,7 @@ GameObject:
   - component: {fileID: 8646554810331593661}
   - component: {fileID: 3047244506673091581}
   m_Layer: 5
-  m_Name: DialogueBox(Always checked if play)
+  m_Name: DialogueBox(Always checked if play)1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11806,7 +11806,7 @@ MonoBehaviour:
   characterIcon: {fileID: 8466542262235093808}
   characterName: {fileID: 4908960820410276274}
   dialogueArea: {fileID: 9057182290587795558}
-  nextButton: {fileID: 0}
+  nextButton: {fileID: 8527589680640463577}
   otherUIElements:
   - {fileID: 3964550426162708104}
   - {fileID: 3338044475747883507}
