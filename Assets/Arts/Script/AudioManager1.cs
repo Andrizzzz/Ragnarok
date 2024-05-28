@@ -1,11 +1,34 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace Lance
 {
     public class AudioManager1 : MonoBehaviour
     {
+        private static AudioManager1 instance;
+
+        // Public method to get the instance of AudioManager
+        public static AudioManager1 Instance
+        {
+            get
+            {
+                // If instance is null, find or create the AudioManager in the scene
+                if (instance == null)
+                {
+                    instance = FindObjectOfType<AudioManager1>();
+
+                    // If AudioManager doesn't exist in the scene, create it
+                    if (instance == null)
+                    {
+                        GameObject obj = new GameObject("AudioManager");
+                        instance = obj.AddComponent<AudioManager1>();
+                    }
+                }
+                return instance;
+            }
+        }
+
         [Header("--------------Audio Source---------------")]
         [SerializeField] AudioSource musicSource;
         [SerializeField] AudioSource SFXSource;
@@ -78,17 +101,25 @@ namespace Lance
 
         private void Awake()
         {
-            // Ensure that the music source is set to loop
-            musicSource.loop = true;
+            // Ensure that only one instance of AudioManager exists
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            instance = this;
 
-            // Don't destroy this object when loading a new scene
-            DontDestroyOnLoad(gameObject);
+            // Set up the audio source to loop
+            musicSource.loop = true;
 
             // Start the coroutine to handle looping
             StartCoroutine(LoopMusic());
 
             // Subscribe to scene change events
             SceneManager.sceneLoaded += OnSceneLoaded;
+
+            // Don't destroy this object when loading a new scene
+            DontDestroyOnLoad(gameObject);
         }
 
         private void OnDestroy()
