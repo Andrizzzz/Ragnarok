@@ -57,7 +57,9 @@ namespace Lance.CoreSystem
                 currentHealth = maxHealth; // Reset current health to max health
                 GM.Respawn(); // Only respawn if this is the player
             }
-            gameObject.SetActive(false);
+
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
         }
 
         private void Save()
