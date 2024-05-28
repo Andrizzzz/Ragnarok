@@ -1,16 +1,33 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishPoint : MonoBehaviour
+namespace Lance
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class FinishPoint : MonoBehaviour
     {
-        if (collision.CompareTag("Player"))
+        private bool isTransitioning = false;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            // go to next level
-            SceneController.instance.NextLevel();
+            if (collision.CompareTag("Player") && !isTransitioning)
+            {
+                isTransitioning = true;
+                LoadingScreenManager.instance.ShowLoadingScreen();
+                SceneController.instance.NextLevel();
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (isTransitioning)
+            {
+                LoadingScreenManager.instance.HideLoadingScreen();
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                isTransitioning = false;
+            }
         }
     }
 }
+
