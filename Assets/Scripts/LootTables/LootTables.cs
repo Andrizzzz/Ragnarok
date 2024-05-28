@@ -8,6 +8,6 @@ using UnityEngine;
     {
     public GameObject itemPrefabs;
 
-    [Range(0, 100)] public float dropcChance;
+    [Range(0, 100)] public float dropChance;
     }
 

@@ -68,7 +68,7 @@ namespace Lance.CoreSystem
 
             foreach(LootTables lootTables in lootTables)
             {
-                if (UnityEngine.Random.Range(0f, 100f) <= lootTables.dropcChance)
+                if (UnityEngine.Random.Range(0f, 100f) <= lootTables.dropChance)
                 {
                     InstantitateLoot(lootTables.itemPrefabs);
                 }
@@ -84,6 +84,7 @@ namespace Lance.CoreSystem
                 GameObject droppedLoot = Instantiate(loot, transform.position, UnityEngine.Quaternion.identity);
 
                 droppedLoot.GetComponent<SpriteRenderer>();
+             
             }
         }
 

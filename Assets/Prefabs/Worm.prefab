@@ -48,10 +48,10 @@ MonoBehaviour:
   isPlayer: 0
   currentHealth: 0
   lootTables:
-  - itemPrefabs: {fileID: 3064197750623537100, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
-    dropcChance: 95
-  - itemPrefabs: {fileID: 6311617161750811229, guid: 5e9a25a1cbf4f5240b483b214326c84d, type: 3}
-    dropcChance: 5
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 5371547145892026946, guid: 5e9a25a1cbf4f5240b483b214326c84d, type: 3}
+    dropChance: 1
 --- !u!1 &1619250782
 GameObject:
   m_ObjectHideFlags: 0
