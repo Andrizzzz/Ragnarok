@@ -43,12 +43,15 @@ namespace Lance.CoreSystem
 
         public void IncreaseHealth(float amount)
         {
+            Debug.Log("Increasing health by: " + amount);
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log("Health increased to: " + currentHealth);
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
             Save(); // Save health after changing
         }
+
+
 
         private void Die()
         {

@@ -17,13 +17,23 @@ public class ItemSO : ScriptableObject
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            Stats playerStats = player.GetComponent<Stats>();
+            Stats playerStats = player.GetComponentInChildren<Stats>();
             if (playerStats != null && statToChange == StatToChange.health)
             {
+                Debug.Log("Player Stats found.");
                 playerStats.IncreaseHealth(amountOfChangeStat);
             }
+            else
+            {
+                Debug.LogWarning("Player Stats component not found or statToChange is not health.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player GameObject not found.");
         }
     }
+
 
     public enum StatToChange
     {
