@@ -1,26 +1,3 @@
-using UnityEngine;
-
-public class BossController : MonoBehaviour
-{
-    public GameObject portal; // Reference to the portal GameObject in the Inspector
-
-    // Other boss-related variables and functions...
-
-    // Call this function when the boss is defeated
-    public void DefeatBoss()
-    {
-        // Check if the portal GameObject is assigned
-        if (portal != null)
-        {
-            // Activate the portal
-            portal.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Portal GameObject is not assigned!");
-        }
-
-        // Destroy the boss GameObject
-        Destroy(gameObject);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:53c8c6b25d309218175a1b426cdb32ea11359389773b945cde3be286d460c20f
+size 668

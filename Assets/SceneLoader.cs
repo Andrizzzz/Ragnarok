@@ -1,24 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-namespace Lance
-{
-    public class SceneLoader : MonoBehaviour
-    {
-        // Function to load the next scene
-        public void LoadNextScene()
-        {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-            {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
-            else
-            {
-                Debug.LogWarning("No next scene available.");
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:debbbf86a81adaf60c483e5df547d4e6d26a58a3fc2fb12233918e25b8d536a8
+size 658

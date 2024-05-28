@@ -1,20 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1d6a46b8365534fbb09734f07b4b56, type: 3}
-  m_Name: Nickel
-  m_EditorClassIdentifier: 
-  itemName: Nickel
-  itemSprite: {fileID: 0}
-  statToChange: 1
-  attributesToChange: 0
-  amountOfChangeStat: 5
-  amountOfChangeAttributes: 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:f1a8e30b43a0d9c5f63a56664a2298e7cc3242f135bcf24d40ad8be06c9fb858
+size 556
