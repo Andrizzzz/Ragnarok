@@ -10,13 +10,25 @@ namespace Lance
     {
         public CameraShaker cameraShaker;
         public GameObject stopButton;
-        public GameObject continueButton; // Add reference to the continue button
+        public GameObject continueButton;
         public GameObject dialoguePanel;
         public TMP_Text dialogueText;
+        public TMP_Text characterNameText; // Text element for the character's name
         public GameObject objectToDestroy;
+        public Image characterImage;
+        public GameObject backgroundPanel; // Reference to the background panel
+        public GameObject[] uiElementsToHide; // Array to store references to UI elements to hide
 
-        private string[] dialogueLines; // Array to store dialogue lines
-        private int currentLineIndex = 0; // Index to keep track of current dialogue line
+        [System.Serializable]
+        public struct DialogueLine
+        {
+            public string characterName; // Name of the character
+            public string text;
+            public Sprite characterSprite;
+        }
+
+        public DialogueLine[] dialogueLines;
+        private int currentLineIndex = 0;
         private Coroutine typingCoroutine;
 
         private void Start()
@@ -41,7 +53,7 @@ namespace Lance
 
             if (continueButton != null)
             {
-                continueButton.SetActive(false); // Hide continue button initially
+                continueButton.SetActive(false);
                 Button continueButtonComponent = continueButton.GetComponent<Button>();
                 if (continueButtonComponent != null)
                 {
@@ -66,22 +78,24 @@ namespace Lance
                 Debug.LogError("DialoguePanel reference is missing.");
             }
 
-            // Initialize dialogue lines
-            dialogueLines = new string[]
+            if (backgroundPanel != null)
             {
-                "Thank you, brave soul! By absorbing these seismic waves, you've averted a catastrophe.",
-                "The waves were emanating from this very core, threatening to destabilize the entire region.",
-                "Seismic waves? Can you tell me more about them?",
-                "Of course. Seismic waves are energy waves caused by sudden movements in the Earth's crust. There are two main types: body waves and surface waves.",
-                "Body waves travel through the Earth's interior and are divided into P-waves and S-waves. P-waves are faster and can move through both solid and liquid layers of the Earth, while S-waves are slower and only travel through solids.",
-                "Surface waves travel along the Earth's surface and are usually the cause of the most damage during an earthquake. They move the ground up and down or side to side.",
-                "So the waves here were causing instability in the core?",
-                "Exactly. If left unchecked, these waves would have grown more violent, causing massive earthquakes. The tremors would have propagated to the surface, potentially causing catastrophic destruction.",
-                "I'm glad I could help. What would have happened if I hadn't absorbed the waves?",
-                "The quakes could have torn the land apart, destroying cities, infrastructure, and taking countless lives. The entire region could have been rendered uninhabitable.",
-                "I'm relieved we avoided that fate. The core is now stable, thanks to you.",
-                "Your courage and quick action have saved us all. We owe you our deepest gratitude. Understanding the nature of seismic waves and acting quickly has made all the difference."
-            };
+                backgroundPanel.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("BackgroundPanel reference is missing.");
+            }
+
+            if (characterImage == null)
+            {
+                Debug.LogError("CharacterImage reference is missing.");
+            }
+
+            if (characterNameText == null)
+            {
+                Debug.LogError("CharacterNameText reference is missing.");
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -100,21 +114,18 @@ namespace Lance
         private void OnStopButtonClick()
         {
             StopShaking();
-            ShowDialogue(dialogueLines[currentLineIndex]);
+            ShowDialogue(dialogueLines[currentLineIndex].characterName, dialogueLines[currentLineIndex].text, dialogueLines[currentLineIndex].characterSprite);
 
-            // Disable the button to prevent further clicks
             if (stopButton != null)
             {
                 stopButton.GetComponent<Button>().interactable = false;
             }
 
-            // Show continue button after displaying the dialogue line
             if (continueButton != null)
             {
                 continueButton.SetActive(true);
             }
 
-            // Destroy the object containing this script
             if (objectToDestroy != null)
             {
                 Destroy(objectToDestroy);
@@ -127,7 +138,6 @@ namespace Lance
 
         private void StopShaking()
         {
-            // Stop the camera shaking
             if (cameraShaker != null)
             {
                 cameraShaker.Stop();
@@ -138,27 +148,41 @@ namespace Lance
                 Debug.LogWarning("CameraShaker reference is missing.");
             }
 
-            // Deactivate the button after stopping the shaking
             if (stopButton != null)
             {
                 stopButton.SetActive(false);
             }
         }
 
-        private void ShowDialogue(string message)
+        private void ShowDialogue(string characterName, string message, Sprite characterSprite)
         {
-            if (dialoguePanel != null && dialogueText != null)
+            if (dialoguePanel != null && dialogueText != null && characterImage != null && backgroundPanel != null && characterNameText != null)
             {
+                Time.timeScale = 0; // Pause the game
                 dialoguePanel.SetActive(true);
+                backgroundPanel.SetActive(true);
+                characterImage.sprite = characterSprite;
+                characterImage.gameObject.SetActive(true);
+                characterNameText.text = characterName; // Set the character's name
+
                 if (typingCoroutine != null)
                 {
                     StopCoroutine(typingCoroutine);
                 }
                 typingCoroutine = StartCoroutine(TypeText(message));
+
+                // Hide specified UI elements
+                foreach (GameObject element in uiElementsToHide)
+                {
+                    if (element != null)
+                    {
+                        element.SetActive(false);
+                    }
+                }
             }
             else
             {
-                Debug.LogError("DialoguePanel or DialogueText reference is missing.");
+                Debug.LogError("DialoguePanel, DialogueText, CharacterImage, CharacterNameText, or BackgroundPanel reference is missing.");
             }
         }
 
@@ -168,30 +192,41 @@ namespace Lance
             foreach (char letter in message.ToCharArray())
             {
                 dialogueText.text += letter;
-                yield return new WaitForSeconds(0.01f); // Adjust typing speed here
+                yield return new WaitForSecondsRealtime(0.01f); // Use WaitForSecondsRealtime to respect the paused time scale
             }
         }
 
         private void OnContinueButtonClick()
         {
-            // Increment index to display the next dialogue line
             currentLineIndex++;
 
-            // Check if there are more dialogue lines to display
             if (currentLineIndex < dialogueLines.Length)
             {
-                ShowDialogue(dialogueLines[currentLineIndex]);
+                ShowDialogue(dialogueLines[currentLineIndex].characterName, dialogueLines[currentLineIndex].text, dialogueLines[currentLineIndex].characterSprite);
             }
             else
             {
-                // Hide dialogue panel and continue button when all lines are displayed
                 if (dialoguePanel != null)
                 {
                     dialoguePanel.SetActive(false);
                 }
+                if (backgroundPanel != null)
+                {
+                    backgroundPanel.SetActive(false);
+                }
                 if (continueButton != null)
                 {
                     continueButton.SetActive(false);
+                }
+                Time.timeScale = 1; // Resume the game
+
+                // Show specified UI elements
+                foreach (GameObject element in uiElementsToHide)
+                {
+                    if (element != null)
+                    {
+                        element.SetActive(true);
+                    }
                 }
             }
         }
