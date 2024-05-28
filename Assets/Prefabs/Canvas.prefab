@@ -3988,12 +3988,12 @@ GameObject:
   - component: {fileID: 4765179294480336747}
   - component: {fileID: 6846202586728202697}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7353346773181727411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4161,7 +4161,7 @@ GameObject:
   - component: {fileID: 4567459021837629802}
   - component: {fileID: 3950181107616850335}
   m_Layer: 5
-  m_Name: dialoguetextutorial
+  m_Name: dialogue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5309,7 +5309,7 @@ GameObject:
   - component: {fileID: 2460257640243447129}
   - component: {fileID: 2361238198553525109}
   m_Layer: 5
-  m_Name: NPCTutorialJump
+  m_Name: NPC1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5334,7 +5334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -1957, y: -260}
+  m_AnchoredPosition: {x: -1043, y: -260}
   m_SizeDelta: {x: 1796.0735, y: 405.8}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2460257640243447129
@@ -5620,7 +5620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2463912890592212594
 Transform:
   m_ObjectHideFlags: 0
