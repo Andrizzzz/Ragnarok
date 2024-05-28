@@ -1,15 +1,13 @@
+using Lance.CoreSystem;
 using UnityEngine;
 
 public class BossDefeat : MonoBehaviour
 {
-    // Reference to the boss GameObject
     public GameObject boss;
 
-    // Reference to the portal GameObject
     public GameObject portal;
 
-    // Reference to the boss's Stats component
-    private Lance.CoreSystem.Stats bossStats;
+    private Stats bossStats;
 
     void Start()
     {

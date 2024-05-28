@@ -69,6 +69,16 @@ public class InventoryManager : MonoBehaviour
         Save();
     }
 
+    public void SetItemSlotButtonsActive(bool active)
+    {
+        foreach (ItemSlot slot in itemSlot)
+        {
+            slot.useButton.gameObject.SetActive(active);
+            slot.dropButton.gameObject.SetActive(active);
+        }
+    }
+
+
 
     public void ToggleInventory()
     {
@@ -83,8 +93,11 @@ public class InventoryManager : MonoBehaviour
         else
         {
             ResumeGame();
+            SetItemSlotButtonsActive(false); // Set item slot buttons inactive when inventory is closed
         }
     }
+
+
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {

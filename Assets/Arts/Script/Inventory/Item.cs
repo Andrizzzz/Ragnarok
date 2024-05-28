@@ -41,7 +41,7 @@ public class Item : MonoBehaviour
     }
 
 
-    private void SaveItem()
+    public void SaveItem()
     {
         PlayerPrefs.SetString(gameObject.name + "_itemName", itemName);
         PlayerPrefs.SetInt(gameObject.name + "_quantity", quantity);
