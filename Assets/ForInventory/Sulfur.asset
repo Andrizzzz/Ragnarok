@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Sulfur
   itemSprite: {fileID: 21300000, guid: 5c52c3721bd6ceb44a898f3232ca0500, type: 3}
   statToChange: 1
-  amountOfChangeStat: 9
+  amountOfChangeStat: 10

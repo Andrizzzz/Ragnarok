@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Rock
   itemSprite: {fileID: 21300000, guid: 97204d7bfbfa13f45ab107e9f126d570, type: 3}
   statToChange: 1
-  amountOfChangeStat: 2
+  amountOfChangeStat: 5

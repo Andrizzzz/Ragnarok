@@ -15,6 +15,4 @@ MonoBehaviour:
   itemName: Iron
   itemSprite: {fileID: 21300000, guid: 27b30ad13e268e14cb19b324ed5463a9, type: 3}
   statToChange: 1
-  attributesToChange: 0
-  amountOfChangeStat: 20
-  amountOfChangeAttributes: 0
+  amountOfChangeStat: 15
