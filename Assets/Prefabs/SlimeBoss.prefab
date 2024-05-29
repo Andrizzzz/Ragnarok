@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598949230532626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.66, y: -3.63, z: 0}
+  m_LocalPosition: {x: 1.66, y: -4.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598950494864099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.53, y: -3.77, z: 0}
+  m_LocalPosition: {x: 1.69, y: -3.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -381,7 +381,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1455826997
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1288867989, guid: f18704cafaa20ec42903d4eae306d594, type: 3}
   m_Color: {r: 0.764151, g: 0.5803222, b: 0.5803222, a: 1}
   m_FlipX: 0
@@ -622,6 +622,8 @@ MonoBehaviour:
   minibosswalkSFX1: {fileID: 0}
   minibosswalkSFX2: {fileID: 0}
   minibosswalkSFX3: {fileID: 0}
+  minibossdetectedSFX: {fileID: 0}
+  minibosschargeSFX: {fileID: 0}
 --- !u!1 &1196598950608566831
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,26 +852,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a53f68a4089ff04ba4fd1fd7702c75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 450
   isPlayer: 0
   currentHealth: 0
   lootTables:
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 2653752685667484370, guid: 2e50515c6dc5b494a96531f6a9f0889c, type: 3}
+    dropChance: 99
 --- !u!1 &1196598951175188921
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598951175188921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3, y: -2.49, z: 0}
+  m_LocalPosition: {x: 4.43, y: -2.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

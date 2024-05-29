@@ -11839,7 +11839,7 @@ GameObject:
   - component: {fileID: 8336513317058623673}
   - component: {fileID: 1220497162997666220}
   m_Layer: 5
-  m_Name: ContinueButtonboss
+  m_Name: ContinueButtonminiboss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

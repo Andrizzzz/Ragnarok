@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Nickel
   itemSprite: {fileID: 21300000, guid: 4255dbaac7362a64d8a936eedad28610, type: 3}
   statToChange: 1
-  amountOfChangeStat: 5
+  amountOfChangeStat: 15
