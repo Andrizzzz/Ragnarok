@@ -51,10 +51,9 @@ namespace Lance
 
             lines = new Queue<DialogueLine>();
 
-            // Disable the dialogue UI, dark panel, and next button initially
+            // Disable the dialogue UI, dark panel initially
             HideDialogueUI();
             HideDarkPanel();
-            HideNextButton();
         }
 
         public void StartDialogue(Dialogue dialogue)
@@ -63,6 +62,7 @@ namespace Lance
             ShowDialogueUI();
             ShowDarkPanel(); // Show dark panel
             HideOtherUI(); // Hide other UI elements
+            ShowNextButton(); // Show next button
 
             lines.Clear();
 
@@ -76,9 +76,6 @@ namespace Lance
 
         public void DisplayNextDialogueLine()
         {
-            // Hide the next button at the start of displaying a new line
-            HideNextButton();
-
             if (lines.Count == 0)
             {
                 EndDialogue();
