@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598949230532626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.66, y: -3.63, z: 0}
+  m_LocalPosition: {x: 1.66, y: -4.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598950494864099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.53, y: -3.77, z: 0}
+  m_LocalPosition: {x: 1.69, y: -3.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,6 +313,8 @@ GameObject:
   - component: {fileID: 1196598950603977702}
   - component: {fileID: 1196598950603977721}
   - component: {fileID: 1196598950603977699}
+  - component: {fileID: 1172955878}
+  - component: {fileID: 1172955871}
   m_Layer: 6
   m_Name: SlimeBoss
   m_TagString: Enemy
@@ -359,7 +361,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -379,7 +381,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1455826997
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1288867989, guid: f18704cafaa20ec42903d4eae306d594, type: 3}
   m_Color: {r: 0.764151, g: 0.5803222, b: 0.5803222, a: 1}
   m_FlipX: 0
@@ -497,6 +499,131 @@ MonoBehaviour:
   moveStateData: {fileID: 11400000, guid: ddade2391abcfed429e9f5627ce8ea11, type: 2}
   playerDetectedData: {fileID: 11400000, guid: fc56012844c7c4a41ac8288d5fa028d1, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: 570292b0c9242fb4ab1802c9e5020c41, type: 2}
+--- !u!82 &1172955878
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196598950603977720}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.97987366
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1172955871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196598950603977720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58d639b268308f498e3345f240a3fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordSwingSFX1: {fileID: 0}
+  swordSwingSFX2: {fileID: 0}
+  swordSwingSFX3: {fileID: 0}
+  jumpSFX: {fileID: 0}
+  dashSFX: {fileID: 0}
+  landingSFX: {fileID: 0}
+  grabSFX: {fileID: 0}
+  runningSFX: {fileID: 0}
+  slimebossSLASHSFX: {fileID: 8300000, guid: 257a649393058af4a9775e709c9a01ce, type: 3}
+  slimebossTHUMPSFX: {fileID: 8300000, guid: 556d6ddf1449b764b8522f5551dbf29b, type: 3}
+  slimebossSCREAMSFX: {fileID: 8300000, guid: 16deb75635ec0624a81b65d39512d924, type: 3}
+  minibossSLASHSFX: {fileID: 0}
+  minibosswalkSFX1: {fileID: 0}
+  minibosswalkSFX2: {fileID: 0}
+  minibosswalkSFX3: {fileID: 0}
+  minibossdetectedSFX: {fileID: 0}
+  minibosschargeSFX: {fileID: 0}
 --- !u!1 &1196598950608566831
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,26 +852,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a53f68a4089ff04ba4fd1fd7702c75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  maxHealth: 450
   isPlayer: 0
   currentHealth: 0
   lootTables:
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
-  - itemPrefabs: {fileID: 0}
-    dropChance: 0
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 6914990566059859783, guid: f79560705b5a53648acc6e59dabb1c48, type: 3}
+    dropChance: 100
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 5581320755875698601, guid: 5937d37646254bc429678b22c9648d70, type: 3}
+    dropChance: 99
+  - itemPrefabs: {fileID: 2653752685667484370, guid: 2e50515c6dc5b494a96531f6a9f0889c, type: 3}
+    dropChance: 99
 --- !u!1 &1196598951175188921
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196598951175188921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3, y: -2.49, z: 0}
+  m_LocalPosition: {x: 4.43, y: -2.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Lava
   itemSprite: {fileID: 21300000, guid: 874cdb0f3dc4cd04292129e64a8a75e8, type: 3}
   statToChange: 1
-  amountOfChangeStat: 20
+  amountOfChangeStat: 60

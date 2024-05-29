@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a53f68a4089ff04ba4fd1fd7702c75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 400
+  maxHealth: 600
   isPlayer: 1
   currentHealth: 0
   lootTables: []
@@ -542,7 +542,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -702,6 +702,13 @@ MonoBehaviour:
   landingSFX: {fileID: 0}
   grabSFX: {fileID: 0}
   runningSFX: {fileID: 0}
+  slimebossSLASHSFX: {fileID: 0}
+  slimebossTHUMPSFX: {fileID: 0}
+  slimebossSCREAMSFX: {fileID: 0}
+  minibossSLASHSFX: {fileID: 0}
+  minibosswalkSFX1: {fileID: 0}
+  minibosswalkSFX2: {fileID: 0}
+  minibosswalkSFX3: {fileID: 0}
 --- !u!1 &5244180701378670771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1139,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1348,6 +1355,13 @@ MonoBehaviour:
   landingSFX: {fileID: 8300000, guid: 7ec0be2a485de944fa13da60299394d1, type: 3}
   grabSFX: {fileID: 8300000, guid: 1e4bf5b95d003634ab0ed6e290494511, type: 3}
   runningSFX: {fileID: 8300000, guid: 95be0c88ef3ef994f8060e9c3b6c7555, type: 3}
+  slimebossSLASHSFX: {fileID: 0}
+  slimebossTHUMPSFX: {fileID: 0}
+  slimebossSCREAMSFX: {fileID: 0}
+  minibossSLASHSFX: {fileID: 0}
+  minibosswalkSFX1: {fileID: 0}
+  minibosswalkSFX2: {fileID: 0}
+  minibosswalkSFX3: {fileID: 0}
 --- !u!1 &7666412906861668099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1710,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1856,6 +1870,13 @@ MonoBehaviour:
   landingSFX: {fileID: 0}
   grabSFX: {fileID: 0}
   runningSFX: {fileID: 0}
+  slimebossSLASHSFX: {fileID: 0}
+  slimebossTHUMPSFX: {fileID: 0}
+  slimebossSCREAMSFX: {fileID: 0}
+  minibossSLASHSFX: {fileID: 0}
+  minibosswalkSFX1: {fileID: 0}
+  minibosswalkSFX2: {fileID: 0}
+  minibosswalkSFX3: {fileID: 0}
 --- !u!1001 &488785518
 PrefabInstance:
   m_ObjectHideFlags: 0

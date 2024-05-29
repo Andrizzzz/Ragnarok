@@ -25,6 +25,8 @@ namespace Lance
         public AudioClip minibosswalkSFX1;
         public AudioClip minibosswalkSFX2;
         public AudioClip minibosswalkSFX3;
+        public AudioClip minibossdetectedSFX;
+        public AudioClip minibosschargeSFX;
 
 
         void Start()
@@ -106,6 +108,16 @@ namespace Lance
         public void PlayMiniWalkSound3()
         {
             StartCoroutine(PlaySoundCoroutine(minibosswalkSFX3));
+        }
+
+        public void PlayMiniDetectedSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibossdetectedSFX));
+        }
+
+        public void PlayMiniChargeSound()
+        {
+            StartCoroutine(PlaySoundCoroutine(minibosschargeSFX));
         }
 
         private IEnumerator PlaySoundCoroutine(AudioClip clip)
