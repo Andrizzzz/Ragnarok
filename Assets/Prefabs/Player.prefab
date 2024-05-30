@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a53f68a4089ff04ba4fd1fd7702c75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 600
+  maxHealth: 1000
   isPlayer: 1
   currentHealth: 0
   lootTables: []
@@ -709,6 +709,8 @@ MonoBehaviour:
   minibosswalkSFX1: {fileID: 0}
   minibosswalkSFX2: {fileID: 0}
   minibosswalkSFX3: {fileID: 0}
+  minibossdetectedSFX: {fileID: 0}
+  minibosschargeSFX: {fileID: 0}
 --- !u!1 &5244180701378670771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1364,8 @@ MonoBehaviour:
   minibosswalkSFX1: {fileID: 0}
   minibosswalkSFX2: {fileID: 0}
   minibosswalkSFX3: {fileID: 0}
+  minibossdetectedSFX: {fileID: 0}
+  minibosschargeSFX: {fileID: 0}
 --- !u!1 &7666412906861668099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,6 +1881,8 @@ MonoBehaviour:
   minibosswalkSFX1: {fileID: 0}
   minibosswalkSFX2: {fileID: 0}
   minibosswalkSFX3: {fileID: 0}
+  minibossdetectedSFX: {fileID: 0}
+  minibosschargeSFX: {fileID: 0}
 --- !u!1001 &488785518
 PrefabInstance:
   m_ObjectHideFlags: 0
